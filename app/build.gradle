@@ -67,10 +67,10 @@ android {
     buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        versionCode 444
-        versionName="1.6.444"
+        versionCode 453
+        versionName="12.1.r453"
         minSdkVersion 17
-        targetSdkVersion 31
+        targetSdkVersion 33
         multiDexEnabled true
         sourceSets {
             main {
@@ -84,15 +84,7 @@ android {
     productFlavors {
         google {
             dimension "distribution"
-            applicationId "net.reichholf.dreamdroid"
-        }
-        fdroid {
-            dimension "distribution"
-            applicationId "net.reichholf.dreamdroid"
-        }
-        amazon {
-            dimension "distribution"
-            applicationId "net.reichholf.dreamdroid.amazon"
+            applicationId "org.openvision.visiondroid"
         }
     }
     splits {
@@ -115,13 +107,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            buildConfigField "long", "BUILD_TIME", "0L"
-            applicationIdSuffix '.debug'
-            versionNameSuffix "-debug"
-            resValue "string", "app_name", "@string/app_name_debug"
-            resValue "string", "app_name_tv", "@string/app_name_tv_debug"
-        }
         release {
             minifyEnabled true
             shrinkResources true

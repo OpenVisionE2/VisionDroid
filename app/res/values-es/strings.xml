@@ -4,7 +4,7 @@
     <string name="description">Descripción</string>
     <string name="title">Título</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquets (TV)</item>
@@ -182,7 +182,7 @@
     <string name="changelog">Registro de cambios</string>
 <string name="license">LICENSE:
 \nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Código fuente disponible en: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Código fuente disponible en: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Perfil</string>
     <string name="connection">Conexión</string>
     <string name="connection_state">Estado</string>
@@ -190,7 +190,7 @@
     <string name="checking">comprobando&#8230;</string>
     <string name="error">¡ERROR!</string>
     <string name="check_connectivity">Comprobar conectividad</string>
-    <string name="version_too_low">Versión &lt; 1.6.5</string>
+    <string name="version_too_low">Versión &lt; 1.4.1</string>
     <string name="connection_error">Error de conexión</string>
     <string name="port_out_of_range">Puerto no está entre 1 y 65535</string>
     <string name="illegal_host">Host ilegal</string>
@@ -229,7 +229,7 @@
     <string name="profiles_long">Configurar perfiles de conexión</string>
     <string name="enable_instant_zap">Zapeo instantáneo</string>
     <string name="enable_instant_zap_long">Zapeo instantáneo en presión corta sobre el servicio</string>
-    <string name="wrong_activity">¡Llamada errónea! Por favor, regenere los accesos directos creados para dreamDroid</string>
+    <string name="wrong_activity">¡Llamada errónea! Por favor, regenere los accesos directos creados para visionDroid</string>
     <string name="simple_remote">Vista simple control remoto</string>
     <string name="screenshot_saved">Captura de pantalla guardada en \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -240,8 +240,8 @@
     <string name="mobile_imdb">Versión móvil de imdb.com</string>
     <string name="mobile_imdb_long">Usar m.imdb.com en lugar de www.imdb.com</string>
     <string name="searching">Buscando&#8230;</string>
-    <string name="searching_known_devices">Buscando Dreamboxes en tu red local. Esto puede tardar varios minutos&#8230;</string>
-    <string name="autodiscovery_failed">¡No se ha encontrado ninguna Dreambox en tu red local!</string>
+    <string name="searching_known_devices">Buscando STBes en tu red local. Esto puede tardar varios minutos&#8230;</string>
+    <string name="autodiscovery_failed">¡No se ha encontrado ninguna STB en tu red local!</string>
     <string name="add_all">Añadir Todo</string>
     <string name="error_parsing">¡Error analizando los datos!</string>
     <string name="enabled">Habilitado</string>
@@ -250,10 +250,10 @@
     <string name="use_light_theme_long">Usar un tema claro en lugar del oscuro por defecto</string>
     <string name="use_light_theme">Usar tema claro</string>
     <string name="leave_confirm">¿Salir?</string>
-    <string name="leave_confirm_long">¿Quiere salir de dreamDroid?</string>
+    <string name="leave_confirm_long">¿Quiere salir de visionDroid?</string>
     <string name="sent_as">Enviado como %s</string>
-    <string name="watch_on_dream">Ver en la Dreambox</string>
-    <string name="sent_from_dreamdroid">Enviado de dreamDroid en %s</string>
+    <string name="watch_on_dream">Ver en la STB</string>
+    <string name="sent_from_visiondroid">Enviado de visionDroid en %s</string>
     <string name="no_profile_available">¡No se ha encontrado ningún perfil de conexión! Por favor, configure al menos uno usando la aplicación principal</string>
     <string name="confirm_app_close">Confirmar al salir</string>
     <string name="confirm_app_close_long">Pedir confirmación antes de cerrar la aplicación al pulsar &quot;atrás&quot;</string>
@@ -264,11 +264,11 @@
     <string name="usability">Usabilidad</string>
     <string name="use_picons">Usar Picons</string>
 <string name="use_picons_long">Habilitar el uso de picons en ciertas áreas.
-\nRequiere picons en /{ExternalStorageDir}/dreamDroid/picons</string>
+\nRequiere picons en /{ExternalStorageDir}/visionDroid/picons</string>
     <string name="sync_picons">Sincronizar Picons</string>
-    <string name="sync_picons_long">Sincronizar Picons en /{ExternalStorageDir}/dreamDroid/picons usando el perfil de conexión actual</string>
+    <string name="sync_picons_long">Sincronizar Picons en /{ExternalStorageDir}/visionDroid/picons usando el perfil de conexión actual</string>
     <string name="sync_picons_path">Picons - ruta remota</string>
-    <string name="sync_picons_path_long">Ruta donde residen los Picons de tu Dreambox</string>
+    <string name="sync_picons_path_long">Ruta donde residen los Picons de tu STB</string>
     <string name="connecting">Conectando</string>
     <string name="connected">Conectado</string>
     <string name="logged_in">Sesión iniciada</string>

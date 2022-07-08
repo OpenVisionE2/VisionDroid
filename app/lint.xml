@@ -123,7 +123,7 @@
     <issue id="UselessParent" severity="ignore" />
     <issue id="UsesMinSdkAttributes" severity="ignore" />
     <issue id="ValidFragment" severity="ignore">
-        <ignore path="src\net\reichholf\dreamdroid\fragment\dialogs\SimpleChoiceDialog.java" />
+        <ignore path="src\org.openvision.visiondroid\fragment\dialogs\SimpleChoiceDialog.java" />
     </issue>
     <issue id="ViewConstructor" severity="ignore" />
     <issue id="ViewTag" severity="ignore" />

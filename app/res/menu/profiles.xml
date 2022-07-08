@@ -1,10 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:dreamDroid="http://schemas.android.com/apk/res-auto" >
+      xmlns:visionDroid="http://schemas.android.com/apk/res-auto" >
 
     <item
         android:id="@+id/menu_detect_devices"
         android:icon="@drawable/ic_action_devices"
-        android:title="@string/autodiscover_dreamboxes"
-        dreamDroid:showAsAction="ifRoom|withText"/>
+        android:title="@string/autodiscover_STBs"
+        visionDroid:showAsAction="ifRoom|withText"/>
 
 </menu>

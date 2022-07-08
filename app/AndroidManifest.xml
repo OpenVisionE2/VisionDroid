@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="net.reichholf.dreamdroid"
+          android:installLocation="auto">
+
+    <uses-sdk
+        tools:overrideLibrary="android.support.v17.leanback, android.support.v17.preference"/>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BIND_JOB_SERVICE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+
+    <application
+        android:name=".DreamDroid"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:backupAgent="DreamDroidBackupAgent"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:icon="@mipmap/ic_launcher"
+        android:banner="@drawable/dreamdroid_banner"
+        android:killAfterRestore="true"
+        android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DreamDroid"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.TabbedNavigationActivity"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="dreamdroid" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.SimpleFragmentActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SimpleNoTitleFragmentActivity"
+            android:theme="@style/Theme.DreamDroid.NoTitle"
+            android:uiOptions=""
+            android:exported="false"/>
+
+        <activity
+            android:name=".activities.SimpleToolbarFragmentActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIpJ1ddymOdlswxM_S0SOTS9GK0WKiqESIKU7KLw"/>
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".activities.SimpleFragmentActivity"/>
+
+        <activity
+            android:name=".tv.activities.MainActivity"
+            android:theme="@style/Theme.Leanback"
+            android:exported="false" />
+        <activity
+            android:name=".tv.activities.PreferenceActivity"
+            android:theme="@style/Theme.Dreamdroid.LeanbackPreferences"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.ShareActivity"
+            android:theme="@style/Theme.DreamDroid"
+            android:exported="true" >
+
+            <intent-filter android:label="@string/watch_on_dream">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="rtsp"/>
+                <data android:scheme="rtmp"/>
+                <data android:scheme="mms"/>
+            </intent-filter>
+
+            <intent-filter android:label="@string/watch_on_dream">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="*/avi"/>
+                <data android:mimeType="*/mkv"/>
+                <data android:mimeType="application/mp4"/>
+                <data android:mimeType="application/mpeg*"/>
+                <data android:mimeType="application/vnd.3gp*"/>
+                <data android:mimeType="application/vnd.apple.mpegurl"/>
+                <data android:mimeType="application/x-extension-mp4"/>
+                <data android:mimeType="application/x-flac"/>
+                <data android:mimeType="application/x-matroska"/>
+                <data android:mimeType="application/x-mpegURL"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="rtsp"/>
+                <data android:scheme="rtmp"/>
+                <data android:scheme="mms"/>
+
+            </intent-filter>
+            <intent-filter android:label="@string/watch_on_dream">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="youtu.be" android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activities.VideoActivity"
+            android:theme="@style/Theme.DreamDroid.Player"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|screenLayout|uiMode|smallestScreenSize"
+            android:exported="false" />
+
+        <activity
+            android:name=".appwidget.VirtualRemoteWidgetConfiguration"
+            android:theme="@style/Theme.DreamDroid.Night"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="de.duenndns.ssl.MemorizingActivity"
+                  android:theme="@style/Theme.DreamDroid.Dialog"
+                  android:exported="false"/>
+
+        <receiver android:name=".appwidget.VirtualRemoteWidgetProvider" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="net.reichholf.dreamdroid.appwidget.WidgetService.ACTION_RCU" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/virtual_remote_appwidget_info"/>
+        </receiver>
+
+        <service
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"
+            android:name=".appwidget.WidgetService"
+            android:enabled="true"/>
+        <service
+            android:name=".helpers.SyncService"
+            android:enabled="true"/>
+        <service
+            android:name=".helpers.PiconSyncService"
+            android:enabled="true"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <uses-library
+            android:name="com.sec.android.app.multiwindow"
+            android:required="false"/>
+
+        <meta-data
+            android:name="com.sec.android.support.multiwindow"
+            android:value="true"/>
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W"
+            android:resource="@dimen/app_defaultsize_w"/>
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H"
+            android:resource="@dimen/app_defaultsize_h"/>
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W"
+            android:resource="@dimen/app_minimumsize_w"/>
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H"
+            android:resource="@dimen/app_minimumsize_h"/>
+
+    </application>
+
+</manifest>

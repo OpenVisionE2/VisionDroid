@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.DreamDroid" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:listSelector">@drawable/list_selector_light</item>
+        <item name="android:navigationBarColor">@color/primary_material_dark</item>
+        <item name="android:windowTranslucentStatus">@bool/requireTranslucentStatusbar</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="android:activatedBackgroundIndicator">?android:attr/selectableItemBackground
+        </item>
+        <item name="actionModeBackground">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="buttonBarStyle">?attr/buttonBarStyle</item>
+        <item name="android:textColorLink">@color/md_theme_light_primary</item>
+        <item name="detailsElementBackground">@color/details_element_background_light</item>
+        <item name="navListPreferredItemHeight">@dimen/navListPreferredItemHeight</item>
+        <item name="simpleHeaderBackground">#DDD</item>
+        <item name="lightBackgroundColor">#FFF</item>
+        <item name="darkBackgroundColor">#DDD</item>
+        <item name="listItemBackground">@drawable/list_item_selector_light</item>
+        <item name="cardListView">@style/CardListView.Light</item>
+        <item name="ic_media_play">@drawable/ic_media_play_light</item>
+        <item name="ic_media_pause">@drawable/ic_media_pause_light</item>
+        <item name="ic_media_stop">@drawable/ic_media_stop_light</item>
+        <item name="ic_media_previous">@drawable/ic_media_previous_light</item>
+        <item name="ic_media_next">@drawable/ic_media_next_light</item>
+        <item name="ic_menu_about">@drawable/ic_menu_about_light</item>
+        <item name="ic_menu_changelog">@drawable/ic_menu_changelog_light</item>
+        <item name="ic_menu_clear_playlist">@drawable/ic_menu_clear_playlist_light</item>
+        <item name="ic_menu_clock">@drawable/ic_menu_clock_light</item>
+        <item name="ic_menu_close">@drawable/ic_menu_close_light</item>
+        <item name="ic_menu_device">@drawable/ic_menu_device_light</item>
+        <item name="ic_menu_current">@drawable/ic_menu_current_light</item>
+        <item name="ic_menu_epg">@drawable/ic_menu_epg_light</item>
+        <item name="ic_menu_info">@drawable/ic_menu_info_light</item>
+        <item name="ic_menu_list">@drawable/ic_menu_list_light</item>
+        <item name="ic_menu_mail">@drawable/ic_menu_mail_light</item>
+        <item name="ic_menu_movie">@drawable/ic_menu_movie_light</item>
+        <item name="ic_menu_music">@drawable/ic_menu_music_light</item>
+        <item name="ic_menu_picture">@drawable/ic_menu_picture_light</item>
+        <item name="ic_menu_power_off">@drawable/ic_menu_power_light</item>
+        <item name="ic_menu_profiles">@drawable/ic_menu_profiles_light</item>
+        <item name="ic_menu_remote">@drawable/ic_menu_remote_light</item>
+        <item name="ic_menu_save">@drawable/ic_menu_save_light</item>
+        <item name="ic_menu_send">@drawable/ic_menu_send_light</item>
+        <item name="ic_menu_services">@drawable/ic_menu_services_light</item>
+        <item name="ic_menu_settings">@drawable/ic_menu_settings_light</item>
+        <item name="ic_menu_signal">@drawable/ic_menu_signal_light</item>
+        <item name="ic_menu_sleeptimer">@drawable/ic_menu_sleeptimer_light</item>
+        <item name="ic_menu_timer">@drawable/ic_menu_timer_light</item>
+        <item name="ic_menu_zap">@drawable/ic_menu_zap_light</item>
+        <item name="text_color">#ff838383</item>
+        <item name="title_color">#ff737373</item>
+        <item name="navigation_footer">@drawable/navigation_footer_light</item>
+        <item name="ic_import_export">@drawable/ic_import_export_light</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButton.Primary</item>
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1
+        </item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2
+        </item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3
+        </item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4
+        </item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5
+        </item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2
+        </item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.DreamDroid.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.DreamDroid.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.DreamDroid.LargeComponent</item>
+
+        <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Elevated</item>
+    </style>
+
+    <style name="Theme.DreamDroid.NoTitle" parent="Theme.DreamDroid">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">#30000000</item>
+    </style>
+
+    <style name="Theme.DreamDroid.Player" parent="Theme.DreamDroid.Night">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="Theme.Dreamdroid.LeanbackPreferences" parent="Theme.Leanback">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlayLeanback</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:colorPrimary">@color/primary_material_dark</item>
+    </style>
+
+    <style name="VideoPlayerButton" parent="Base.Widget.AppCompat.Button.Borderless" />
+
+    <!-- NIGHT STYLES -->
+    <style name="Theme.DreamDroid.Night" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_dark_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_dark_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_dark_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_dark_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_dark_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_dark_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_dark_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_dark_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_dark_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_dark_error</item>
+        <item name="colorErrorContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_dark_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_dark_background</item>
+        <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
+        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_dark_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_dark_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_dark_outline</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_dark_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/md_theme_dark_primaryInverse</item>
+        <item name="buttonBarButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.Material3.Button.TextButton</item>
+
+        <item name="android:listSelector">@drawable/list_selector_dark</item>
+        <item name="android:navigationBarColor">@color/primary_material_dark</item>
+        <item name="android:windowTranslucentStatus">@bool/requireTranslucentStatusbar</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardBackgroundColor">@color/cardview_dark_background</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="android:activatedBackgroundIndicator">?android:attr/selectableItemBackground
+        </item>
+        <item name="actionModeShareDrawable">@drawable/ic_action_share</item>
+        <item name="actionModeBackground">@color/material_blue_grey_800</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="detailsElementBackground">@color/details_element_background_dark</item>
+        <item name="android:textColorLink">@color/material_blue_500</item>
+        <item name="navListPreferredItemHeight">@dimen/navListPreferredItemHeight</item>
+        <item name="simpleHeaderBackground">@android:color/transparent</item>
+        <item name="lightBackgroundColor">#333</item>
+        <item name="darkBackgroundColor">#111</item>
+        <item name="listItemBackground">@drawable/list_item_selector_dark</item>
+        <item name="cardListView">@style/CardListView</item>
+        <item name="ic_media_play">@drawable/ic_media_play_dark</item>
+        <item name="ic_media_pause">@drawable/ic_media_pause_dark</item>
+        <item name="ic_media_stop">@drawable/ic_media_stop_dark</item>
+        <item name="ic_media_previous">@drawable/ic_media_previous_dark</item>
+        <item name="ic_media_next">@drawable/ic_media_next_dark</item>
+        <item name="ic_menu_about">@drawable/ic_menu_about_dark</item>
+        <item name="ic_menu_changelog">@drawable/ic_menu_changelog_dark</item>
+        <item name="ic_menu_clear_playlist">@drawable/ic_menu_close_dark</item>
+        <item name="ic_menu_clock">@drawable/ic_menu_clock_dark</item>
+        <item name="ic_menu_close">@drawable/ic_menu_close_dark</item>
+        <item name="ic_menu_device">@drawable/ic_menu_device_dark</item>
+        <item name="ic_menu_current">@drawable/ic_menu_current_dark</item>
+        <item name="ic_menu_epg">@drawable/ic_menu_epg_dark</item>
+        <item name="ic_menu_info">@drawable/ic_menu_info_dark</item>
+        <item name="ic_menu_list">@drawable/ic_menu_list_dark</item>
+        <item name="ic_menu_mail">@drawable/ic_menu_mail_dark</item>
+        <item name="ic_menu_movie">@drawable/ic_menu_movie_dark</item>
+        <item name="ic_menu_music">@drawable/ic_menu_music_dark</item>
+        <item name="ic_menu_picture">@drawable/ic_menu_picture_dark</item>
+        <item name="ic_menu_power_off">@drawable/ic_menu_power_dark</item>
+        <item name="ic_menu_profiles">@drawable/ic_menu_profiles_dark</item>
+        <item name="ic_menu_remote">@drawable/ic_menu_remote_dark</item>
+        <item name="ic_menu_save">@drawable/ic_menu_save_dark</item>
+        <item name="ic_menu_send">@drawable/ic_menu_send_dark</item>
+        <item name="ic_menu_services">@drawable/ic_menu_services_dark</item>
+        <item name="ic_menu_settings">@drawable/ic_menu_settings_dark</item>
+        <item name="ic_menu_signal">@drawable/ic_menu_signal_dark</item>
+        <item name="ic_menu_sleeptimer">@drawable/ic_menu_sleeptimer_dark</item>
+        <item name="ic_menu_timer">@drawable/ic_menu_timer_dark</item>
+        <item name="ic_menu_zap">@drawable/ic_menu_zap_dark</item>
+        <item name="text_color">#ffb0b0b0</item>
+        <item name="title_color">#ffd6d6d6</item>
+        <item name="navigation_footer">@drawable/navigation_footer_dark</item>
+        <item name="ic_import_export">@drawable/ic_import_export_dark</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButton.Primary</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1
+        </item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2
+        </item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3
+        </item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4
+        </item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5
+        </item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2
+        </item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+        <!-- Material3 attributes (needed if parent="Theme.MaterialComponents"). -->
+
+
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Material3.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Material3.DisplayMedium
+        </item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Material3.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Material3.HeadlineLarge
+        </item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Material3.HeadlineMedium
+        </item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Material3.HeadlineSmall
+        </item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Material3.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Material3.LabelSmall</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.DreamDroid.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.DreamDroid.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.DreamDroid.LargeComponent</item>
+
+        <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Elevated</item>
+    </style>
+</resources>

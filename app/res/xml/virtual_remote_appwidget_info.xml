@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:minWidth="288dp"
+                    android:minHeight="288dp"
+                    android:minResizeWidth="288dp"
+                    android:minResizeHeight="288dp"
+                    android:initialLayout="@layout/virtual_remote_appwidget"
+                    android:previewLayout="@layout/virtual_remote_appwidget"
+                    android:previewImage="@drawable/dreamdroid_appwidget"
+                    android:configure="net.reichholf.dreamdroid.appwidget.VirtualRemoteWidgetConfiguration"
+                    android:resizeMode="horizontal|vertical"
+                    android:widgetCategory="home_screen"
+                    android:widgetFeatures="reconfigurable">
+</appwidget-provider>

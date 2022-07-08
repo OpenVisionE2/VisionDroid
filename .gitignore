@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+.gradle
+.idea/
+gradle/
+bin/
+gen/
+build/
+*.iml
+local.properties
+app/manifest-merger-release-report.txt

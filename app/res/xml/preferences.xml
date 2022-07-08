@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orderingFromXml="true">
+
+    <PreferenceCategory
+        android:key="category_videoplayer"
+        android:title="@string/video_player">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="integrated_video_player"
+            android:summary="@string/integrated_video_player_long"
+            android:title="@string/integrated_video_player"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:dependency="integrated_video_player"
+            android:key="video_enable_gestures"
+            android:summary="@string/video_enable_gestures_long"
+            android:title="@string/video_enable_gestures"/>
+        <ListPreference
+            android:defaultValue="@integer/hw_accel_default"
+            android:dependency="integrated_video_player"
+            android:dialogTitle="@string/video_use_hw_accel"
+            android:entries="@array/hw_accel_entries"
+            android:entryValues="@array/hw_accel_values"
+            android:key="video_hardware_acceleration"
+            android:summary="@string/use_hw_accel_long"
+            android:title="@string/use_hw_accel"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="category_usability"
+        android:title="@string/usability">
+        <CheckBoxPreference
+            android:key="volume_control"
+            android:summary="@string/enable_volume_control_long"
+            android:title="@string/enable_volume_control"/>
+        <CheckBoxPreference
+            android:key="instant_zap"
+            android:summary="@string/enable_instant_zap_long"
+            android:title="@string/enable_instant_zap"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="simple_vrm"
+            android:summary="@string/default_to_full_vrm_long"
+            android:title="@string/default_to_full_vrm"/>
+        <CheckBoxPreference
+            android:key="mobile_imdb"
+            android:summary="@string/mobile_imdb_long"
+            android:title="@string/mobile_imdb"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="confirm_app_close"
+            android:summary="@string/confirm_app_close_long"
+            android:title="@string/confirm_app_close"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="play_button_as_play_pause"
+            android:summary="@string/play_button_as_play_pause_long"
+            android:title="@string/play_button_as_play_pause"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="category_appearance"
+        android:title="@string/appearance">
+
+        <ListPreference
+            android:defaultValue="@integer/theme_default"
+            android:dialogTitle="@string/theme"
+            android:entries="@array/theme_option_entries"
+            android:entryValues="@array/theme_option_values"
+            android:key="theme_type"
+            android:summary="@string/theme"
+            android:title="@string/theme_long"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="dynamic_theme_colors"
+            android:summary="@string/dynamic_theme_colors_long"
+            android:title="@string/dynamic_theme_colors"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disable_fab_reload"
+            android:summary="@string/disable_fab_reload_long"
+            android:title="@string/disable_fab_reload"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="enable_animations"
+            android:summary="@string/enable_animations_long"
+            android:title="@string/enable_animations"/>
+        <ListPreference
+            android:defaultValue="@integer/max_grid_col_default"
+            android:dialogTitle="@string/max_grid_cols"
+            android:entries="@array/max_grid_col_entries"
+            android:entryValues="@array/max_grid_col_values"
+            android:key="grid_max_cols"
+            android:summary="@string/max_grid_cols_long"
+            android:title="@string/max_grid_cols"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="category_picons"
+        android:title="@string/picons">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="picons"
+            android:summary="@string/use_picons_long"
+            android:title="@string/use_picons"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="picons_online"
+            android:summary="@string/online_picons_long"
+            android:title="@string/online_picons"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="picons"
+            android:key="use_name_as_picon_filename"
+            android:summary="@string/use_name_as_picon_filename_long"
+            android:title="@string/use_name_as_picon_filename"/>
+
+        <Preference
+            android:dependency="picons"
+            android:key="sync_picons"
+            android:summary="@string/sync_picons_long"
+            android:title="@string/sync_picons"/>
+
+        <EditTextPreference
+            android:defaultValue="/usr/share/enigma2/picon"
+            android:dependency="picons"
+            android:key="sync_picons_path"
+            android:summary="@string/sync_picons_path_long"
+            android:title="@string/sync_picons_path"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="developer"
+        android:title="@string/developer_settings">
+
+        <CheckBoxPreference
+            android:key="enable_developer"
+            android:title="@string/developer_settings_enable"/>
+
+        <CheckBoxPreference
+            android:dependency="enable_developer"
+            android:key="fake_picon"
+            android:summary="@string/use_fake_picon_long"
+            android:title="@string/use_fake_picon"/>
+
+        <CheckBoxPreference
+            android:dependency="enable_developer"
+            android:key="xml_debug"
+            android:summary="@string/dump_xml_long"
+            android:title="@string/dump_xml"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="profile"
+        android:title="@string/profile">
+
+        <CheckBoxPreference
+            android:key="auto_switch_profile_wifi_based"
+            android:title="@string/auto_switch_profile_wifi_based"
+            android:summary="@string/auto_switch_profile_wifi_based_long"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

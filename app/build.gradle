@@ -63,8 +63,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
-    buildToolsVersion project.BUILD_TOOLS_VERSION
+    compileSdk 33
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
         versionCode 453
@@ -125,4 +125,5 @@ android {
     lint {
         abortOnError false
     }
+    ndkVersion '24.0.8215888'
 }

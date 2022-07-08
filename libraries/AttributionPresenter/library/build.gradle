@@ -4,8 +4,8 @@ group = 'com.github.franmontiel'
 version = '1.0.1'
 
 android {
-    compileSdk 32
-    buildToolsVersion '31.0.0'
+    compileSdk 33
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
         minSdkVersion 15
@@ -27,6 +27,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 

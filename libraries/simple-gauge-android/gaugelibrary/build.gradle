@@ -5,8 +5,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-
+    compileSdk 33
 
 
     defaultConfig {
@@ -25,6 +24,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildToolsVersion '33.0.0'
 
 }
 

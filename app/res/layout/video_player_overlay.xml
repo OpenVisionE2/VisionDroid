@@ -220,7 +220,7 @@
         </RelativeLayout>
 
     </RelativeLayout>
-    <net.reichholf.dreamdroid.widget.AutofitRecyclerView
+    <org.openvision.visiondroid.widget.AutofitRecyclerView
         android:id="@+id/servicelist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

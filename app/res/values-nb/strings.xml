@@ -4,7 +4,7 @@
     <string name="description">Beskrivelse</string>
     <string name="title">Tittel</string>
     <string name="mo">Ma</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Utvalg (TV)</item>
@@ -173,7 +173,7 @@
     <string name="default_bouquet_not_set">Standard utvalg kunne ikke settes!</string>
     <string name="loading">Henter...</string>
     <string name="about">Om</string>
-    <string name="source_code_link">Kildekoden er tilgjengelig hos: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Kildekoden er tilgjengelig hos: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktiv profil</string>
     <string name="connection_state">Tilkoblings status</string>
     <string name="not_available">Ikke tilgjengelig</string>

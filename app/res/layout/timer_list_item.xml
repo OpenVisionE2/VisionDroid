@@ -9,7 +9,7 @@
     app:cardElevation="4dp"
     app:contentPadding="4dp">
 
-    <net.reichholf.dreamdroid.widget.CheckableLinearLayout
+    <org.openvision.visiondroid.widget.CheckableLinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="?attr/listItemBackground"
@@ -112,5 +112,5 @@
             </LinearLayout>
         </LinearLayout>
 
-    </net.reichholf.dreamdroid.widget.CheckableLinearLayout>
+    </org.openvision.visiondroid.widget.CheckableLinearLayout>
 </com.google.android.material.card.MaterialCardView>

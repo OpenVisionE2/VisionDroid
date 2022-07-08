@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/listView2Header">
 
-            <net.reichholf.dreamdroid.widget.AutofitRecyclerView
+            <org.openvision.visiondroid.widget.AutofitRecyclerView
                 android:id="@+id/list2"
                 style="?attr/cardListView"
                 android:layout_width="fill_parent"

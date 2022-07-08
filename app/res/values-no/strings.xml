@@ -4,7 +4,7 @@
     <string name="description">Beskrivelse</string>
     <string name="title">Tittel</string>
     <string name="mo">Man</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Grupper (TV)</item>
@@ -159,7 +159,7 @@
     <string name="loading">Laster...</string>
     <string name="about">Om</string>
     <string name="license">LICENSE:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Kildekode tilgjengelig på: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Kildekode tilgjengelig på: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktiv profil</string>
     <string name="connection_state">Tilkoblingsstatus</string>
     <string name="not_available">Ikke tilgjengelig</string>

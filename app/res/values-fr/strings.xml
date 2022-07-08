@@ -4,7 +4,7 @@
     <string name="description">Description</string>
     <string name="title">Titre</string>
     <string name="mo">Mega</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquets (TV)</item>
@@ -181,7 +181,7 @@
     <string name="about">A propos</string>
 <string name="license">LICENSE:
 \nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Code source disponible: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Code source disponible: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Profil actif</string>
     <string name="connection">Connexion</string>
     <string name="connection_state">Etat de connexion</string>
@@ -189,7 +189,7 @@
     <string name="checking">Vérification&#8230;</string>
     <string name="error">ERREUR!</string>
     <string name="check_connectivity">Test de la connexion</string>
-    <string name="version_too_low">Version &lt; 1.6.5</string>
+    <string name="version_too_low">Version &lt; 1.4.1</string>
     <string name="connection_error">Erreur de connexion</string>
     <string name="port_out_of_range">Port non compris entre 1 et 65535</string>
     <string name="illegal_host">Nom illegal</string>
@@ -228,7 +228,7 @@
     <string name="profiles_long">Configurer les profils de connexion</string>
     <string name="enable_instant_zap">Zap maintenant</string>
     <string name="enable_instant_zap_long">Zapper instantanément quand appuis court sur service</string>
-    <string name="wrong_activity">Mauvaise activité lancée! Recrée tous les raccourcis que vous avez créer pour la dreamDroid</string>
+    <string name="wrong_activity">Mauvaise activité lancée! Recrée tous les raccourcis que vous avez créer pour la visionDroid</string>
     <string name="simple_remote">Affichage télécomande simple</string>
     <string name="screenshot_saved">Capture d\'écran sauvé sous \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -239,9 +239,9 @@
     <string name="mobile_imdb">Utiliser la version portable de imdb.com</string>
     <string name="mobile_imdb_long">Utiliser m.imdb.com au lieu de www.imdb.com</string>
     <string name="searching">Recherche en cours&#8230;</string>
-    <string name="searching_known_devices">Recherche en cour d\'une dreambox dans votre réseaux locale. Cela peut prendre environ une minute </string>
-    <string name="autodiscover_dreamboxes">Dreambox trouvée !</string>
-    <string name="autodiscovery_failed">Ne peut pas trouver de Dreambox sur votre réseau local</string>
+    <string name="searching_known_devices">Recherche en cour d\'une STB dans votre réseaux locale. Cela peut prendre environ une minute </string>
+    <string name="autodiscover_STBs">STB trouvée !</string>
+    <string name="autodiscovery_failed">Ne peut pas trouver de STB sur votre réseau local</string>
     <string name="add_all">Tout ajouter</string>
     <string name="enabled">Activé</string>
     <string name="connecting">Connexion en cours</string>
@@ -250,8 +250,6 @@
     <string name="picons">Picons</string>
     <string name="enable">Activer</string>
     <string name="disable">Désactiver</string>
-    <string name="donate_sum">Don de %s</string>
-    <string name="donate">Donation</string>
     <string name="donation_thanks">Merci beaucoup pour votre don!</string>
     <string name="donation_error">Votre don a échoué! Désolé! (%s)</string>
 </resources>

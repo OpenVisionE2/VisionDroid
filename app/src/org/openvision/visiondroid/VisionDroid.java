@@ -316,7 +316,7 @@ public class VisionDroid extends Application {
 		// the profile-table is initial - let's migrate the current config as
 		// default Profile
 		if (profiles.isEmpty()) {
-			String host = sp.getString("host", "visiondroid.org");
+			String host = sp.getString("host", "192.168.1.2");
 			String streamHost = sp.getString("host", "");
 
 			int port = Integer.valueOf(sp.getString("port", "80"));
@@ -326,7 +326,7 @@ public class VisionDroid extends Application {
 			boolean login = sp.getBoolean("login", true);
 			boolean ssl = sp.getBoolean("ssl", false);
 
-			Profile p = new Profile(-1, "Demo", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
+			Profile p = new Profile(-1, "Open Vision", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
 					false, false, "", "", "", "");
 			dbh.addProfile(p);
 			profileId = p.getId();

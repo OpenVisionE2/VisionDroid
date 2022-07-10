@@ -9,9 +9,9 @@ setup_git() {
 }
 
 commit_files() {
+  ./CI/apk.sh
   git clean -fd
   git checkout master
-  ./CI/apk.sh
 }
 
 upload_files() {

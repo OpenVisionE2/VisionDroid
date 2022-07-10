@@ -4,13 +4,20 @@ on:
   push:
     branches: [ master ]
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout the code
+
         uses: actions/checkout@v2
+        with:
+          ref: 'master'
+
       - name: Build the app
-        run: ./gradlew assembleDebug
+        run: ./gradlew build
+
       - name: Publish the app
         run: ./CI/build.sh

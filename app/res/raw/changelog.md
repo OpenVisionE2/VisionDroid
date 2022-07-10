@@ -1,5 +1,5 @@
 ## 12.1.r453
-* Update build settings (API 33)
+* Update build settings (API 32-Android 12)
 * Add sfx6008 and sx988
 * Add opt9600prima
 * Add og2ott4k

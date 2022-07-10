@@ -8,7 +8,7 @@ echo -e "${VNAME}"
 #mv -f app-google-universal-debug.apk VisionDroid-${$VNAME}.apk
 #cd
 
-#git add VisionDroid-${VNAME}.apk
+git add VisionDroid-${VNAME}.apk
 git add *
 git commit -m "Publish latest apk build"
 

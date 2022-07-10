@@ -7,15 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-
+      - name: Checkout the code
         uses: actions/checkout@v2
-        with:
-          ref: 'master'
-
       - name: Build the app
-        run: ./gradlew build
-
+        run: ./gradlew assembleDebug
       - name: Publish the app
         run: ./CI/build.sh

@@ -11,6 +11,6 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
       - name: Build VisionDroid app
-        run: ./gradlew assembleDebug
+        run: ./gradlew build
       - name: Publish VisionDroid apk file
         run: ./CI/build.sh

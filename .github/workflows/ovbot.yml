@@ -1,6 +1,14 @@
-- uses: sparkfabrik/android-build-action@v1.2.0
-  with:
-    build-type: assemble
-    gradle-task: googleDebug
-    project-path: android
-    output-path: VisionDroid.apk
+name: ovbot
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Build the app
+        run: ./android/gradlew build

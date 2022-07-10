@@ -11,4 +11,4 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
       - name: Build the app
-        run: ./android/gradlew build
+        run: ./gradlew build

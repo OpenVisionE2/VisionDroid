@@ -1,4 +1,6 @@
-- uses: sparkfabrik/android-build-action@v1.0.0
+- uses: sparkfabrik/android-build-action@v1.2.0
   with:
-    project-path: .
-    output-path: my-app.apk
+    build-type: assemble
+    gradle-task: googleDebug
+    project-path: android
+    output-path: VisionDroid.apk

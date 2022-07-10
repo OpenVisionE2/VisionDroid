@@ -5,6 +5,7 @@
 .idea/
 bin/
 gen/
+build/
 *.iml
 local.properties
 manifest-merger-release-report.txt

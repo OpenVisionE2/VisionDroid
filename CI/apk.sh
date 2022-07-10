@@ -2,13 +2,12 @@
 
 VNAME=`cat app/build.gradle | grep "versionName=" | cut -d "=" -f2 | sed 's|"||g'`
 
-echo "${VNAME}"
+mkdir -p apk
+rm -f apk/*.apk
+mv -f app/build/outputs/apk/google/debug/app-google-universal-debug.apk apk/VisionDroid-${$VNAME}.apk
+rm -rf app/build
 
-#cd app/build/outputs/apk/google/debug
-#mv -f app-google-universal-debug.apk VisionDroid-${$VNAME}.apk
-#cd
-
-#git add VisionDroid-${VNAME}.apk
+git add -u
 git add *
-git commit -m "Publish latest apk build"
+git commit -m "Publish latest apk file"
 

@@ -5,14 +5,14 @@ VisionDroid is based on dreamDroid sources: https://github.com/sreichholf/dreamD
 * [English](app/res/raw/changelog.md)
 * [git history](https://github.com/OpenVisionE2/VisionDroid/commits/master)
 # Functionality
-Remotely control your enigma2 based STB with any Android Device (running android >= 4.1)!
+Remotely control your enigma2 based STB with any android device
 
 VisionDroid has a fragment-based layout which is optimized for all common device sizes.
 # Requirements
 * The STBs should be running Open WebIF.
-* VisionDroid requires at least Android 4.1 (minimum 5.0 is recommended)
-# AndroidStudio
-Simply import VisionDroid as gradle project and you should be fine.
+* VisionDroid requires >=Android 4.1 (>=5 is recommended)
+# Android Studio
+Simply import VisionDroid as gradle project.
 # Clone git
 Only clone this repo with shallow clone otherwise it takes much time to complete:
 * git clone --depth 1 https://github.com/OpenVisionE2/VisionDroid.git

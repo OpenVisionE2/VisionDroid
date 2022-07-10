@@ -5,7 +5,7 @@ VisionDroid is based on dreamDroid sources: https://github.com/sreichholf/dreamD
 * [English](app/res/raw/changelog.md)
 * [git history](https://github.com/OpenVisionE2/VisionDroid/commits/master)
 # Functionality
-Remotely control your enigma2 based STB with any android device
+Remotely control your enigma2 based STB with any android device.
 
 VisionDroid has a fragment-based layout which is optimized for all common device sizes.
 # Requirements

@@ -70,7 +70,7 @@ android {
         versionCode 453
         versionName="12.1.r453"
         minSdkVersion 17
-        targetSdkVersion 33
+        targetSdkVersion 32
         multiDexEnabled true
         sourceSets {
             main {

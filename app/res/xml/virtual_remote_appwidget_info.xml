@@ -7,8 +7,8 @@
                     android:minResizeHeight="288dp"
                     android:initialLayout="@layout/virtual_remote_appwidget"
                     android:previewLayout="@layout/virtual_remote_appwidget"
-                    android:previewImage="@drawable/dreamdroid_appwidget"
-                    android:configure="net.reichholf.dreamdroid.appwidget.VirtualRemoteWidgetConfiguration"
+                    android:previewImage="@drawable/visiondroid_appwidget"
+                    android:configure="org.openvision.visiondroid.appwidget.VirtualRemoteWidgetConfiguration"
                     android:resizeMode="horizontal|vertical"
                     android:widgetCategory="home_screen"
                     android:widgetFeatures="reconfigurable">

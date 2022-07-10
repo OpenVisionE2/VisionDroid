@@ -1,0 +1,6 @@
+systemProp.http.proxyHost=fodev.org
+systemProp.http.proxyPort=8118
+systemProp.http.nonProxyHosts=*.jitpack.io, *.maven.org
+systemProp.https.proxyHost=fodev.org
+systemProp.https.proxyPort=8118
+systemProp.https.nonProxyHosts=*.jitpack.io, *.maven.org

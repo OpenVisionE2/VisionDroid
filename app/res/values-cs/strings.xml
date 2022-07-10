@@ -4,7 +4,7 @@
     <string name="description">Popis</string>
     <string name="title">Název</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquety (TV)</item>
@@ -161,17 +161,17 @@
     <string name="default_bouquet_set_to">Výchozí bouquet byl nastaven na:</string>
     <string name="default_bouquet_not_set">Výchozí bouquet nelze nastavit!</string>
     <string name="loading">Načítání...</string>
-    <string name="about">O dreamdroid</string>
+    <string name="about">O visiondroid</string>
 <string name="license">LICENCE:
 \nLicencováno pod Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Zdrojový kód dostupný na: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Zdrojový kód dostupný na: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktivní profil</string>
     <string name="connection_state">Stav připojení</string>
     <string name="not_available">Není k dispozici</string>
     <string name="checking">Ověřování</string>
     <string name="error">Chyba!</string>
     <string name="check_connectivity">Kontrola připojení</string>
-    <string name="version_too_low">Verze &lt; 1.6.5</string>
+    <string name="version_too_low">Verze &lt; 1.4.1</string>
     <string name="connection_error">Chyba připojení</string>
     <string name="port_out_of_range">Port není mezi 1 a 65535</string>
     <string name="illegal_host">Neplatný hostitel</string>
@@ -209,7 +209,7 @@
     <string name="profiles">Profily</string>
     <string name="enable_instant_zap">Okamžité přepnutí</string>
     <string name="enable_instant_zap_long">Okamžité přepnutí při krátkém klepnutí na službu</string>
-    <string name="wrong_activity">Zvolena nesprávná aktivita! Nastavte znovu všechny rychlé předvolby pro dreamDroid!</string>
+    <string name="wrong_activity">Zvolena nesprávná aktivita! Nastavte znovu všechny rychlé předvolby pro visionDroid!</string>
     <string name="simple_remote">Jednoduchý vzhled DO</string>
     <string name="screenshot_saved">Screenshot uložen do \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -220,9 +220,9 @@
     <string name="mobile_imdb">Použít mobilní verzi imdb.com</string>
     <string name="mobile_imdb_long">Použít m.imdb.com namísto www.imdb.com</string>
     <string name="searching">Vyhledávám&#8230;</string>
-    <string name="searching_known_devices">Vyhledávám dreamboxy na lokální síti. To může trvat několik minut&#8230;</string>
-    <string name="autodiscover_dreamboxes">Automatické vyhledání dreamboxů</string>
-    <string name="autodiscovery_failed">Na lokální síti nebylo možné nalézt žádný dreambox!</string>
+    <string name="searching_known_devices">Vyhledávám STBy na lokální síti. To může trvat několik minut&#8230;</string>
+    <string name="autodiscover_STBs">Automatické vyhledání STBů</string>
+    <string name="autodiscovery_failed">Na lokální síti nebylo možné nalézt žádný STB!</string>
     <string name="add_all">Přidat vše</string>
     <string name="error_parsing">Došlo k chybě při parsování dat!</string>
     <string name="enabled">Zapnuto</string>

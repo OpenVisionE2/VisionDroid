@@ -4,7 +4,7 @@
     <string name="description">Περιγραφή</string>
     <string name="title">Τίτλος</string>
     <string name="mo">μο</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Μπουκέτα (TV)</item>
@@ -157,7 +157,7 @@
     <string name="about">Περί</string>
 <string name="license">¨Αδεια :
 \nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Ο πηγαίος κώδικας είναι διαθέσιμος στο: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Ο πηγαίος κώδικας είναι διαθέσιμος στο: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Ενεργό προφίλ</string>
     <string name="connection_state">Κατάσταση σύνδεσης</string>
     <string name="not_available">Μη διαθέσιμο</string>
@@ -192,7 +192,7 @@
     <string name="profiles">Προφίλ</string>
     <string name="enable_instant_zap">Άμεση εναλλαγή καναλιού</string>
     <string name="enable_instant_zap_long">Άμεση εναλλαγή καναλιού με το άγγιγμα υπηρεσίας</string>
-    <string name="wrong_activity">Λάθος δραστηριότητα! Παρακαλούμε δημιουργήσετε ξανά τις συντομεύσεις που έχετε δημιουργήσει για dreamDroid!</string>
+    <string name="wrong_activity">Λάθος δραστηριότητα! Παρακαλούμε δημιουργήσετε ξανά τις συντομεύσεις που έχετε δημιουργήσει για visionDroid!</string>
     <string name="simple_remote">Απλή εμφάνιση</string>
     <string name="screenshot_saved">Η εικόνα σώθηκε σε \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -201,8 +201,8 @@
     <string name="mobile_imdb">Χρησιμοποιήστε mobile έκδοση του imdb.com</string>
     <string name="mobile_imdb_long">Χρησιμοποιήστε m.imdb.com αντί του www.imdb.com</string>
     <string name="searching">Αναζήτηση &#8230;</string>
-    <string name="searching_known_devices">Αναζήτηση για Dreamboxes στο τοπικό σας δίκτυο. Αυτό μπορεί να διαρκέσει μερικά λεπτά&#8230;</string>
-    <string name="autodiscover_dreamboxes">Αυτόματη Αναζήτηση Dreambox</string>
-    <string name="autodiscovery_failed">Δεν βρέθηκε καμία συσκευή DreamBox στο τοπικό σας δίκτυο!</string>
+    <string name="searching_known_devices">Αναζήτηση για STBes στο τοπικό σας δίκτυο. Αυτό μπορεί να διαρκέσει μερικά λεπτά&#8230;</string>
+    <string name="autodiscover_STBs">Αυτόματη Αναζήτηση STB</string>
+    <string name="autodiscovery_failed">Δεν βρέθηκε καμία συσκευή STB στο τοπικό σας δίκτυο!</string>
     <string name="add_all">Προσθήκη όλων</string>
 </resources>

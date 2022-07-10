@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.DreamDroid" parent="Theme.DreamDroid.Night" />
+    <style name="Theme.VisionDroid" parent="Theme.VisionDroid.Night" />
 
 </resources>

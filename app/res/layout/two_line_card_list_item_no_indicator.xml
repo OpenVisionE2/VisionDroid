@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
-    style="@style/Theme.DreamDroid.Night"
+    style="@style/Theme.VisionDroid.Night"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
@@ -10,7 +10,7 @@
     app:cardElevation="4dp"
     app:contentPadding="4dp">
 
-    <net.reichholf.dreamdroid.widget.CheckableLinearLayout
+    <org.openvision.visiondroid.widget.CheckableLinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/list_item_selector_dark"
@@ -38,5 +38,5 @@
                 android:textSize="16sp"/>
         </LinearLayout>
 
-    </net.reichholf.dreamdroid.widget.CheckableLinearLayout>
+    </org.openvision.visiondroid.widget.CheckableLinearLayout>
 </com.google.android.material.card.MaterialCardView>

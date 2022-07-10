@@ -4,7 +4,7 @@
     <string name="description">Beskrivelse</string>
     <string name="title">Titel</string>
     <string name="mo">Man</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquets (TV)</item>
@@ -159,7 +159,7 @@
     <string name="loading">Henter...</string>
     <string name="about">Om</string>
     <string name="license">LICENSE:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Source code available at: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Source code available at: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktiv profil</string>
     <string name="connection_state">Forbindelsestilstand</string>
     <string name="not_available">Ikke tilgængelig</string>
@@ -204,7 +204,7 @@
     <string name="profiles">profiler</string>
     <string name="enable_instant_zap">Direkte zap</string>
     <string name="enable_instant_zap_long">Øjeblikkelig ZAP ved kort tryk på en tjeneste</string>
-    <string name="wrong_activity">Forkert Aktivitet kaldet! Venligst genskab de genveje, du har oprettet for dreamDroid!</string>
+    <string name="wrong_activity">Forkert Aktivitet kaldet! Venligst genskab de genveje, du har oprettet for visionDroid!</string>
     <string name="simple_remote">Simpel fjernbetjenings layout</string>
     <string name="screenshot_saved">Skærmbillede gemt i \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -217,7 +217,7 @@
     <string name="mobile_imdb_long">Brug m.imdb.com istedet for www.imdb.com</string>
     <string name="searching">Søger.&#8230;</string>
     <string name="searching_known_devices">Søger efter tilsluttede dreambokse på netværket, kan tage flere minutter.&#8230;</string>
-    <string name="autodiscover_dreamboxes">Autosøg tilsluttede dreambokse.</string>
+    <string name="autodiscover_STBs">Autosøg tilsluttede dreambokse.</string>
     <string name="autodiscovery_failed">Fandt ingen tilsluttede dreambokse på netværket.</string>
     <string name="add_all">Tilføj alt.</string>
 

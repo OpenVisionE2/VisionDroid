@@ -4,7 +4,7 @@
     <string name="description">Beskrivning</string>
     <string name="title">Titel</string>
     <string name="mo">Mån</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquets (TV)</item>
@@ -176,7 +176,7 @@
     <string name="about">Om</string>
 <string name="license">LICENSE:
 \nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Source code available at: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Source code available at: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktiv profil</string>
     <string name="connection">Anslutning</string>
     <string name="connection_state">Status på anslutningen</string>
@@ -184,7 +184,7 @@
     <string name="checking">Testar...</string>
     <string name="error">FEL!</string>
     <string name="check_connectivity">Kolla anslutningen</string>
-    <string name="version_too_low">Version &lt; 1.6.5</string>
+    <string name="version_too_low">Version &lt; 1.4.1</string>
     <string name="connection_error">Kunde inte ansluta</string>
     <string name="port_out_of_range">Inga portar emellan 1 och 65535</string>
     <string name="illegal_host">Otillåten värd</string>
@@ -222,16 +222,16 @@
     <string name="profiles">Profiler</string>
     <string name="enable_instant_zap">Snabb-zap</string>
     <string name="enable_instant_zap_long">Snabb-zappa vid snabbklick på en tjänst</string>
-    <string name="wrong_activity">Fel aktivitet påkallad. Uppdatera ny genväg för DreamDroid</string>
+    <string name="wrong_activity">Fel aktivitet påkallad. Uppdatera ny genväg för VisionDroid</string>
     <string name="simple_remote">Enkel fjärrkontroll </string>
     <string name="screenshot_saved">Skärmdump sparad till \'%s\'</string>
     <string name="imdb">IMDB</string>
     <string name="missing_stream_player">Ingen spelare för videoströmmar finns installerad på denna enheten</string>
     <string name="edit_profile">Redigera profil</string>
     <string name="searching">Söker &#8230;</string>
-    <string name="searching_known_devices">Söker efter dreamboxar i det lokala nätverket. Det här kan ta en liten stund &#8230;</string>
-    <string name="autodiscover_dreamboxes">Hitta dreamboxar automatiskt</string>
-    <string name="autodiscovery_failed">Misslyckades med att automatiskt hitta dreambox, i det lokala nätverket!</string>
+    <string name="searching_known_devices">Söker efter STBar i det lokala nätverket. Det här kan ta en liten stund &#8230;</string>
+    <string name="autodiscover_STBs">Hitta STBar automatiskt</string>
+    <string name="autodiscovery_failed">Misslyckades med att automatiskt hitta STB, i det lokala nätverket!</string>
     <string name="add_all">Lägg till alla</string>
     <string name="error_parsing">Ett fel uppstod, då data skulle hanteras.</string>
     <string name="enabled">Aktiverad</string>
@@ -240,7 +240,7 @@
     <string name="leave_confirm">Avsluta programmet?</string>
     <string name="leave_confirm_long">Är du säker på att du vill avsluta programmet?</string>
     <string name="sent_as">Skickad som</string>
-    <string name="watch_on_dream">Visa på Dreambox</string>
-    <string name="sent_from_dreamdroid">Skickad från dreamDroid %s</string>
+    <string name="watch_on_dream">Visa på STB</string>
+    <string name="sent_from_visiondroid">Skickad från visionDroid %s</string>
     <string name="no_profile_available">Ingen anslutningsprofil kunde hittas, Skapa en via huvudapplikationen</string>
 </resources>

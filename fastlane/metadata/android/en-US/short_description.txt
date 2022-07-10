@@ -1,1 +1,1 @@
-Control and streaming client for enigma2 based dreamboxes
+Control and streaming client for enigma2 based STBs

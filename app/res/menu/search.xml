@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:dreamDroid="http://schemas.android.com/apk/res-auto" >
+      xmlns:visionDroid="http://schemas.android.com/apk/res-auto" >
 
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_action_search"
         android:title="@string/epg_search"
-        dreamDroid:actionViewClass="androidx.appcompat.widget.SearchView"
-        dreamDroid:showAsAction="always|collapseActionView"/>
+        visionDroid:actionViewClass="androidx.appcompat.widget.SearchView"
+        visionDroid:showAsAction="always|collapseActionView"/>
 
 </menu>

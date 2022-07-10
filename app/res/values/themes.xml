@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.DreamDroid" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.VisionDroid" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:listSelector">@drawable/list_selector_light</item>
         <item name="android:navigationBarColor">@color/primary_material_dark</item>
         <item name="android:windowTranslucentStatus">@bool/requireTranslucentStatusbar</item>
@@ -105,14 +105,14 @@
         <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
         <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
 
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.DreamDroid.SmallComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.DreamDroid.MediumComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.DreamDroid.LargeComponent</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.VisionDroid.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.VisionDroid.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.VisionDroid.LargeComponent</item>
 
         <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Elevated</item>
     </style>
 
-    <style name="Theme.DreamDroid.NoTitle" parent="Theme.DreamDroid">
+    <style name="Theme.VisionDroid.NoTitle" parent="Theme.VisionDroid">
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
@@ -123,7 +123,7 @@
         <item name="android:navigationBarColor" tools:targetApi="21">#30000000</item>
     </style>
 
-    <style name="Theme.DreamDroid.Player" parent="Theme.DreamDroid.Night">
+    <style name="Theme.VisionDroid.Player" parent="Theme.VisionDroid.Night">
         <item name="windowActionBar">false</item>
         <item name="android:windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -135,7 +135,7 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="Theme.Dreamdroid.LeanbackPreferences" parent="Theme.Leanback">
+    <style name="Theme.Visiondroid.LeanbackPreferences" parent="Theme.Leanback">
         <item name="preferenceTheme">@style/PreferenceThemeOverlayLeanback</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -146,7 +146,7 @@
     <style name="VideoPlayerButton" parent="Base.Widget.AppCompat.Button.Borderless" />
 
     <!-- NIGHT STYLES -->
-    <style name="Theme.DreamDroid.Night" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.VisionDroid.Night" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -276,9 +276,9 @@
         <item name="textAppearanceLabelLarge">@style/TextAppearance.Material3.LabelLarge</item>
         <item name="textAppearanceLabelMedium">@style/TextAppearance.Material3.LabelMedium</item>
         <item name="textAppearanceLabelSmall">@style/TextAppearance.Material3.LabelSmall</item>
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.DreamDroid.SmallComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.DreamDroid.MediumComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.DreamDroid.LargeComponent</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.VisionDroid.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.VisionDroid.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.VisionDroid.LargeComponent</item>
 
         <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Elevated</item>
     </style>

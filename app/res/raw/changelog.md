@@ -1,3 +1,136 @@
+## 12.1.r453
+* Update build settings (API 32-Android 12)
+* Add sfx6008 and sx988
+* Add opt9600prima
+* Add og2ott4k
+* Add hd66se
+* Add ustym4kottpremium
+* Add vipertwin
+* Get rid of developer boxes
+
+## 11.2.r427
+* Add opt9600 and opt9600mini
+* Add protek4kx2
+* Add pulse4kmini
+
+## 11.2.r413
+* Add iziboxone4kplus
+* Add viper4kv20
+* Add sf8008opt
+* Try enabling default password
+
+## 11.1.r403
+* Add atto pixel models
+
+## 10.3.r388
+* No text or buttons in dialog when adding widget
+* Add reborn
+* Add h11
+* Add axashistwinplus
+* Add pulse4k
+* Add dinobot4ktwin
+* Add dual (dagsmv200)
+* Add dmamlogic (dreamone and dreamtwo)
+
+## 10.2.r310
+* Add iziboxelite4k
+* Cleanup old model names
+* Add debug flags
+
+## 10.2.r256
+* Add h9combose
+* Add h9se
+* Add i55plusse
+
+## 10.2.r243
+* Update build settings (android 11, sdk 30)
+* Add vip1_v1
+* Add vuduo4kse
+* Add missing zgemma models
+* Add h0 and h8
+* Add viper4kv20 and vipers
+* Get rid of odin duplicates
+* Add turing
+* Add multiboxplus
+* Get rid of dev boxes
+* Add adb_2850
+* Add k1plusv2
+* Get rid of dream name
+* Get rid of dinobot u42/u43 duplicates
+* UPD: Update google libraries, adjust themes
+* FIX: Fix build issues on f-droid
+* FIX: crash when streaming
+
+## 7.3.r70
+* Update build settings
+* DEL: Auto-Theme selection and with that the coarse location permission have been dropped
+* DEL: Donations have been removed with no intention for any replacement (~70% of any donation got eaten up by google and local taxes)
+* UPD: AndroidX libriaries updated to 1.1 where available
+* UPD: Built with Android 10 SDK
+* FIX: Some minor crashes have been fixed
+
+## 7.3.r65
+* Add forever_2424hd
+* Add forever_3434hd
+* Add forever_9898hd
+* Add forever_nanosmart
+
+## 7.3.r61
+* Add sf8008m
+* Add qboxhd
+* Add qboxhd_mini
+
+## 7.3.r57
+* Add osmini4k
+
+## 7.3.r55
+* Add lunixco
+* Remove dinobot duplicates
+
+## 7.3.r53
+* Add gbx34k
+* Update build settings
+
+## 7.2.r29
+* Add gbip4k
+
+## 7.2.r28
+* Add iziboxx3
+* Update build settings
+
+## 7.2.r23
+* Add arivacombo
+* Add arivatwin
+* Add iziboxecohd
+* Add jdhdduo
+* Add protek4kx1
+* Add spycatminiv2
+* Add turing
+* Add raspberrypi4
+
+## 7.2.r18
+* Add axultra
+* Add dinobotu43
+* Add dreamone
+
+## 7.2.r16
+* Add h10
+
+## 7.2.r14
+* Add anadolprohd5
+
+## 7.2.r12
+* Add viper4k
+
+## 7.2.r11
+* Add osmio4kplus
+
+## 7.1.r10
+* Add new STBs
+
+## 7.0.r8
+* First compatible release for Open Vision
+
 ## 1.6.444
 * UPD: Color theme improvments
 * UPD/FIX: number of columns and general visuals in Zap layout
@@ -79,7 +212,7 @@
 ## 1.3.430
 * FIX: crash when trying to stream with external video player
 * FIX: crash when encoder-port/bitrate is empty or invalid
-* FIX: Bug in integrated gaugeview-library that caused "READ_PHONE_STATE" permission to be added by the android SDK [https://github.com/...](https://github.com/sreichholf/dreamDroid/commit/f3eb97472a850ddbeca7bf91a14c4163f845cc35)
+* FIX: Bug in integrated gaugeview-library that caused "READ_PHONE_STATE" permission to be added by the android SDK [https://github.com/...](https://github.com/OpenVisionE2/VisionDroid/commit/f3eb97472a850ddbeca7bf91a14c4163f845cc35)
 
 ## 1.3.429
 * Improvements to the videoplayer (don't stop on rotation, jump in recordings, playback time displayed correctly when watching recorded movies)
@@ -112,7 +245,7 @@
 
 ## 1.2.420
 * NEW: Settings Backup
-* FIX: Some improvements for the TV version of dreamDroid
+* FIX: Some improvements for the TV version of visionDroid
 * FIX: Fix NPEs
 * DEV: Switch to Android SDK 28 and AndroidX
 * DEV: Update external libraries
@@ -138,7 +271,7 @@
 * Fast scrolling is back
 
 ## 1.2.409
-* DreamDroid is now free Software, licensed under GPLv3
+* VisionDroid is now free Software, licensed under GPLv3
 * Some changes for releasing on f-droid
 
 ## 1.2-405
@@ -193,7 +326,7 @@
 
 ## 1.1-380
 * FIX: Improve error handling in some of the lists
-* FIX: Workaround for issues with "EPG" on older dreambox models
+* FIX: Workaround for issues with "EPG" on older STB models
 
 ## 1.1-379
 * FIX: Profile Name fix was actually missing

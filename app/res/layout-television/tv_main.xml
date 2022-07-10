@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/main_browse_fragment"
-        android:name="net.reichholf.dreamdroid.tv.fragment.RootBrowseFragment"
+        android:name="org.openvision.visiondroid.tv.fragment.RootBrowseFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

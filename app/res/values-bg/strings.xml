@@ -146,14 +146,14 @@
     <string name="default_bouquet_not_set">Букета не е поставен по подразбиране</string>
     <string name="loading">Зареждане...</string>
     <string name="about">За</string>
-    <string name="source_code_link">Сорс кода е достъпен от: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Сорс кода е достъпен от: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Активен профил</string>
     <string name="connection_state">Състояние на връзката</string>
     <string name="not_available">Не е налично</string>
     <string name="checking">Проверка..</string>
     <string name="error">ГРЕШКА!</string>
     <string name="check_connectivity">Проверете връзката</string>
-    <string name="version_too_low">Версия $Ит; 1.6.5</string>
+    <string name="version_too_low">Версия $Ит; 1.4.1</string>
     <string name="connection_error">Грешка във връзката</string>
     <string name="port_out_of_range">Порта не е между 1 и 65535</string>
     <string name="illegal_host">нелегален хост</string>

@@ -129,7 +129,7 @@
     <string name="set_default">Aseta oletukseksi</string>
     <string name="loading">Lataa</string>
     <string name="about">lisätietoja</string>
-    <string name="source_code_link">Lähdekoodi saatavilla http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Lähdekoodi saatavilla https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktivoitu profiili</string>
     <string name="connection_state">Yhteyden tila</string>
     <string name="not_available">ei saatavilla</string>

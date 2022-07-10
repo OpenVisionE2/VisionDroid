@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
-      - name: Build the app
+      - name: Build VisionDroid app
         run: ./gradlew assembleDebug
-      - name: Publish the app
+      - name: Publish VisionDroid apk file
         run: ./CI/build.sh

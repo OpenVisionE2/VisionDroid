@@ -24,3 +24,7 @@ VisionDroid is built for use with all enigma2 STBs and the included Open WebIF.
 # Developing / building VisionDroid with AndroidStudio
 
 Simply import VisionDroid as gradle project and you should be fine.
+
+# Clone git
+Only clone this repo with shallow clone otherwise it takes much time to complete:
+* git clone --depth 1 https://github.com/OpenVisionE2/VisionDroid.git

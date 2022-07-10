@@ -47,8 +47,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Optional;
 
-import java.time.LocalDateTime;  
-import java.time.format.DateTimeFormatter;  
+import java.time.LocalDate;
+/*
+import java.time.format.DateTimeFormatter;
+*/
 
 /**
  * @author sre
@@ -134,7 +136,7 @@ public class VisionDroid extends Application {
 
 	@NonNull
 	public static String getVersionString() {
-		String buildDate = java.time.LocalDate.now();
+		String buildDate = LocalDate.now();
 /*
 		if (BuildConfig.BUILD_TIME > 0)
 			buildDate = DateTime.getYearDateTimeString(BuildConfig.BUILD_TIME / 1000);

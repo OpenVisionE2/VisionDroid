@@ -5,14 +5,12 @@
 .idea/
 bin/
 gen/
-build/
 *.iml
 local.properties
 manifest-merger-release-report.txt
 workspace.xml
 import-summary.txt
 *.ser
-*.apk
 *.bin
 *.lock
 *.class

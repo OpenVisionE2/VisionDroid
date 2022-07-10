@@ -4,7 +4,7 @@ group = 'com.github.franmontiel'
 version = '1.0.1'
 
 android {
-    compileSdk 33
+    compileSdk 32
     buildToolsVersion '33.0.0'
 
     defaultConfig {

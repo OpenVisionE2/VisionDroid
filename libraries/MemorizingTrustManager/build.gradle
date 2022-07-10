@@ -9,7 +9,7 @@ android {
     compileSdk 33
     buildToolsVersion '33.0.0'
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 14
         targetSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
     }
 

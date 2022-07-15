@@ -67,8 +67,8 @@ android {
     buildToolsVersion '33.0.0'
 
     defaultConfig {
-        versionCode 453
-        versionName="12.1.r453"
+        versionCode 454
+        versionName="12.1.r454"
         minSdkVersion 17
         targetSdkVersion 32
         multiDexEnabled true
@@ -125,5 +125,5 @@ android {
     lint {
         abortOnError false
     }
-    ndkVersion '24.0.8215888'
+    ndkVersion '25.0.8775105'
 }

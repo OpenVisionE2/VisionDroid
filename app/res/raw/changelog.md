@@ -1,3 +1,7 @@
+## 12.2.r476
+* Update build settings
+* Add multiboxpro
+
 ## 12.1.r453
 * Update build settings (API 32-Android 12)
 * Add sfx6008 and sx988

@@ -34,8 +34,8 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.leanback:leanback:1.0.0'
     implementation 'androidx.leanback:leanback-preference:1.0.0'
-    implementation 'androidx.annotation:annotation:1.4.0'
-    implementation 'androidx.fragment:fragment:1.5.2'
+    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.fragment:fragment:1.5.3'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'org.videolan.android:libvlc-all:3.1.12'
     implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.1'
@@ -67,8 +67,8 @@ android {
     buildToolsVersion '33.0.0'
 
     defaultConfig {
-        versionCode 476
-        versionName="12.2.r476"
+        versionCode 480
+        versionName="12.2.r480"
         minSdkVersion 17
         targetSdkVersion 32
         multiDexEnabled true

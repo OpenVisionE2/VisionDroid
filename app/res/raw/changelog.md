@@ -1,7 +1,8 @@
-## 12.2.r480
+## 12.2.r505
 * Update build settings
 * Add multiboxpro
 * Add gbtrio4kplus
+* Add ip8
 
 ## 12.1.r453
 * Update build settings (API 32-Android 12)

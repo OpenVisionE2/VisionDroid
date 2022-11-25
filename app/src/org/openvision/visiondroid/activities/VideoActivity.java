@@ -1,14 +1,17 @@
 package org.openvision.visiondroid.activities;
 
 import android.annotation.TargetApi;
+import android.app.PictureInPictureParams;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.util.Rational;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.SurfaceView;
@@ -22,7 +25,7 @@ import org.openvision.visiondroid.fragment.VideoOverlayFragment;
 import org.openvision.visiondroid.fragment.dialogs.ActionDialog;
 import org.openvision.visiondroid.video.VLCPlayer;
 
-import org.videolan.libvlc.IVLCVout;
+import org.videolan.libvlc.interfaces.IVLCVout;
 import org.videolan.libvlc.Media;
 import org.videolan.libvlc.MediaPlayer;
 
@@ -151,6 +154,7 @@ public class VideoActivity extends AppCompatActivity implements IVLCVout.OnNewVi
 
 	@Override
 	protected void onNewIntent(@NonNull Intent intent) {
+		super.onNewIntent(intent);
 		handleIntent(intent);
 	}
 
@@ -217,6 +221,17 @@ public class VideoActivity extends AppCompatActivity implements IVLCVout.OnNewVi
 		mSurfaceView = null;
 		VLCPlayer.getMediaPlayer().getVLCVout().removeCallback(this);
 		VLCPlayer.getMediaPlayer().setEventListener(null);
+	}
+
+	protected void onMediaPlaying() {
+		if (mVideoWidth * mVideoHeight == 0) {
+			mVideoHeight = mPlayer.getVideoHeight();
+			mVideoWidth = mPlayer.getVideoWidth();
+			mVideoVisibleWidth = mVideoWidth;
+			mVideoVisibleHeight = mVideoHeight;
+		}
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+			setPictureInPictureParams(getPipParams());
 	}
 
 	protected void changeSurfaceLayout() {
@@ -324,6 +339,41 @@ public class VideoActivity extends AppCompatActivity implements IVLCVout.OnNewVi
 		subtitlesSurface.invalidate();
 	}
 
+	protected PictureInPictureParams getPipParams() {
+		final Rect sourceRectHint = new Rect();
+		mSurfaceView.getGlobalVisibleRect(sourceRectHint);
+		Rational ar = new Rational(mVideoWidth, mVideoHeight);
+		PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
+		if (ar.isFinite() && !ar.isZero())
+				builder.setAspectRatio(ar);
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.S_V2)
+			builder.setSourceRectHint(sourceRectHint);
+		return builder.build();
+	}
+
+	@TargetApi(Build.VERSION_CODES.O)
+	protected boolean doEnterPip() {
+		PictureInPictureParams params = getPipParams();
+		try {
+			enterPictureInPictureMode(params);
+		} catch (IllegalArgumentException e) {
+			enterPictureInPictureMode();
+		}
+		return true;
+	}
+	@Override
+	@TargetApi(Build.VERSION_CODES.R)
+	public boolean onPictureInPictureRequested() {
+		return doEnterPip();
+	}
+
+	@Override
+	@TargetApi(Build.VERSION_CODES.O)
+	protected void onUserLeaveHint() {
+		if (!isInPictureInPictureMode())
+			doEnterPip();
+	}
+
 	public void setFullScreen() {
 		int visibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_FULLSCREEN;
 		int navigation = View.SYSTEM_UI_FLAG_LOW_PROFILE | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
@@ -358,8 +408,8 @@ public class VideoActivity extends AppCompatActivity implements IVLCVout.OnNewVi
 	}
 
 	@Override
-	public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
-		super.onPictureInPictureModeChanged(isInPictureInPictureMode);
+	public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig) {
+		super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig);
 		changeSurfaceLayout();
 	}
 
@@ -384,6 +434,8 @@ public class VideoActivity extends AppCompatActivity implements IVLCVout.OnNewVi
 	public void onEvent(@NonNull MediaPlayer.Event event) {
 		mOverlayFragment.onUpdateButtons();
 		switch(event.type){
+			case MediaPlayer.Event.Playing:
+				onMediaPlaying();
 			case MediaPlayer.Event.ESSelected:
 				if (event.getEsChangedType() == Media.VideoTrack.Type.Video)
 					changeSurfaceLayout();

@@ -1,3 +1,9 @@
+## 12.2.r510
+* Update build settings (API 33-Android 13)
+* Add multiboxpro
+* Add gbtrio4kplus
+* Add ip8
+
 ## 12.1.r453
 * Update build settings (API 32-Android 12)
 * Add sfx6008 and sx988
@@ -130,6 +136,16 @@
 
 ## 7.0.r8
 * First compatible release for Open Vision
+
+## 1.6.446
+* FIX: crash introduced with the latest pip changes
+
+## 1.6.445
+* NEW: enable PIP for android >= 8.0
+* UPD: German translation
+* FIX: try to fix a crash I can't reproduce
+* FIX: Theming cleanups
+* IMP: minor code cleanups
 
 ## 1.6.444
 * UPD: Color theme improvments

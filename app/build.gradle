@@ -8,7 +8,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
     ext.kotlin_version = '1.6.21'
     dependencies {
@@ -34,10 +34,10 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.leanback:leanback:1.0.0'
     implementation 'androidx.leanback:leanback-preference:1.0.0'
-    implementation 'androidx.annotation:annotation:1.4.0'
-    implementation 'androidx.fragment:fragment:1.5.0'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'org.videolan.android:libvlc-all:3.1.12'
+    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.fragment:fragment:1.5.4'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'org.videolan.android:libvlc-all:3.5.1'
     implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.1'
     implementation 'com.github.StephenVinouze:MaterialNumberPicker:1.0.5'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
@@ -57,20 +57,20 @@ dependencies {
     implementation 'com.github.livefront:bridge:v2.0.2'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.0'
-    implementation 'androidx.navigation:navigation-ui:2.5.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
     implementation 'androidx.slidingpanelayout:slidingpanelayout:1.2.0'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
     buildToolsVersion '33.0.0'
 
     defaultConfig {
-        versionCode 453
-        versionName="12.1.r453"
+        versionCode 510
+        versionName="12.2.r510"
         minSdkVersion 17
-        targetSdkVersion 32
+        targetSdkVersion 33
         multiDexEnabled true
         sourceSets {
             main {
@@ -125,5 +125,5 @@ android {
     lint {
         abortOnError false
     }
-    ndkVersion '24.0.8215888'
+    ndkVersion '25.0.8775105'
 }

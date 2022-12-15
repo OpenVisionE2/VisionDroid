@@ -35,7 +35,7 @@ dependencies {
     implementation 'androidx.leanback:leanback:1.0.0'
     implementation 'androidx.leanback:leanback-preference:1.0.0'
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation 'androidx.fragment:fragment:1.5.4'
+    implementation 'androidx.fragment:fragment:1.5.5'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'org.videolan.android:libvlc-all:3.5.1'
     implementation 'com.simplecityapps:recyclerview-fastscroll:2.0.1'
@@ -67,8 +67,8 @@ android {
     buildToolsVersion '33.0.0'
 
     defaultConfig {
-        versionCode 510
-        versionName="12.2.r510"
+        versionCode 513
+        versionName="12.2.r513"
         minSdkVersion 17
         targetSdkVersion 33
         multiDexEnabled true

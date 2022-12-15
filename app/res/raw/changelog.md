@@ -1,8 +1,9 @@
-## 12.2.r510
+## 12.2.r513
 * Update build settings (API 33-Android 13)
 * Add multiboxpro
 * Add gbtrio4kplus
 * Add ip8
+* Add sx88v2
 
 ## 12.1.r453
 * Update build settings (API 32-Android 12)

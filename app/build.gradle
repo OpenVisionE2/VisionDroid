@@ -8,7 +8,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.1'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
     ext.kotlin_version = '1.8.10'
     dependencies {
@@ -67,8 +67,8 @@ android {
     buildToolsVersion '33.0.1'
 
     defaultConfig {
-        versionCode 523
-        versionName="12.2.r523"
+        versionCode 524
+        versionName="12.2.r524"
         minSdkVersion 17
         targetSdkVersion 33
         multiDexEnabled true

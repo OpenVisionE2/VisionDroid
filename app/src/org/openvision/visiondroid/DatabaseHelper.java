@@ -1,9 +1,9 @@
-/* © 2010 Original creator
- * 
- * Licensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported
- * http://creativecommons.org/licenses/by-nc-sa/3.0/
- */
-
+///* © 2010 Original creator
+// *
+// * Licensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported
+// * http://creativecommons.org/licenses/by-nc-sa/3.0/
+// */
+//
 package org.openvision.visiondroid;
 
 import android.content.ContentValues;
@@ -27,12 +27,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-
-/**
- * @author sre
- *
- */
+//
+///**
+// * @author sre
+// *
+// */
 public class DatabaseHelper extends SQLiteOpenHelper {
+	private static final int DATABASE_VERSION = 14;
+
 	public static final String LOG_TAG = DatabaseHelper.class.getSimpleName();
 
 	public static final String KEY_PROFILE_ID = "_id";
@@ -65,6 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String KEY_PROFILE_ENCODER_PASS = "encoder_pass";
 	public static final String KEY_PROFILE_ENCODER_VIDEO_BITRATE = "encoder_video_bitrate";
 	public static final String KEY_PROFILE_ENCODER_AUDIO_BITRATE = "encoder_audio_bitrate";
+	public static final String KEY_PROFILE_TRUST_ALL_CERTS = "trust_all_certs";
 
 	public static final String KEY_EVENT_ID = "id";
 	public static final String KEY_EVENT_START = "start";
@@ -77,7 +80,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String KEY_SERVICES_NAME = "name";
 
 	public static final String DATABASE_NAME = "visiondroid";
-	private static final int DATABASE_VERSION = 13;
 	private static final String PROFILES_TABLE_NAME = "profiles";
 	private static final String EVENT_TABLE_NAME = "events";
 	private static final String SERVICES_TABLE_NAME = "services";
@@ -112,7 +114,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			KEY_PROFILE_ENCODER_VIDEO_BITRATE + " TEXT, " +
 			KEY_SSID + " TEXT, " +
 			KEY_DEFAULT_PROFILE_ON_NO_WIFI + " BOOLEAN, " +
-			KEY_PROFILE_ENCODER_AUDIO_BITRATE + " TEXT);";
+			KEY_PROFILE_ENCODER_AUDIO_BITRATE + " TEXT, " +
+			KEY_PROFILE_TRUST_ALL_CERTS + " BOOLEAN);";
 
 	private static final String PROFILES_TABLE_UPGRADE_2_3 = "ALTER TABLE " + PROFILES_TABLE_NAME + " ADD "
 			+ KEY_PROFILE_STREAM_HOST + " TEXT;";
@@ -147,6 +150,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	private static final String PROFILES_TABLE_UPGRADE_12_13_1 = "ALTER TABLE " + PROFILES_TABLE_NAME + " ADD " + KEY_SSID + " TEXT; ";
 	private static final String PROFILES_TABLE_UPGRADE_12_13_2 = "ALTER TABLE " + PROFILES_TABLE_NAME + " ADD " + KEY_DEFAULT_PROFILE_ON_NO_WIFI + " BOOLEAN;";
+
+	private static final String PROFILES_TABLE_UPGRADE_13_14 = "ALTER TABLE " + PROFILES_TABLE_NAME + " ADD " + KEY_PROFILE_TRUST_ALL_CERTS + " BOOLEAN;";
 
 	private static final String EVENT_TABLE_CREATE = "CREATE TABLE IF NOT EXISTS " +
 			EVENT_TABLE_NAME + " (" +
@@ -208,6 +213,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(PROFILES_TABLE_UPGRADE_12_13_2);
 	}
 
+	private void upgrade13to14(@NonNull SQLiteDatabase db) {
+		db.execSQL(PROFILES_TABLE_UPGRADE_13_14);
+	}
+
 	/* (non-Javadoc)
 	 * @see android.database.sqlite.SQLiteOpenHelper#onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
 	 */
@@ -264,11 +273,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				oldVersion++;
 			}
 
-			if (oldVersion != DATABASE_VERSION){ //this should never happen...
-				emergencyRecovery(db);
+			if (oldVersion == 13) {
+				upgrade13to14(db);
+				oldVersion ++ ;
 			}
-
-
 		} catch (SQLiteException e) {
 			Log.e(LOG_TAG, "onUpgrade: SQLiteException, recreating db. ", e);
 			Log.e(LOG_TAG, "(oldVersion was " + oldVersion + ")");
@@ -276,7 +284,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			return; // this was lossy
 		}
 		if(scheduleBackup)
-			VisionDroid.scheduleBackup(mContext);
+			DreamDroid.scheduleBackup(mContext);
 	}
 
 	private void emergencyRecovery(@NonNull SQLiteDatabase db){
@@ -297,14 +305,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		values.put(KEY_PROFILE_USER, p.getUser());
 		values.put(KEY_PROFILE_PASS, p.getPass());
 		values.put(KEY_PROFILE_SSL, p.isSsl());
+		values.put(KEY_PROFILE_TRUST_ALL_CERTS, p.isAllCertsTrusted());
 		values.put(KEY_PROFILE_STREAM_LOGIN, p.isStreamLogin());
 		values.put(KEY_PROFILE_FILE_LOGIN, p.isFileLogin());
 		values.put(KEY_PROFILE_FILE_SSL, p.isFileSsl());
 		values.put(KEY_PROFILE_SIMPLE_REMOTE, p.isSimpleRemote());
-		values.put(KEY_PROFILE_DEFAULT_REF, p.getDefaultRef());
-		values.put(KEY_PROFILE_DEFAULT_REF_NAME, p.getDefaultRefName());
-		values.put(KEY_PROFILE_DEFAULT_REF_2, p.getDefaultRef2());
-		values.put(KEY_PROFILE_DEFAULT_REF_2_NAME, p.getDefaultRef2Name());
+		values.put(KEY_PROFILE_DEFAULT_REF, p.getDefaultBouquetTv());
+		values.put(KEY_PROFILE_DEFAULT_REF_NAME, p.getDefaultBouquetTvName());
+		values.put(KEY_PROFILE_DEFAULT_REF_2, p.getParentBouquetTv());
+		values.put(KEY_PROFILE_DEFAULT_REF_2_NAME, p.getParentBouquetTvName());
 		values.put(KEY_PROFILE_ENCODER_STREAM, p.isEncoderStream());
 		values.put(KEY_PROFILE_ENCODER_PATH, p.getEncoderPath());
 		values.put(KEY_PROFILE_ENCODER_PORT, p.getEncoderPort());
@@ -327,7 +336,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		if (id > -1) {
 			db.close();
 			p.setId((int) id);
-			VisionDroid.scheduleBackup(mContext);
+			DreamDroid.scheduleBackup(mContext);
 			return true;
 		}
 		db.close();
@@ -342,8 +351,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		int numRows = db.update(PROFILES_TABLE_NAME, p2cv(p), KEY_PROFILE_ID + "=" + p.getId(), null);
 		db.close();
 		if (numRows == 1) {
-			VisionDroid.scheduleBackup(mContext);
-			VisionDroid.profileChanged(mContext, p);
+			DreamDroid.scheduleBackup(mContext);
+			DreamDroid.profileChanged(mContext, p);
 			return true;
 		}
 		return false;
@@ -357,7 +366,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		int numRows = db.delete(PROFILES_TABLE_NAME, KEY_PROFILE_ID + "=" + p.getId(), null);
 		db.close();
 		if (numRows == 1) {
-			VisionDroid.scheduleBackup(mContext);
+			DreamDroid.scheduleBackup(mContext);
 			return true;
 		}
 
@@ -370,10 +379,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@NonNull
 	public ArrayList<Profile> getProfiles() {
 		String[] columns = {KEY_PROFILE_ID, KEY_PROFILE_PROFILE, KEY_PROFILE_HOST, KEY_PROFILE_STREAM_HOST, KEY_PROFILE_PORT, KEY_PROFILE_STREAM_PORT, KEY_PROFILE_FILE_PORT, KEY_PROFILE_LOGIN, KEY_PROFILE_USER, KEY_PROFILE_PASS,
-				KEY_PROFILE_SSL, KEY_PROFILE_SIMPLE_REMOTE, KEY_PROFILE_STREAM_LOGIN, KEY_PROFILE_FILE_LOGIN, KEY_PROFILE_FILE_SSL, KEY_PROFILE_DEFAULT_REF, KEY_PROFILE_DEFAULT_REF_NAME, KEY_PROFILE_DEFAULT_REF_2, KEY_PROFILE_DEFAULT_REF_2_NAME,
+				KEY_PROFILE_SSL, KEY_PROFILE_TRUST_ALL_CERTS, KEY_PROFILE_SIMPLE_REMOTE, KEY_PROFILE_STREAM_LOGIN, KEY_PROFILE_FILE_LOGIN, KEY_PROFILE_FILE_SSL, KEY_PROFILE_DEFAULT_REF, KEY_PROFILE_DEFAULT_REF_NAME, KEY_PROFILE_DEFAULT_REF_2, KEY_PROFILE_DEFAULT_REF_2_NAME,
 				KEY_PROFILE_ENCODER_STREAM, KEY_PROFILE_ENCODER_PATH, KEY_PROFILE_ENCODER_PORT, KEY_PROFILE_ENCODER_LOGIN, KEY_PROFILE_ENCODER_USER, KEY_PROFILE_ENCODER_PASS, KEY_PROFILE_ENCODER_VIDEO_BITRATE, KEY_PROFILE_ENCODER_AUDIO_BITRATE,
 				KEY_SSID, KEY_DEFAULT_PROFILE_ON_NO_WIFI};
 		SQLiteDatabase db = getReadableDatabase();
+
 
 		ArrayList<Profile> list = new ArrayList<>();
 
@@ -401,7 +411,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Nullable
 	public Profile getProfile(int id) {
 		String[] columns = {KEY_PROFILE_ID, KEY_PROFILE_PROFILE, KEY_PROFILE_HOST, KEY_PROFILE_STREAM_HOST, KEY_PROFILE_PORT, KEY_PROFILE_STREAM_PORT, KEY_PROFILE_FILE_PORT, KEY_PROFILE_LOGIN, KEY_PROFILE_USER, KEY_PROFILE_PASS,
-				KEY_PROFILE_SSL, KEY_PROFILE_SIMPLE_REMOTE, KEY_PROFILE_STREAM_LOGIN, KEY_PROFILE_FILE_LOGIN, KEY_PROFILE_FILE_SSL, KEY_PROFILE_DEFAULT_REF, KEY_PROFILE_DEFAULT_REF_NAME, KEY_PROFILE_DEFAULT_REF_2, KEY_PROFILE_DEFAULT_REF_2_NAME,
+				KEY_PROFILE_SSL, KEY_PROFILE_SIMPLE_REMOTE, KEY_PROFILE_STREAM_LOGIN, KEY_PROFILE_FILE_LOGIN, KEY_PROFILE_FILE_SSL, KEY_PROFILE_TRUST_ALL_CERTS, KEY_PROFILE_DEFAULT_REF, KEY_PROFILE_DEFAULT_REF_NAME, KEY_PROFILE_DEFAULT_REF_2, KEY_PROFILE_DEFAULT_REF_2_NAME,
 				KEY_PROFILE_ENCODER_STREAM, KEY_PROFILE_ENCODER_PATH, KEY_PROFILE_ENCODER_PORT, KEY_PROFILE_ENCODER_LOGIN, KEY_PROFILE_ENCODER_USER, KEY_PROFILE_ENCODER_PASS, KEY_PROFILE_ENCODER_VIDEO_BITRATE, KEY_PROFILE_ENCODER_AUDIO_BITRATE,
 				KEY_SSID, KEY_DEFAULT_PROFILE_ON_NO_WIFI};
 		SQLiteDatabase db = getReadableDatabase();
@@ -437,6 +447,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		boolean isLogin = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_LOGIN)) == 1;
 		boolean isSsl = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_SSL)) == 1;
+		boolean isAllCertsTrusted = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_TRUST_ALL_CERTS)) == 1;
 		boolean isStreamLogin = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_STREAM_LOGIN)) == 1;
 		boolean isFileLogin = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_FILE_LOGIN)) == 1;
 		boolean isFileSsl = c.getInt(c.getColumnIndex(DatabaseHelper.KEY_PROFILE_FILE_SSL)) == 1;
@@ -471,7 +482,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		encoderAudioBitrate = encoderAudioBitrate <= 0 ? 128 : encoderAudioBitrate;
 		encoderVideoBitrate = encoderVideoBitrate <= 0 ? 2500 : encoderVideoBitrate;
 
-		Profile p = new Profile(id, name, host, streamHost, port, streamPort, filePort, isLogin, user, pass, isSsl, isStreamLogin, isFileLogin, isFileSsl, isSimpleRemote, defaultRef, defaultRefName, defaultRef2, defaultRef2Name, isEncoderStream, encoderPath, encoderPort, isEncoderLogin, encoderUser, encoderPass, encoderVideoBitrate, encoderAudioBitrate );
+		Profile p = new Profile(id, name, host, streamHost, port, streamPort, filePort, isLogin, user, pass, isSsl, isAllCertsTrusted, isStreamLogin, isFileLogin, isFileSsl, isSimpleRemote, defaultRef, defaultRefName, defaultRef2, defaultRef2Name, isEncoderStream, encoderPath, encoderPort, isEncoderLogin, encoderUser, encoderPass, encoderVideoBitrate, encoderAudioBitrate );
 		p.setSsid(ssid);
 		p.setDefaultProfileOnNoWifi(defaultProfileOnNoWifi);
 		return p;

@@ -1,4 +1,4 @@
-/* © 2010 Stephan Reichholf <stephan at reichholf dot net>
+/* © 2010 Original creator
  * 
  * Licensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported
  * http://creativecommons.org/licenses/by-nc-sa/3.0/
@@ -51,7 +51,7 @@ import java.util.ArrayList;
 /**
  * Allows browsing recorded movies. Supports filtering by tags and locations
  *
- * @author sreichholf
+ * @author original creator
  */
 public class MovieListFragment extends BaseHttpRecyclerFragment implements MultiChoiceDialog.MultiChoiceDialogListener {
 	public static String ARGUMENT_LOCATION = "location";

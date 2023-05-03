@@ -284,7 +284,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			return; // this was lossy
 		}
 		if(scheduleBackup)
-			DreamDroid.scheduleBackup(mContext);
+			VisionDroid.scheduleBackup(mContext);
 	}
 
 	private void emergencyRecovery(@NonNull SQLiteDatabase db){
@@ -336,7 +336,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		if (id > -1) {
 			db.close();
 			p.setId((int) id);
-			DreamDroid.scheduleBackup(mContext);
+			VisionDroid.scheduleBackup(mContext);
 			return true;
 		}
 		db.close();
@@ -351,8 +351,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		int numRows = db.update(PROFILES_TABLE_NAME, p2cv(p), KEY_PROFILE_ID + "=" + p.getId(), null);
 		db.close();
 		if (numRows == 1) {
-			DreamDroid.scheduleBackup(mContext);
-			DreamDroid.profileChanged(mContext, p);
+			VisionDroid.scheduleBackup(mContext);
+			VisionDroid.profileChanged(mContext, p);
 			return true;
 		}
 		return false;
@@ -366,7 +366,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		int numRows = db.delete(PROFILES_TABLE_NAME, KEY_PROFILE_ID + "=" + p.getId(), null);
 		db.close();
 		if (numRows == 1) {
-			DreamDroid.scheduleBackup(mContext);
+			VisionDroid.scheduleBackup(mContext);
 			return true;
 		}
 

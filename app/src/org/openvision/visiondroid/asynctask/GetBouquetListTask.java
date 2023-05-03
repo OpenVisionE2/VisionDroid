@@ -13,7 +13,7 @@ import org.openvision.visiondroid.helpers.enigma2.requesthandler.ServiceListRequ
 import java.util.ArrayList;
 
 /**
- * @author sreichholf Fetches a service list async. Does all the
+ * @author original creator Fetches a service list async. Does all the
  *         error-handling, refreshing and title-setting
  */
 public class GetBouquetListTask extends AsyncHttpTaskBase<Void, String, Boolean> {

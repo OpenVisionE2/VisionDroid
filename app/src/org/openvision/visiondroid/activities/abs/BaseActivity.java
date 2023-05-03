@@ -21,11 +21,11 @@ import com.livefront.bridge.Bridge;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
-import org.openvision.visiondroid.DreamDroid;
+import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.R;
 import org.openvision.visiondroid.fragment.dialogs.ActionDialog;
 import org.openvision.visiondroid.helpers.PiconSyncService;
-import org.openvision.visiondroid.ssl.DreamDroidTrustManager;
+import org.openvision.visiondroid.ssl.VisionDroidTrustManager;
 
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -53,7 +53,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 	@NonNull
 	private static String TAG = BaseActivity.class.getSimpleName();
 
-	private DreamDroidTrustManager mTrustManager;
+	private VisionDroidTrustManager mTrustManager;
 
     private int responseCount(Response response) {
         int result = 1;
@@ -82,7 +82,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		try {
-			mTrustManager = new DreamDroidTrustManager(this);
+			mTrustManager = new VisionDroidTrustManager(this);
 
 			SSLContext sc = SSLContext.getInstance("TLS");
 			sc.init(null, new X509TrustManager[]{mTrustManager},
@@ -117,7 +117,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 		super.onCreate(savedInstanceState);
 		Bridge.restoreInstanceState(this, savedInstanceState);
 		if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
-				DreamDroid.PREFS_KEY_ENABLE_ANIMATIONS, true)) {
+				VisionDroid.PREFS_KEY_ENABLE_ANIMATIONS, true)) {
 			overridePendingTransition(R.animator.activity_open_translate, R.animator.activity_close_scale);
 		}
 	}
@@ -147,7 +147,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 	public void onPause() {
 		super.onPause();
 		if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
-				DreamDroid.PREFS_KEY_ENABLE_ANIMATIONS, true))
+				VisionDroid.PREFS_KEY_ENABLE_ANIMATIONS, true))
 			overridePendingTransition(R.animator.activity_open_scale, R.animator.activity_close_translate);
 	}
 

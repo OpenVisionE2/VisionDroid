@@ -23,15 +23,16 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.openvision.visiondroid.DatabaseHelper;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.Profile;
 import org.openvision.visiondroid.R;
 import org.openvision.visiondroid.fragment.abs.BaseFragment;
 import org.openvision.visiondroid.helpers.ExtendedHashMap;
 import org.openvision.visiondroid.helpers.Statics;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import org.openvision.visiondroid.room.AppDatabase;
 
 import static org.openvision.visiondroid.fragment.abs.BaseHttpFragment.sData;
 
@@ -51,6 +52,7 @@ public class ProfileEditFragment extends BaseFragment {
 	private EditText mStreamPort;
 	private EditText mFilePort;
 	private CheckBox mSsl;
+	private CheckBox mTrustAllCerts;
 	private CheckBox mLogin;
 	private CheckBox mStreamLogin;
 	private CheckBox mFileSsl;
@@ -74,6 +76,7 @@ public class ProfileEditFragment extends BaseFragment {
 	private EditText ssid;
 	private CheckBox defaultOnNoWifi;
 
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		mHasFabMain = true;
@@ -93,6 +96,7 @@ public class ProfileEditFragment extends BaseFragment {
 		mStreamPort = view.findViewById(R.id.EditTextStreamPort);
 		mFilePort = view.findViewById(R.id.EditTextFilePort);
 		mSsl = view.findViewById(R.id.CheckBoxSsl);
+		mTrustAllCerts = view.findViewById(R.id.CheckBoxTrustAll);
 		mLogin = view.findViewById(R.id.CheckBoxLogin);
 		mStreamLogin = view.findViewById(R.id.CheckBoxLoginStream);
 		mUser = view.findViewById(R.id.EditTextUser);
@@ -130,18 +134,17 @@ public class ProfileEditFragment extends BaseFragment {
 		onIsLoginChanged(mLogin.isChecked());
 		onIsEncoderStreamChanged(mEncoderStream.isChecked());
 		onIsEncoderLoginChanged(mEncoderLogin.isChecked());
+		onSslChanged(mSsl.isChecked(), true);
 		registerListeners();
 		return view;
 	}
 
 	private void registerListeners() {
 		mLogin.setOnCheckedChangeListener((checkbox, checked) -> onIsLoginChanged(checked));
-
-		mSsl.setOnCheckedChangeListener((checkbox, checked) -> onSslChanged(checked));
-
+		mSsl.setOnCheckedChangeListener((checkbox, checked) -> onSslChanged(checked, false));
 		mEncoderStream.setOnCheckedChangeListener((buttonView, isChecked) -> onIsEncoderStreamChanged(isChecked));
-
 		mEncoderLogin.setOnCheckedChangeListener((buttonView, isChecked) -> onIsEncoderLoginChanged(isChecked));
+
 		registerFab(R.id.fab_main, R.string.save, R.drawable.ic_action_save, v -> save());
 	}
 
@@ -165,11 +168,10 @@ public class ProfileEditFragment extends BaseFragment {
 	}
 
 	@SuppressLint("SetTextI18n")
-	private void onSslChanged(boolean checked) {
-		if (checked)
-			mPort.setText("443");
-		else
-			mPort.setText("80");
+	private void onSslChanged(boolean checked, boolean keepPort) {
+		if (!keepPort)
+			mPort.setText(checked ? "443" : "80");
+		mTrustAllCerts.setVisibility(checked ? View.VISIBLE : View.INVISIBLE);
 	}
 
 	/**
@@ -211,6 +213,7 @@ public class ProfileEditFragment extends BaseFragment {
 		mHost.setText(mCurrentProfile.getHost());
 		mStreamHost.setText(mCurrentProfile.getStreamHostValue());
 		mSsl.setChecked(mCurrentProfile.isSsl());
+		mTrustAllCerts.setChecked(mCurrentProfile.isAllCertsTrusted());
 		mPort.setText(mCurrentProfile.getPortString());
 		mStreamPort.setText(mCurrentProfile.getStreamPortString());
 		mFilePort.setText(mCurrentProfile.getFilePortString());
@@ -241,7 +244,7 @@ public class ProfileEditFragment extends BaseFragment {
 		mCurrentProfile.setName(mProfile.getText().toString());
 		mCurrentProfile.setHost(mHost.getText().toString().trim());
 		mCurrentProfile.setStreamHost(mStreamHost.getText().toString().trim());
-		mCurrentProfile.setPort(mPort.getText().toString(), mSsl.isChecked());
+		mCurrentProfile.setPort(mPort.getText().toString(), mSsl.isChecked(), mTrustAllCerts.isChecked());
 		mCurrentProfile.setStreamPort(mStreamPort.getText().toString());
 		mCurrentProfile.setFilePort(mFilePort.getText().toString());
 		mCurrentProfile.setLogin(mLogin.isChecked());
@@ -265,11 +268,11 @@ public class ProfileEditFragment extends BaseFragment {
 
 
 		Context ctx = getContext();
-		if(ctx == null) { //FIMXE: why/how does this happen?
+		if (ctx == null) { //FIMXE: why/how does this happen?
 			showToast(getText(R.string.profile_not_updated) + " '" + mCurrentProfile.getName() + "'");
 			return;
 		}
-		DatabaseHelper dbh = DatabaseHelper.getInstance(ctx);
+		Profile.ProfileDao dao = AppDatabase.profiles(getContext());
 		if (mCurrentProfile.getId() > 0) {
 			if (mCurrentProfile.getHost() == null || "".equals(mCurrentProfile.getHost())) {
 				showToast(getText(R.string.host_empty));
@@ -278,19 +281,15 @@ public class ProfileEditFragment extends BaseFragment {
 			if (mCurrentProfile.getStreamHost() == null) {
 				mCurrentProfile.setStreamHost("");
 			}
-			if (dbh.updateProfile(mCurrentProfile)) {
-				showToast(getText(R.string.profile_updated) + " '" + mCurrentProfile.getName() + "'");
-				finish(Activity.RESULT_OK);
-			} else {
-				showToast(getText(R.string.profile_not_updated) + " '" + mCurrentProfile.getName() + "'");
-			}
+			dao.updateProfile(mCurrentProfile);
+			if (mCurrentProfile.getId().equals(VisionDroid.getCurrentProfile().getId()))
+				VisionDroid.setCurrentProfile(mCurrentProfile);
+			showToast(getText(R.string.profile_updated) + " '" + mCurrentProfile.getName() + "'");
+			finish(Activity.RESULT_OK);
 		} else {
-			if (dbh.addProfile(mCurrentProfile)) {
-				showToast(getText(R.string.profile_added) + " '" + mCurrentProfile.getName() + "'");
-				finish(Activity.RESULT_OK);
-			} else {
-				showToast(getText(R.string.profile_not_added) + " '" + mCurrentProfile.getName() + "'");
-			}
+			mCurrentProfile.setId( dao.addProfile(mCurrentProfile) );
+			showToast(getText(R.string.profile_added) + " '" + mCurrentProfile.getName() + "'");
+			finish(Activity.RESULT_OK);
 		}
 	}
 

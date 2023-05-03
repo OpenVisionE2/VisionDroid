@@ -19,6 +19,7 @@ import org.openvision.visiondroid.DatabaseHelper;
 import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.Profile;
 import org.openvision.visiondroid.R;
+import org.openvision.visiondroid.room.AppDatabase;
 
 /**
  * Created by Stephan on 29.10.2016.
@@ -31,6 +32,7 @@ public class ProfileFragment extends LeanbackPreferenceFragment {
 			DatabaseHelper.KEY_PROFILE_HOST,
 			DatabaseHelper.KEY_PROFILE_PORT,
 			DatabaseHelper.KEY_PROFILE_SSL,
+			DatabaseHelper.KEY_PROFILE_TRUST_ALL_CERTS,
 			DatabaseHelper.KEY_PROFILE_LOGIN,
 			DatabaseHelper.KEY_PROFILE_USER,
 			DatabaseHelper.KEY_PROFILE_PASS,
@@ -90,6 +92,7 @@ public class ProfileFragment extends LeanbackPreferenceFragment {
 		editor.putString(DatabaseHelper.KEY_PROFILE_HOST, p.getHost());
 		editor.putString(DatabaseHelper.KEY_PROFILE_PORT, p.getPortString());
 		editor.putBoolean(DatabaseHelper.KEY_PROFILE_SSL, p.isSsl());
+		editor.putBoolean(DatabaseHelper.KEY_PROFILE_TRUST_ALL_CERTS, p.isAllCertsTrusted());
 		editor.putBoolean(DatabaseHelper.KEY_PROFILE_LOGIN, p.isLogin());
 		editor.putString(DatabaseHelper.KEY_PROFILE_USER, p.getUser());
 		editor.putString(DatabaseHelper.KEY_PROFILE_PASS, p.getPass());
@@ -139,6 +142,7 @@ public class ProfileFragment extends LeanbackPreferenceFragment {
 		p.setHost(prefs.getString(DatabaseHelper.KEY_PROFILE_HOST, ""));
 		p.setPort(prefs.getString(DatabaseHelper.KEY_PROFILE_PORT, "80"));
 		p.setSsl(prefs.getBoolean(DatabaseHelper.KEY_PROFILE_SSL, false));
+		p.setAllCertsTrusted(prefs.getBoolean(DatabaseHelper.KEY_PROFILE_TRUST_ALL_CERTS, false));
 		p.setLogin(prefs.getBoolean(DatabaseHelper.KEY_PROFILE_LOGIN, false));
 		p.setUser(prefs.getString(DatabaseHelper.KEY_PROFILE_USER, "root"));
 		p.setPass(prefs.getString(DatabaseHelper.KEY_PROFILE_PASS, "openvision"));
@@ -156,8 +160,8 @@ public class ProfileFragment extends LeanbackPreferenceFragment {
 		p.setEncoderVideoBitrate(prefs.getString(DatabaseHelper.KEY_PROFILE_ENCODER_VIDEO_BITRATE, "6000"));
 		p.setEncoderAudioBitrate(prefs.getString(DatabaseHelper.KEY_PROFILE_ENCODER_AUDIO_BITRATE, "128"));
 
-		DatabaseHelper dbh = DatabaseHelper.getInstance(getActivity());
-		dbh.updateProfile(p);
+		Profile.ProfileDao dao = AppDatabase.profiles(getContext());
+		dao.updateProfile(p);
 
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putInt(VisionDroid.CURRENT_PROFILE, p.getId());

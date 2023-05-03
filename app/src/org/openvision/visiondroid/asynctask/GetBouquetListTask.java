@@ -13,7 +13,7 @@ import org.openvision.visiondroid.helpers.enigma2.requesthandler.ServiceListRequ
 import java.util.ArrayList;
 
 /**
- * @author original creator Fetches a service list async. Does all the
+ * @author sreichholf Fetches a service list async. Does all the
  *         error-handling, refreshing and title-setting
  */
 public class GetBouquetListTask extends AsyncHttpTaskBase<Void, String, Boolean> {
@@ -27,28 +27,28 @@ public class GetBouquetListTask extends AsyncHttpTaskBase<Void, String, Boolean>
 		}
 	}
 
+	protected String mTV;
+	protected String mRadio;
+
 	private Bouquets mBouquets;
 
 	public GetBouquetListTask(AsyncHttpTaskBaseHandler taskHandler) {
 		super(taskHandler);
+		GetBouquetListTaskHandler t = (GetBouquetListTaskHandler) mTaskHandler.get();
+		mTV = t.getResources().getStringArray(R.array.servicerefs)[0]; //Favorites TV;
+		mRadio = t.getResources().getStringArray(R.array.servicerefs)[3]; // Favorites Radio
 	}
 
 	@NonNull
 	@Override
 	protected Boolean doInBackground(Void... unused) {
 		mBouquets = new Bouquets();
-		GetBoquetListTaskHandler taskHandler = (GetBoquetListTaskHandler) mTaskHandler.get();
-		if (isCancelled() || taskHandler == null)
-			return false;
-
-		if (!taskHandler.isAdded())
+		if (isCancelled())
 			return false;
 
 		AbstractListRequestHandler handler = new ServiceListRequestHandler();
-		String ref = taskHandler.getResources().getStringArray(R.array.servicerefs)[0]; //Favorites TV;
-		addBouquets(handler, ref, mBouquets.tv);
-		ref = taskHandler.getResources().getStringArray(R.array.servicerefs)[3]; // Favorites Radio
-		addBouquets(handler, ref, mBouquets.radio);
+		addBouquets(handler, mTV, mBouquets.tv);
+		addBouquets(handler, mRadio, mBouquets.radio);
 
 		return true;
 	}
@@ -62,14 +62,14 @@ public class GetBouquetListTask extends AsyncHttpTaskBase<Void, String, Boolean>
 
 	@Override
 	protected void onPostExecute(Boolean result) {
-		GetBoquetListTaskHandler taskHandler = (GetBoquetListTaskHandler) mTaskHandler.get();
-		if (isCancelled() || taskHandler == null)
+		GetBouquetListTaskHandler taskHandler = (GetBouquetListTaskHandler) mTaskHandler.get();
+		if (isInvalid(taskHandler))
 			return;
 
 		taskHandler.onBouquetListReady(result, mBouquets, getErrorText());
 	}
 
-	public interface GetBoquetListTaskHandler extends AsyncHttpTaskBaseHandler {
+	public interface GetBouquetListTaskHandler extends AsyncHttpTaskBaseHandler {
 		@NonNull
 		Resources getResources();
 

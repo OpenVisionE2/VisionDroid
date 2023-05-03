@@ -1,21 +1,22 @@
 package org.openvision.visiondroid.service;
 
 import android.os.Handler;
-import androidx.core.app.JobIntentService;
 import android.widget.Toast;
+
+import androidx.core.app.JobIntentService;
+
+import org.openvision.visiondroid.ssl.VisionDroidTrustManager;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
-
-import de.duenndns.ssl.MemorizingTrustManager;
 
 /**
  * Created by Stephan on 04.06.2014.
  */
 public abstract class HttpIntentService extends JobIntentService {
 	protected Handler mHandler;
-	protected MemorizingTrustManager mTrustManager;
+	protected VisionDroidTrustManager mTrustManager;
 
 	@Override
 	public void onCreate() {
@@ -24,13 +25,11 @@ public abstract class HttpIntentService extends JobIntentService {
 	}
 
 	protected void setupSSL() {
-		if(!HttpsURLConnection.getDefaultSSLSocketFactory().getClass().equals(MemorizingTrustManager.class)){
+		if(!HttpsURLConnection.getDefaultSSLSocketFactory().getClass().equals(VisionDroidTrustManager.class)){
 			try {
-				// set location of the keystore
-				MemorizingTrustManager.setKeyStoreFile("private", "sslkeys.bks");
-				// register MemorizingTrustManager for HTTPS
+				// register VisionDroidTrustManager for HTTPS
 				SSLContext sc = SSLContext.getInstance("TLS");
-				mTrustManager = new MemorizingTrustManager(getApplicationContext());
+				mTrustManager = new VisionDroidTrustManager(getApplicationContext());
 				sc.init(null, new X509TrustManager[] { mTrustManager },
 						new java.security.SecureRandom());
 				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());

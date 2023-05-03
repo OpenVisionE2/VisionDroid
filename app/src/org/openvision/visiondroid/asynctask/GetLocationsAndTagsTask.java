@@ -6,7 +6,7 @@ import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.R;
 
 public class GetLocationsAndTagsTask extends AsyncHttpTaskBase<Void, String, Boolean> {
-	public GetLocationsAndTagsTask(AsyncHttpTaskBaseHandler taskHandler) {
+	public GetLocationsAndTagsTask(GetLocationsAndTagsTaskHandler taskHandler) {
 		super(taskHandler);
 	}
 
@@ -17,6 +17,8 @@ public class GetLocationsAndTagsTask extends AsyncHttpTaskBase<Void, String, Boo
 		if (isInvalid(taskHandler))
 			return false;
 		if (VisionDroid.getLocations().size() == 0) {
+			if (isInvalid(taskHandler))
+				return false;
 			publishProgress(taskHandler.getString(R.string.locations) + " - " + taskHandler.getString(R.string.fetching_data));
 			VisionDroid.loadLocations(getHttpClient());
 		}

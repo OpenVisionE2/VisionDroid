@@ -48,7 +48,7 @@ public class VisionDroidTrustManager implements HostnameVerifier, X509TrustManag
 	}
 
 	public boolean trustAllCertificates() {
-		return DreamDroid.getCurrentProfile().isAllCertsTrusted();
+		return VisionDroid.getCurrentProfile().isAllCertsTrusted();
 	}
 
 	@Override

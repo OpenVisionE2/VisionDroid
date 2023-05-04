@@ -1,50 +1,77 @@
-package org.openvision.visiondroid.service;
+package org.openvision.visiondroid.ssl;
 
-import android.os.Handler;
-import android.widget.Toast;
+import android.content.Context;
+import android.util.Log;
 
-import androidx.core.app.JobIntentService;
+import androidx.annotation.NonNull;
 
-import org.openvision.visiondroid.ssl.VisionDroidTrustManager;
+import org.openvision.visiondroid.VisionDroid;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
+import java.security.KeyStore;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-/**
- * Created by Stephan on 04.06.2014.
- */
-public abstract class HttpIntentService extends JobIntentService {
-	protected Handler mHandler;
-	protected VisionDroidTrustManager mTrustManager;
+public class VisionDroidTrustManager implements HostnameVerifier, X509TrustManager {
+	private static String LOG_TAG = VisionDroidTrustManager.class.getSimpleName();
+	X509TrustManager mDefaultTrustManager;
+	HostnameVerifier mDefaultHostnameVerifier;
+
+	public VisionDroidTrustManager(Context ctx) {
+		mDefaultTrustManager = getDefaultTrustManager();
+		mDefaultHostnameVerifier = null;
+	}
+
+	X509TrustManager getDefaultTrustManager() {
+		try {
+			TrustManagerFactory tmf = TrustManagerFactory.getInstance("X509");
+			tmf.init((KeyStore)null);
+			for (TrustManager t : tmf.getTrustManagers()) {
+				if (t instanceof X509TrustManager) {
+					return (X509TrustManager)t;
+				}
+			}
+		} catch (Exception e) {
+			Log.w(LOG_TAG, "getDefaultTrustManager(): " + e);
+		}
+		return null;
+	}
+
+	public HostnameVerifier wrapHostnameVerifier(@NonNull final HostnameVerifier verifier) {
+		mDefaultHostnameVerifier = verifier;
+		return this;
+	}
+
+	public boolean trustAllCertificates() {
+		return DreamDroid.getCurrentProfile().isAllCertsTrusted();
+	}
 
 	@Override
-	public void onCreate() {
-		mHandler = new Handler();
-		super.onCreate();
+	public boolean verify(String hostname, SSLSession session) {
+		if (trustAllCertificates())
+			return true;
+		return mDefaultHostnameVerifier.verify(hostname, session);
 	}
 
-	protected void setupSSL() {
-		if(!HttpsURLConnection.getDefaultSSLSocketFactory().getClass().equals(VisionDroidTrustManager.class)){
-			try {
-				// register VisionDroidTrustManager for HTTPS
-				SSLContext sc = SSLContext.getInstance("TLS");
-				mTrustManager = new VisionDroidTrustManager(getApplicationContext());
-				sc.init(null, new X509TrustManager[] { mTrustManager },
-						new java.security.SecureRandom());
-				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-				HttpsURLConnection.setDefaultHostnameVerifier(
-						mTrustManager.wrapHostnameVerifier(HttpsURLConnection.getDefaultHostnameVerifier()));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+	@Override
+	public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+		if (!trustAllCertificates())
+			mDefaultTrustManager.checkClientTrusted(chain, authType);
 	}
 
-	/*
- * show a toast and take care of calling it on the UI Thread
- */
-	protected void showToast(final String text) {
-		mHandler.post(() -> Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show());
+	@Override
+	public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+		if (!trustAllCertificates())
+			mDefaultTrustManager.checkServerTrusted(chain, authType);
+	}
+
+	@Override
+	public X509Certificate[] getAcceptedIssuers() {
+		return new X509Certificate[0];
 	}
 }

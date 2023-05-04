@@ -80,7 +80,7 @@ public class VirtualRemoteWidgetConfiguration extends AppCompatActivity implemen
 			adapter.notifyDataSetChanged();
 		} else {
 			showToast(getString(R.string.no_profile_available));
-			finish();org.openvision.visiondroid
+			finish();
 		}
 	}
 

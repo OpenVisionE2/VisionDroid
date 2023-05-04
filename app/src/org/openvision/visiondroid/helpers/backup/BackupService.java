@@ -61,7 +61,7 @@ public class BackupService {
         PrintWriter out = null;
         try {
             File backupDirectory = getExternalStoragePublicDirectory(DIRECTORY_DOWNLOADS);
-            File backupFile = new File(backupDirectory, "dreamdroid_backup.json");
+            File backupFile = new File(backupDirectory, "visiondroid_backup.json");
             out = new PrintWriter(backupFile);
         } catch (FileNotFoundException e) {
             Log.e(TAG, "Export unable to create export file to write the backup to.", e);

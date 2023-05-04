@@ -169,7 +169,7 @@ public class ProfileListFragment extends BaseRecyclerFragment implements DetectD
 	}
 
 	/**
-	 * @param profiles A list of profiles for auto-discovered dreamboxes
+	 * @param profiles A list of profiles for auto-discovered STBs
 	 */
 	@Override
 	public void onDevicesDetected(@NonNull ArrayList<Profile> profiles) {
@@ -181,7 +181,7 @@ public class ProfileListFragment extends BaseRecyclerFragment implements DetectD
 		mDetectedProfiles = profiles;
 
 		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
-		builder.setTitle(R.string.autodiscover_dreamboxes);
+		builder.setTitle(R.string.autodiscover_STBs);
 
 		if (mDetectedProfiles.size() > 0) {
 			CharSequence[] items = new CharSequence[profiles.size()];

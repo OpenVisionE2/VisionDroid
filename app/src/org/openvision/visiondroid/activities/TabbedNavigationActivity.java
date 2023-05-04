@@ -6,23 +6,21 @@
 
 package org.openvision.visiondroid.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import org.openvision.visiondroid.VisionDroid;
 
-public class TabbedNavigationActivity extends AppCompatActivity {
+public class TabbedNavigationActivity extends Activity {
 	/* (non-Javadoc)
 	 * @see android.app.ActivityGroup#onCreate(android.os.Bundle)
 	 */
 	public void onCreate(Bundle savedInstanceState) {
-		VisionDroid.setTheme(this);
 		super.onCreate(savedInstanceState);
 
-
 		Intent intent;
-		if(VisionDroid.isTV(this)) {
+		if (VisionDroid.isTV(this)) {
 			intent = new Intent(this, org.openvision.visiondroid.tv.activities.MainActivity.class);
 		} else {
 			intent = new Intent(this, MainActivity.class);

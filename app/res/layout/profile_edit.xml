@@ -20,7 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EditTextProfile"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
                 android:layout_marginRight="80dp"
                 android:layout_marginEnd="80dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EditTextHost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:layout_marginLeft="-80dp"
                 android:layout_marginStart="-80dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EditTextPort"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,6 +97,13 @@
                 android:text="@string/ssl_enabled"/>
 
             <CheckBox
+                android:id="@+id/CheckBoxTrustAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/trust_all_certs"/>
+
+            <CheckBox
                 android:id="@+id/CheckBoxLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,6 +115,7 @@
             android:id="@+id/LoginLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -115,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EditTextUser"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -129,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EditTextPass"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -142,7 +150,7 @@
         </LinearLayout>
 
         <TextView
-            style="@style/SimpleHeader"
+            style="@style/SimpleHeaderSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -157,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/EditTextSSID"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -174,7 +182,7 @@
         </LinearLayout>
 
         <TextView
-            style="@style/SimpleHeader"
+            style="@style/SimpleHeaderSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -185,7 +193,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EditTextStreamHost"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -219,7 +227,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextEncoderPath"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -234,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextEncoderPort"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -266,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextEncodermUser"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -280,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextEncoderPass"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -303,7 +311,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextVideoBitrate"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -320,7 +328,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextAudioBitrate"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -353,7 +361,7 @@
                 android:paddingEnd="6dp">
 
                 <TextView
-                    style="@style/SimpleHeader"
+                    style="@style/SimpleHeaderSmall"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -363,7 +371,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextStreamPort"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -371,7 +379,7 @@
                         android:hint="@string/port_stream_live"
                         android:inputType="number"
                         android:maxLength="5"
-                        android:singleLine="true"></EditText>
+                        android:singleLine="true"></com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox
@@ -393,7 +401,7 @@
                 android:paddingEnd="6dp">
 
                 <TextView
-                    style="@style/SimpleHeader"
+                    style="@style/SimpleHeaderSmall"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -403,7 +411,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/EditTextFilePort"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -411,7 +419,7 @@
                         android:hint="@string/port_stream_file"
                         android:inputType="number"
                         android:maxLength="5"
-                        android:singleLine="true"></EditText>
+                        android:singleLine="true"></com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox

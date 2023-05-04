@@ -138,54 +138,54 @@
 ## 7.0.r8
 * First compatible release for Open Vision
 
-## 1.6.446
-* FIX: crash introduced with the latest pip changes
+## 1.13.457
+* FIX: Don't reset the port to protocol default when editing an existing profile
+* FIX: Marked entries are now properly highlighted again (Profiles, Timers, etc)
+* FIX: Some visual glitches on android < 5.0 (SDK 21) 
+* FIX: Availability for TVs without WiFi but only Ethernet (google told me those things exist, I wouldn't have guessed so)
+* UPD: Prettify the backup screen and modernize the code it uses
+* UPD: Visual improvements at multiple places
+* UPD: External libraries
 
-## 1.6.445
-* NEW: enable PIP for android >= 8.0
-* UPD: German translation
-* FIX: try to fix a crash I can't reproduce
-* FIX: Theming cleanups
-* IMP: minor code cleanups
+## 1.12.456
+* FIX: TV & Movies now properly remembers where you left any of the tabs after rotation or reopening the app
+* FIX: A crash in TV & Services when the device was rotated while the "Timer" tab was active
+* FIX: Crashes related to the new profile storage implementation, breaking saving of any newly created Profile
 
-## 1.6.444
-* UPD: Color theme improvments
-* UPD/FIX: number of columns and general visuals in Zap layout
-* UPD: Settings are now always opened in a dedicated Activity
-* FIX: On large screens time selection in "EPG" view was invisible (but actually there)
+## 1.10.452 / 1.11.453
+* FIX: Crashing VirtualRemote on Android 6.0 and older (SDK <= 23)
+* FIX: A bunch of crashes on mobile and tv
+* FIX: Some theming/style issues
+* FIX: Radio mode (broken in 1.10.452)
+* UPD: Italian and spanish translations
+* UPD: Internal changes to how profiles are handled (old profiles will migrated automatically)
 
-## 1.6.443
-* NEW: Add preference for enabling "Dynamic Theme" mode on Android >= 12 (this was default enabled in all previous 1.6.x versions)
-* IMP: Bigger picons on bigger screens
-* IMP: Modernize signal meter
-* IMP: Side navigation rail instead of bottom navigation for TV & Movies on larger screens
-* FIX/IMP: reimplement Multi-Column service list
-* FIX: misaligned floating action button when profile fails to connect
-* FIX/NEW: add "UP" navigation for providers by clicking the selected tab again (if no up is available this will reload the current bouquet)
-* FIX: Screenshot saving, caching and sharing
-* FIX: Add a bunch of missing accessibility descriptions
-* UPD: German translation
-* NEW/TV: Add "next" event to content description in service list
+## 1.9.451
+* FIX: Crashes related to self-signed ssl/https certificates
+* FIX: Crash on android < 24 (Nougat) when trying to stream with the internal player
+* FIX: Crashes related to the movies tab
 
-## 1.6.442
-* FIX: end date/time could not be changed when editing a timer
-* FIX: localize time format in timer edit timer picker
+## 1.8.449
+* FIX: This should finally fix most of the annyoing crashes you've experienced recently
+* FIX: Favorite bouquet is properly loaded upon start again
 
-## 1.6.441
-* FIX: some typos in german translation
-* FIX: Crash on large screen devices when trying to open the TV & Movies
-* UPD: multiple updates to the home screen Widget
-  * FIX: widget not being added on Android >= 12
-  * FIX: configuration colors
-  * NEW: make appwidget reconfigurable
-  * NEW: add a proper preview image/layout
-* minor code cleanups
+## 1.7.448
+* FIX: location selection for movies
+* FIX: crashes on TVs
+* FIX: experimental fix for a bug i can't reproduce 
+* NOTE: there are some open reported Bug, this is just fixing SOME issues
 
-## 1.6.440
-* NEW: Material 3 Theme and updated libraries
+## 1.6.447
+* NEW: Material 3 theme incl. dynamic color themes
 * NEW: Merge TV, Radio, Movies and Timer Management into a Sliding Tab
+* NEW: Numerous visual improvements
+* NEW: Enable PIP for android >= 8.0
 * NEW: You can now define an alternative ip/hostname based on the WiFi SSID you're connected to, thx to @basalt79
-* FIX: Use "Play/Pause" in Virtual Remote instead of "Play"
+* NEW-TV: Add "next" event to content description in service list
+* UPD: multiple updates to the home screen widget
+* UPD: external libraries
+* FIX: Screenshot saving, caching and sharing
+* FIX: Add a bunch of missing accessibility descriptions 
 
 ## 1.5.439
 * UPD: Update google libraries, adjust themes

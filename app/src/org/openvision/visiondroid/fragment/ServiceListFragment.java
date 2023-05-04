@@ -31,7 +31,6 @@ import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 
 import com.evernote.android.state.State;
 
-import org.openvision.visiondroid.DatabaseHelper;
 import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.Profile;
 import org.openvision.visiondroid.R;
@@ -56,6 +55,7 @@ import org.openvision.visiondroid.helpers.enigma2.requesthandler.ServiceListRequ
 import org.openvision.visiondroid.intents.IntentFactory;
 import org.openvision.visiondroid.loader.AsyncListLoader;
 import org.openvision.visiondroid.loader.LoaderResult;
+import org.openvision.visiondroid.room.AppDatabase;
 import org.openvision.visiondroid.widget.AutofitRecyclerView;
 
 import java.util.ArrayList;
@@ -162,13 +162,13 @@ public class ServiceListFragment extends BaseHttpRecyclerEventFragment {
 		}
 
 		if (mDetailReference == null) {
-			mDetailReference = VisionDroid.getCurrentProfile().getDefaultRef();
-			mDetailName = VisionDroid.getCurrentProfile().getDefaultRefName();
+			mDetailReference = VisionDroid.getCurrentProfile().getDefaultBouquetTv();
+			mDetailName = VisionDroid.getCurrentProfile().getDefaultBouquetTvName();
 		}
 
 		if (mNavReference == null) {
-			mNavReference = VisionDroid.getCurrentProfile().getDefaultRef2();
-			mNavName = VisionDroid.getCurrentProfile().getDefaultRef2Name();
+			mNavReference = VisionDroid.getCurrentProfile().getParentBouquetTv();
+			mNavName = VisionDroid.getCurrentProfile().getParentBouquetTvName();
 		}
 	}
 
@@ -327,7 +327,7 @@ public class ServiceListFragment extends BaseHttpRecyclerEventFragment {
 			return;
 
 		MenuItem setDefault = menu.findItem(R.id.menu_default);
-		String defaultReference = VisionDroid.getCurrentProfile().getDefaultRef();
+		String defaultReference = VisionDroid.getCurrentProfile().getDefaultBouquetTv();
 		setDefault.setVisible(true);
 		if (defaultReference != null) {
 			if (defaultReference.equals(mDetailReference)) {
@@ -360,12 +360,12 @@ public class ServiceListFragment extends BaseHttpRecyclerEventFragment {
 				if (mDetailReference != null || mNavReference != null) {
 					Profile p = VisionDroid.getCurrentProfile();
 					boolean reset = false;
-					if (p.getDefaultRef() != null && p.getDefaultRef().equals(mDetailReference)) {
-						p.setDefaultRef(null);
+					if (p.getDefaultBouquetTv() != null && p.getDefaultBouquetTv().equals(mDetailReference)) {
+						p.setDefaultBouquetTv(null);
 						reset = true;
 					}
-					if (p.getDefaultRef2() != null && p.getDefaultRef2().equals(mNavReference)) {
-						p.setDefaultRef2(null);
+					if (p.getParentBouquetTv() != null && p.getParentBouquetTv().equals(mNavReference)) {
+						p.setParentBouquetTv(null);
 						reset = true;
 					}
 
@@ -375,13 +375,10 @@ public class ServiceListFragment extends BaseHttpRecyclerEventFragment {
 						if (mNavReference != null)
 							p.setDefaultRef2Values(mNavReference, mNavName);
 					}
-					DatabaseHelper dbh = DatabaseHelper.getInstance(getAppCompatActivity());
-					if (dbh.updateProfile(p)) {
-						if (!reset)
-							showToast(getText(R.string.default_bouquet_set_to) + " '" + mDetailName + "'");
-					} else {
-						showToast(getText(R.string.default_bouquet_not_set));
-					}
+					Profile.ProfileDao dao = AppDatabase.profiles(getAppCompatActivity());
+					dao.updateProfile(p);
+					if (!reset)
+						showToast(getText(R.string.default_bouquet_set_to) + " '" + mDetailName + "'");
 				} else {
 					showToast(getText(R.string.default_bouquet_not_set));
 				}

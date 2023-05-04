@@ -85,7 +85,7 @@ public class RootBrowseFragment extends BaseHttpBrowseFragment implements Profil
 		private ExtendedHashMap mBouquet;
 
 		public BouquetHeaderItem(long id, @NonNull ExtendedHashMap bouquet) {
-			super(id, bouquet.getString(Service.KEY_NAME));
+			super(id, bouquet.getString(Service.KEY_NAME, getString(R.string.not_available)));
 			mBouquet = bouquet;
 		}
 
@@ -125,7 +125,7 @@ public class RootBrowseFragment extends BaseHttpBrowseFragment implements Profil
 			mBouquets = new ArrayList<>();
 		if (mBouquetQueue == null)
 			mBouquetQueue = new ArrayList<>();
-		if (mLocations == null);
+		if (mLocations == null)
 		 	mLocations = new HashMap<>();
 
 		setHeadersState(HEADERS_ENABLED);

@@ -37,6 +37,7 @@ import org.openvision.visiondroid.helpers.DateTime;
 import org.openvision.visiondroid.helpers.SimpleHttpClient;
 import org.openvision.visiondroid.helpers.enigma2.requesthandler.LocationListRequestHandler;
 import org.openvision.visiondroid.helpers.enigma2.requesthandler.TagListRequestHandler;
+import org.openvision.visiondroid.room.AppDatabase;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -45,6 +46,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import java.time.LocalDate;
@@ -134,8 +137,8 @@ public class VisionDroid extends Application {
 
 	@NonNull
 	public static String getVersionString() {
-		LocalDate myDate = LocalDate.now();  
-		String buildDate = myDate.format(DateTimeFormatter.ISO_DATE);  
+		LocalDate myDate = LocalDate.now();
+		String buildDate = myDate.format(DateTimeFormatter.ISO_DATE);
 /*
 		if (BuildConfig.BUILD_TIME > 0)
 			buildDate = DateTime.getYearDateTimeString(BuildConfig.BUILD_TIME / 1000);
@@ -185,6 +188,20 @@ public class VisionDroid extends Application {
 			}
 		});
 
+
+		Profile.ProfileDao dao = AppDatabase.profiles(getAppContext());
+		if (dao.getProfiles().size() == 0) {
+			DatabaseHelper dbh = DatabaseHelper.getInstance(getAppContext());
+			if (dbh.getProfiles().size() > 0) {
+				for (Profile p : dbh.getProfiles()) {
+					dbh.deleteProfile(p);
+					p.setId( dao.addProfile(p) );
+				}
+
+			}
+		}
+
+
 		initChannels();
 		sLocations = new ArrayList<>();
 		sTags = new ArrayList<>();
@@ -203,14 +220,14 @@ public class VisionDroid extends Application {
 
 			Log.i(LOG_TAG, "currentWifiName = " + currentWifiName);
 			Log.i(LOG_TAG, "currentProfileSsid = " + currentProfile.getSsid());
-			DatabaseHelper dbh = DatabaseHelper.getInstance(context);
+			Profile.ProfileDao dao = AppDatabase.profiles(getAppContext());
 			if (currentWifiName == null) {
 				Log.i(LOG_TAG, "not connected to wifi, will search for default profile");
 				// not connected to wifi, search for default profile
 				if (currentProfile.isDefaultProfileOnNoWifi()) {
 					Log.i(LOG_TAG, "currentProfile is default for NO WIFI, so no action required");
 				} else {
-					Optional<Profile> noWifiDefault = dbh.getProfiles().stream().filter(Profile::isDefaultProfileOnNoWifi).findFirst();
+					Optional<Profile> noWifiDefault = dao.getProfiles().stream().filter(Profile::isDefaultProfileOnNoWifi).findFirst();
 					if (noWifiDefault.isPresent()) {
 						Log.i(LOG_TAG, "found profile for default ");
 						setCurrentProfile(context, noWifiDefault.get().getId());
@@ -226,7 +243,7 @@ public class VisionDroid extends Application {
 					Log.i(LOG_TAG, "currentProfile has correct wifi name configured, so no action required");
 				} else {
 					Log.i(LOG_TAG, "connected to wifi " + currentWifiName + " will search for profile with this wifi name configured");
-					Optional<Profile> wifiProfile = dbh.getProfiles().stream().filter(p -> p.getSsid() != null).filter(p -> p.getSsid().equalsIgnoreCase(currentWifiName)).findFirst();
+					Optional<Profile> wifiProfile = dao.getProfiles().stream().filter(p -> p.getSsid() != null).filter(p -> p.getSsid().equalsIgnoreCase(currentWifiName)).findFirst();
 					if (wifiProfile.isPresent()) {
 						Log.i(LOG_TAG, "found profile with configured ssid ");
 						setCurrentProfile(context, wifiProfile.get().getId());
@@ -240,7 +257,7 @@ public class VisionDroid extends Application {
 
 	@Nullable
 	private String getWifiName(@NonNull Context context) {
-		WifiManager manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+		WifiManager manager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		if (manager.isWifiEnabled()) {
 			WifiInfo wifiInfo = manager.getConnectionInfo();
 			if (wifiInfo != null) {
@@ -315,25 +332,25 @@ public class VisionDroid extends Application {
 		if (sProfile != null && sProfile.getId() == profileId)
 			return;
 
-		DatabaseHelper dbh = DatabaseHelper.getInstance(context);
-		ArrayList<Profile> profiles = dbh.getProfiles();
+		Profile.ProfileDao dao = AppDatabase.profiles(context);
+		List<Profile> profiles = dao.getProfiles();
 		// the profile-table is initial - let's migrate the current config as
 		// default Profile
 		if (profiles.isEmpty()) {
 			String host = sp.getString("host", "192.168.1.2");
 			String streamHost = sp.getString("host", "");
 
-			int port = Integer.valueOf(sp.getString("port", "80"));
+			int port = Integer.valueOf(sp.getString("port", "443"));
 			String user = sp.getString("user", "root");
 			String pass = sp.getString("pass", "openvision");
 
 			boolean login = sp.getBoolean("login", true);
-			boolean ssl = sp.getBoolean("ssl", false);
+			boolean ssl = sp.getBoolean("ssl", true);
 
-			Profile p = new Profile(-1, "Open Vision", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
+			Profile p = new Profile(null, "Open Vision", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
 					false, false, "", "", "", "");
-			dbh.addProfile(p);
-			profileId = p.getId();
+			p.setId( dao.addProfile(p) );
+
 			SharedPreferences.Editor editor = sp.edit();
 			editor.remove(CURRENT_PROFILE);
 			editor.apply();
@@ -342,7 +359,7 @@ public class VisionDroid extends Application {
 		if (!setCurrentProfile(context, profileId)) {
 			// However we got here... we're creating an
 			// "do-not-crash-default-profile now
-			sProfile = new Profile(-1, "Open Vision", "192.168.1.2", "", 80, 8001, 80, true, "root", "openvision", false, false, false, false,
+			sProfile = new Profile(null, "Open Vision", "192.168.1.2", "", 80, 8001, 80, true, "root", "openvision", false, false, false, false,
 					false, "", "", "", "");
 		}
 	}
@@ -367,8 +384,7 @@ public class VisionDroid extends Application {
 			oldProfile = Profile.getDefault();
 
 
-		DatabaseHelper dbh = DatabaseHelper.getInstance(context);
-		sProfile = dbh.getProfile(id);
+		sProfile = AppDatabase.profiles(context).getProfile(id);
 
 		if (sProfile != null) {
 			SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
@@ -379,7 +395,7 @@ public class VisionDroid extends Application {
 				sLocations.clear();
 				sTags.clear();
 				activeProfileChanged();
-			} else if (sProfile.getId() == oldProfile.getId()) {
+			} else if (Objects.equals(sProfile.getId(), oldProfile.getId())) {
 				sProfile.setSessionId(oldProfile.getSessionId());
 			}
 			return true;
@@ -394,7 +410,7 @@ public class VisionDroid extends Application {
 	}
 
 	public static void profileChanged(Context context, @NonNull Profile p) {
-		if (p.getId() == sProfile.getId()) {
+		if (Objects.equals(p.getId(), sProfile.getId())) {
 			reloadCurrentProfile(context);
 		}
 	}

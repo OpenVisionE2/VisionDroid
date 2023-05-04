@@ -13,14 +13,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.loader.content.Loader;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.evernote.android.state.State;
 
@@ -31,7 +32,6 @@ import org.openvision.visiondroid.fragment.abs.BaseHttpRecyclerFragment;
 import org.openvision.visiondroid.fragment.dialogs.MovieDetailBottomSheet;
 import org.openvision.visiondroid.fragment.dialogs.MultiChoiceDialog;
 import org.openvision.visiondroid.fragment.dialogs.PositiveNegativeDialog;
-import org.openvision.visiondroid.fragment.dialogs.SimpleChoiceDialog;
 import org.openvision.visiondroid.helpers.ExtendedHashMap;
 import org.openvision.visiondroid.helpers.NameValuePair;
 import org.openvision.visiondroid.helpers.Python;
@@ -54,7 +54,7 @@ import java.util.ArrayList;
  * @author original creator
  */
 public class MovieListFragment extends BaseHttpRecyclerFragment implements MultiChoiceDialog.MultiChoiceDialogListener {
-
+	public static String ARGUMENT_LOCATION = "location";
 	private boolean mTagsChanged;
 	private boolean mReloadOnSimpleResult;
 
@@ -73,18 +73,32 @@ public class MovieListFragment extends BaseHttpRecyclerFragment implements Multi
 		//mHasFabMain = true;
 		super.onCreate(savedInstanceState);
 		initTitle(getString(R.string.movies));
-
-		mCurrentLocation = "/media/hdd/movie/";
-		mReload = true;
+		mCurrentLocation = null;
 		if (savedInstanceState == null) {
 			mSelectedTags = new ArrayList<>();
 			mOldTags = new ArrayList<>();
-			if(!(VisionDroid.getLocations().indexOf(mCurrentLocation) >= 0))
+		}
+		setInitialLocation(savedInstanceState);
+	}
+
+	protected void setInitialLocation(@Nullable Bundle savedInstanceState) {
+		int locationArg = getArguments().getInt(ARGUMENT_LOCATION, -1);
+		if (locationArg >= 0) {
+			mCurrentLocation = VisionDroid.getLocations().get(
+					getArguments().getInt(
+							ARGUMENT_LOCATION,
+							VisionDroid.getLocations().indexOf(mCurrentLocation)
+					)
+			);
+		} else if (savedInstanceState == null) {
+			if(mCurrentLocation != null && VisionDroid.getLocations().indexOf(mCurrentLocation) >= 0) {
 				for (String location : VisionDroid.getLocations()) {
 					mCurrentLocation = location;
 					break;
 				}
+			}
 		}
+		mReload = true;
 	}
 
 	@Override
@@ -109,8 +123,6 @@ public class MovieListFragment extends BaseHttpRecyclerFragment implements Multi
 			case Statics.ITEM_TAGS:
 				pickTags();
 				return true;
-			case Statics.ITEM_SELECT_LOCATION:
-				selectLocation();
 			default:
 				return super.onItemSelected(id);
 		}
@@ -135,19 +147,6 @@ public class MovieListFragment extends BaseHttpRecyclerFragment implements Multi
 				R.string.cancel);
 
 		getMultiPaneHandler().showDialogFragment(f, "dialog_pick_tags");
-	}
-
-	protected void selectLocation() {
-		int len = VisionDroid.getLocations().size();
-		CharSequence[] locations = new CharSequence[len];
-		int[] locationIds = new int[locations.length];
-		for(int i=0; i<len;++i){
-			locations[i] = VisionDroid.getLocations().get(i);
-			locationIds[i] = i;
-		}
-
-		SimpleChoiceDialog f = SimpleChoiceDialog.newInstance(getString(R.string.choose_location), locations, locationIds);
-		getMultiPaneHandler().showDialogFragment(f, "dialog_pick_location");
 	}
 
 	@Override
@@ -244,16 +243,16 @@ public class MovieListFragment extends BaseHttpRecyclerFragment implements Multi
 		getAppCompatActivity().setTitle(mCurrentLocation);
 	}
 
-	public void onDialogAction(int action, Object details, String dialogTag) {
-		if("dialog_pick_location".equals(dialogTag)) {
-			String selectedLoc = VisionDroid.getLocations().get(action);
-			if (!selectedLoc.equals(mCurrentLocation)) {
-				mCurrentLocation = selectedLoc;
-				reload();
-			}
-			return;
+	public void setLocation(int index) {
+		String selectedLoc = VisionDroid.getLocations().get(index);
+		if (!selectedLoc.equals(mCurrentLocation)) {
+			mCurrentLocation = selectedLoc;
+			reload();
 		}
+		return;
+	}
 
+	public void onDialogAction(int action, Object details, String dialogTag) {
 		onMovieAction(action);
 	}
 

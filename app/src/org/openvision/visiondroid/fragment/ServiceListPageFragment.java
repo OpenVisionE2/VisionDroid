@@ -25,7 +25,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.evernote.android.state.State;
 
-import org.openvision.visiondroid.DatabaseHelper;
 import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.Profile;
 import org.openvision.visiondroid.R;
@@ -46,6 +45,7 @@ import org.openvision.visiondroid.helpers.enigma2.requesthandler.ServiceListRequ
 import org.openvision.visiondroid.intents.IntentFactory;
 import org.openvision.visiondroid.loader.AsyncListLoader;
 import org.openvision.visiondroid.loader.LoaderResult;
+import org.openvision.visiondroid.room.AppDatabase;
 import org.openvision.visiondroid.widget.AutofitRecyclerView;
 
 import java.util.ArrayList;
@@ -86,9 +86,9 @@ public class ServiceListPageFragment extends BaseHttpRecyclerEventFragment {
 		mEnableReload = false;
 
 		Bundle args = getArguments();
-		if (args != null) {
-			mRef = args.getString(Service.KEY_REFERENCE, mRef);
-			mName = args.getString(Service.KEY_NAME, mName);
+		if (args != null)  {
+			mRef = args.getString(Service.KEY_REFERENCE, null);
+			mName = args.getString(Service.KEY_NAME, "-");
 		}
 
 		mCurrentItem = new ExtendedHashMap();
@@ -97,8 +97,8 @@ public class ServiceListPageFragment extends BaseHttpRecyclerEventFragment {
 		mHistory = new ArrayList<>();
 
 		if (mRef == null) {
-			mRef = VisionDroid.getCurrentProfile().getDefaultRef();
-			mName = VisionDroid.getCurrentProfile().getDefaultRefName();
+			mRef = VisionDroid.getCurrentProfile().getDefaultBouquetTv();
+			mName = VisionDroid.getCurrentProfile().getDefaultBouquetTvName();
 		}
 	}
 
@@ -186,7 +186,7 @@ public class ServiceListPageFragment extends BaseHttpRecyclerEventFragment {
 			return;
 
 		MenuItem setDefault = menu.findItem(R.id.menu_default);
-		String defaultReference = VisionDroid.getCurrentProfile().getDefaultRef();
+		String defaultReference = VisionDroid.getCurrentProfile().getDefaultBouquetTv();
 		setDefault.setVisible(true);
 		if (defaultReference != null) {
 			if (defaultReference.equals(mRef)) {
@@ -206,20 +206,17 @@ public class ServiceListPageFragment extends BaseHttpRecyclerEventFragment {
 				if (mRef != null) {
 					Profile p = VisionDroid.getCurrentProfile();
 					boolean reset = false;
-					if (p.getDefaultRef() != null && p.getDefaultRef().equals(mRef)) {
-						p.setDefaultRef(null);
+					if (p.getDefaultBouquetTv() != null && p.getDefaultBouquetTv().equals(mRef)) {
+						p.setDefaultBouquetTv(null);
 						reset = true;
 					} else {
 						p.setDefaultRefValues(mRef, mName);
 					}
 
-					DatabaseHelper dbh = DatabaseHelper.getInstance(getAppCompatActivity());
-					if (dbh.updateProfile(p)) {
-						if (!reset)
-							showToast(getText(R.string.default_bouquet_set_to) + " '" + mName + "'");
-					} else {
-						showToast(getText(R.string.default_bouquet_not_set));
-					}
+					Profile.ProfileDao dao = AppDatabase.profiles(getAppCompatActivity());
+					dao.updateProfile(p);
+					if (!reset)
+						showToast(getText(R.string.default_bouquet_set_to) + " '" + mName + "'");
 				} else {
 					showToast(getText(R.string.default_bouquet_not_set));
 				}

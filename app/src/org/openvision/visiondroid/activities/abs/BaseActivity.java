@@ -25,6 +25,7 @@ import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.R;
 import org.openvision.visiondroid.fragment.dialogs.ActionDialog;
 import org.openvision.visiondroid.helpers.PiconSyncService;
+import org.openvision.visiondroid.ssl.VisionDroidTrustManager;
 
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -37,8 +38,6 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-import de.duenndns.ssl.JULHandler;
-import de.duenndns.ssl.MemorizingTrustManager;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
@@ -54,11 +53,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 	@NonNull
 	private static String TAG = BaseActivity.class.getSimpleName();
 
-	private MemorizingTrustManager mTrustManager;
-
-	static {
-		MemorizingTrustManager.setKeyStoreFile("private", "sslkeys.bks");
-	}
+	private VisionDroidTrustManager mTrustManager;
 
     private int responseCount(Response response) {
         int result = 1;
@@ -87,12 +82,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		try {
-			// set location of the keystore
-			JULHandler.initialize();
-			JULHandler.setDebugLogSettings(() -> false);
-			// register MemorizingTrustManager for HTTPS
-
-			mTrustManager = new MemorizingTrustManager(this);
+			mTrustManager = new VisionDroidTrustManager(this);
 
 			SSLContext sc = SSLContext.getInstance("TLS");
 			sc.init(null, new X509TrustManager[]{mTrustManager},
@@ -117,7 +107,7 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
                     .sslSocketFactory(sc.getSocketFactory(), systemDefaultTrustManager())
                     .hostnameVerifier(mTrustManager.wrapHostnameVerifier(OkHostnameVerifier.INSTANCE));
             Picasso.Builder builder = new Picasso.Builder(getApplicationContext());
-            builder.downloader(new OkHttp3Downloader(clientBuilder.build()));
+			builder.downloader(new OkHttp3Downloader(clientBuilder.build()));
 			try {
 				Picasso.setSingletonInstance(builder.build());
 			} catch (IllegalStateException ignored) {}
@@ -155,7 +145,6 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 
 	@Override
 	public void onPause() {
-		mTrustManager.unbindDisplayActivity(this);
 		super.onPause();
 		if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
 				VisionDroid.PREFS_KEY_ENABLE_ANIMATIONS, true))
@@ -164,7 +153,6 @@ public class BaseActivity extends AppCompatActivity implements ActionDialog.Dial
 
 	@Override
 	public void onResume() {
-		mTrustManager.bindDisplayActivity(this);
 		super.onResume();
 	}
 

@@ -27,7 +27,6 @@ import org.openvision.visiondroid.DatabaseHelper;
 import org.openvision.visiondroid.VisionDroid;
 import org.openvision.visiondroid.Profile;
 import org.openvision.visiondroid.R;
-import org.openvision.visiondroid.activities.abs.BaseActivity;
 import org.openvision.visiondroid.adapter.recyclerview.ProfileAdapter;
 import org.openvision.visiondroid.asynctask.SimpleResultTask;
 import org.openvision.visiondroid.helpers.ExtendedHashMap;
@@ -35,11 +34,13 @@ import org.openvision.visiondroid.helpers.NameValuePair;
 import org.openvision.visiondroid.helpers.SimpleHttpClient;
 import org.openvision.visiondroid.helpers.enigma2.URIStore;
 import org.openvision.visiondroid.helpers.enigma2.requesthandler.SimpleResultRequestHandler;
+import org.openvision.visiondroid.room.AppDatabase;
 import org.openvision.visiondroid.widget.helper.ItemClickSupport;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author sre
@@ -57,7 +58,7 @@ public class ShareActivity extends AppCompatActivity implements SimpleResultTask
 	private ProgressDialog mProgress;
 	private String mTitle;
 
-	ArrayList<Profile> mProfiles;
+	List<Profile> mProfiles;
 
 	protected ItemClickSupport mItemClickSupport;
 
@@ -146,10 +147,10 @@ public class ShareActivity extends AppCompatActivity implements SimpleResultTask
 	}
 
 	public void load() {
-		DatabaseHelper dbh = DatabaseHelper.getInstance(this);
+		Profile.ProfileDao dao = AppDatabase.profiles(getContext());
 		mProfileMapList = new ArrayList<>();
 		mProfileMapList.clear();
-		mProfiles = dbh.getProfiles();
+		mProfiles = dao.getProfiles();
 		if (mProfiles.size() > 1) {
 			for (Profile m : mProfiles) {
 				ExtendedHashMap map = new ExtendedHashMap();

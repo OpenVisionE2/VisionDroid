@@ -3,7 +3,7 @@
     <string name="description">Opis</string>
     <string name="title">Naslov</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
     <string-array name="servicelist">
         <item>Buketi (TV)</item>
         <item>Provideri (TV)</item>
@@ -153,14 +153,14 @@
     <string name="loading">Loading...</string>
     <string name="about">O</string>
     <string name="license">LIZENCIJA:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0	 </string>
-    <string name="source_code_link">Source code available at: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Source code available at: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktiviran profil</string>
     <string name="connection_state">Stanje veze</string>
     <string name="not_available">Nije dostupno</string>
     <string name="checking">Provjeravanje...</string>
     <string name="error">POGREŠKA!</string>
     <string name="check_connectivity">Provjeravanje veze</string>
-    <string name="version_too_low">Version &lt; 1.6.5</string>
+    <string name="version_too_low">Version &lt; 1.4.1</string>
     <string name="connection_error">Pogreška u vezi</string>
     <string name="port_out_of_range">Port nije izmedžu 1 i 65535</string>
     <string name="illegal_host">Nezakoniti host</string>
@@ -197,7 +197,7 @@
     <string name="profiles">Profili</string>
     <string name="enable_instant_zap">Instant zap</string>
     <string name="enable_instant_zap_long">Instant zap when short-tapping a service</string>
-    <string name="wrong_activity">Wrong Activity called! Please recreate any shortcuts you created for dreamDroid!</string>
+    <string name="wrong_activity">Wrong Activity called! Please recreate any shortcuts you created for visionDroid!</string>
     <string name="simple_remote">Jednostavni raspored daljinskog</string>
     <string name="screenshot_saved">Slika spremljena u \'%s\'</string>
     <string name="imdb">IMDb</string>

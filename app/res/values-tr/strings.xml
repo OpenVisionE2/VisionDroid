@@ -4,7 +4,7 @@
     <string name="description">Tanım</string>
     <string name="title">Başlık</string>
     <string name="mo">Pazartesi</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Buketler (TV)</item>
@@ -179,7 +179,7 @@
     <string name="about">Hakkında</string>
     <string name="changelog">Sürüm notları</string>
     <string name="license">Lisans</string>
-    <string name="source_code_link">Kaynak kodu mevcut: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Kaynak kodu mevcut: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Profili etkinleştir</string>
     <string name="connection">Bağlantı</string>
     <string name="connection_state">Bağlantı durumu</string>
@@ -187,7 +187,7 @@
     <string name="checking">kontrol ediliyor&#8230;</string>
     <string name="error">HATA!</string>
     <string name="check_connectivity">Bağlantıyı kontrol et</string>
-    <string name="version_too_low">Sürüm &lt; 1.6.5</string>
+    <string name="version_too_low">Sürüm &lt; 1.4.1</string>
     <string name="connection_error">Bağlantı hatası</string>
     <string name="port_out_of_range">Port 1 ile 65535 arasında değil</string>
     <string name="illegal_host">İllegal host</string>
@@ -235,8 +235,8 @@
     <string name="mobile_imdb">Imdb.com mobil sürümünü kullanın</string>
     <string name="mobile_imdb_long">M.imdb.com yerine www.imdb.com kullanımı</string>
     <string name="searching">Aranıyor &#8230;</string>
-    <string name="searching_known_devices">Yerel ağınızdaki dreamboxes aranıyor. Bu işlem birkaç dakika sürebilir &#8230;</string>
-    <string name="autodiscover_dreamboxes">Dreambox\'da otomatik bul</string>
+    <string name="searching_known_devices">Yerel ağınızdaki STBs aranıyor. Bu işlem birkaç dakika sürebilir &#8230;</string>
+    <string name="autodiscover_STBs">STB\'da otomatik bul</string>
     <string name="add_all">Hepsini ekle</string>
     <string name="enabled">Etkin</string>
 </resources>

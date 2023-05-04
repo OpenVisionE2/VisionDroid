@@ -3,8 +3,8 @@
 
     <string name="description">Përshkrimi</string>
     <string name="title">Titull</string>
-    <string name="mo">DreamDroid</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="mo">VisionDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Paketat (TV)</item>
@@ -125,7 +125,7 @@
     <string name="checking">kontrolluar</string>
     <string name="error">GABIM!</string>
     <string name="check_connectivity">Kontrollo lidhjen</string>
-    <string name="version_too_low">Versioni &lt; 1.6.5</string>
+    <string name="version_too_low">Versioni &lt; 1.4.1</string>
     <string name="connection_error">Probleme ne lidhje</string>
     <string name="port_out_of_range">Porta jo midis 1 dhe 65535</string>
     <string name="cleanup">Pastro</string>
@@ -135,8 +135,8 @@
     <string name="enabled">Aktivizuar</string>
     <string name="leave_confirm">Je i sigurte te largohesh</string>
     <string name="sent_as">Derguar si %s</string>
-    <string name="watch_on_dream">Shiko ne Dreambox</string>
-    <string name="sent_from_dreamdroid">Derguar nga dreamDroid ne %s</string>
+    <string name="watch_on_dream">Shiko ne STB</string>
+    <string name="sent_from_visiondroid">Derguar nga visionDroid ne %s</string>
     <string name="connecting">Duke u lidhur</string>
     <string name="connected">I lidhur</string>
     <string name="getting_list_of_files">Duke marre skedaret</string>

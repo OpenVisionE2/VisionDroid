@@ -25,13 +25,11 @@ import org.openvision.visiondroid.fragment.CurrentServiceFragment;
 import org.openvision.visiondroid.fragment.DeviceInfoFragment;
 import org.openvision.visiondroid.fragment.EpgBouquetFragment;
 import org.openvision.visiondroid.fragment.MediaPlayerFragment;
-import org.openvision.visiondroid.fragment.MovieListFragment;
 import org.openvision.visiondroid.fragment.MyPreferenceFragment;
 import org.openvision.visiondroid.fragment.ProfileListFragment;
 import org.openvision.visiondroid.fragment.ScreenShotFragment;
 import org.openvision.visiondroid.fragment.ServiceListPager;
 import org.openvision.visiondroid.fragment.SignalFragment;
-import org.openvision.visiondroid.fragment.TimerListFragment;
 import org.openvision.visiondroid.fragment.VirtualRemotePagerFragment;
 import org.openvision.visiondroid.fragment.ZapFragment;
 import org.openvision.visiondroid.fragment.dialogs.AboutDialog;
@@ -274,10 +272,10 @@ public class NavigationHelper implements NavigationView.OnNavigationItemSelected
                 clearBackStack();
                 Bundle args = new Bundle();
 
-                String ref = VisionDroid.getCurrentProfile().getDefaultRef();
+                String ref = VisionDroid.getCurrentProfile().getDefaultBouquetTv();
                 args.putString(Event.KEY_SERVICE_REFERENCE, ref);
 
-                String name = VisionDroid.getCurrentProfile().getDefaultRefName();
+                String name = VisionDroid.getCurrentProfile().getDefaultBouquetTvName();
                 args.putString(Event.KEY_SERVICE_NAME, name);
 
                 EpgBouquetFragment f = new EpgBouquetFragment();

@@ -50,6 +50,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author sre
  */
@@ -91,17 +94,6 @@ public class VisionDroid extends Application {
 	public static final String PREFS_KEY_DYNAMIC_THEME_COLORS = "dynamic_theme_colors";
 
 	public static final String IAB_PUB_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkWyCpE79iRAcqWnC+/I5AuahW/wvbGF5SxcZCELP6I6Rs47hYOydmCBDV5e11FXHZyS3BGuuVKEjf9DxkR2skNtKfgbX/UQD0jpnaEk2GnnsZ9OAaso9pKFn1ZJKtLtP7OKVlt2HpHjag3x8NGayjkno0k0gmvf5T8c77tYLtoHY+uLlUTwo0DiXhzxHjTjzTxc0nbEyRDa/5pDPudBCSien4lg+C8D9K8rdcUCI1QcLjkOgBR888CxT7cyhvUnoHcHZQLGbTFZG0XtyJnxop2AqWMiOepT3txAfq6OjOmo0PofuIk+m0jVrPLYs2eNSxmJrfZ5MddocPYD50cj+2QIDAQAB";
-
-	public static final String SKU_DONATE_1 = "donate_1";
-	public static final String SKU_DONATE_2 = "donate_2";
-	public static final String SKU_DONATE_3 = "donate_3";
-	public static final String SKU_DONATE_5 = "donate_5";
-	public static final String SKU_DONATE_10 = "donate_10";
-	public static final String SKU_DONATE_15 = "donate_15";
-	public static final String SKU_DONATE_20 = "donate_20";
-	public static final String SKU_DONATE_INSANE = "donate_insane";
-
-	public static final String[] SKU_LIST = {SKU_DONATE_1, SKU_DONATE_2, SKU_DONATE_3, SKU_DONATE_5, SKU_DONATE_10, SKU_DONATE_15, SKU_DONATE_20, SKU_DONATE_INSANE};
 
 	public static final String CURRENT_PROFILE = "currentProfile";
 
@@ -345,17 +337,17 @@ public class VisionDroid extends Application {
 		// the profile-table is initial - let's migrate the current config as
 		// default Profile
 		if (profiles.isEmpty()) {
-			String host = sp.getString("host", "visiondroid.org");
+			String host = sp.getString("host", "192.168.1.2");
 			String streamHost = sp.getString("host", "");
 
 			int port = Integer.valueOf(sp.getString("port", "443"));
 			String user = sp.getString("user", "root");
-			String pass = sp.getString("pass", "dreambox");
+			String pass = sp.getString("pass", "openvision");
 
-			boolean login = sp.getBoolean("login", false);
+			boolean login = sp.getBoolean("login", true);
 			boolean ssl = sp.getBoolean("ssl", true);
 
-			Profile p = new Profile(null, "Demo", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
+			Profile p = new Profile(null, "Open Vision", host, streamHost, port, 8001, 80, login, user, pass, ssl, false, false,
 					false, false, "", "", "", "");
 			p.setId( dao.addProfile(p) );
 
@@ -367,7 +359,7 @@ public class VisionDroid extends Application {
 		if (!setCurrentProfile(context, profileId)) {
 			// However we got here... we're creating an
 			// "do-not-crash-default-profile now
-			sProfile = new Profile(null, "Demo", "visiondroid.org", "", 80, 8001, 80, false, "", "", false, false, false, false,
+			sProfile = new Profile(null, "Open Vision", "192.168.1.2", "", 80, 8001, 80, true, "root", "openvision", false, false, false, false,
 					false, "", "", "", "");
 		}
 	}

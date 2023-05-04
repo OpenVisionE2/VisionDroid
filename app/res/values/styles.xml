@@ -29,25 +29,25 @@
         <item name="android:padding">4dp</item>
     </style>
 
-    <style name="CardListView.Light" parent="CardListView"/>
+    <style name="CardListView.Light" parent="CardListView" />
 
-    <style name="SimpleHeaderSmall" parent="@style/TextAppearance.Material3.HeadlineSmall">
+    <style name="SimpleHeaderSmall" parent="@style/TextAppearance.Material3.TitleSmall">
         <item name="android:textAllCaps">true</item>
-        <item name="android:paddingLeft">3dp</item>
-        <item name="android:paddingRight">3dp</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:background">@drawable/simple_heading_line</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">3dp</item>
+        <item name="android:textColor">?attr/colorAccent</item>
     </style>
 
-    <style name="SimpleHeaderMedium" parent="@style/TextAppearance.Material3.HeadlineSmall">
+    <style name="SimpleHeaderMedium" parent="@style/TextAppearance.Material3.TitleMedium">
         <item name="android:textAllCaps">true</item>
-        <item name="android:background">@drawable/simple_heading_line</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">3dp</item>
+        <item name="android:textColor">?attr/colorAccent</item>
     </style>
 
-    <style name="ButtonPanel"/>
+    <style name="ButtonPanel" />
 
-    <style name="NavButtonBar" parent="@style/Widget.AppCompat.ButtonBar"/>
+    <style name="NavButtonBar" parent="@style/Widget.AppCompat.ButtonBar" />
 
     <style name="NavButtonBarButton">
         <item name="android:background">?attr/listItemBackground</item>
@@ -104,17 +104,17 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="ShapeAppearance.VisionDroid.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+    <style name="ShapeAppearance.DreamDroid.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="ShapeAppearance.VisionDroid.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+    <style name="ShapeAppearance.DreamDroid.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="ShapeAppearance.VisionDroid.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+    <style name="ShapeAppearance.DreamDroid.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>

@@ -4,7 +4,7 @@
     <string name="description">Omschrijving</string>
     <string name="title">Titel</string>
     <string name="mo">Ma</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Boeketten (TV)</item>
@@ -181,7 +181,7 @@
     <string name="changelog">wijzigingslog </string>
 <string name="license">Licentie:
 \nGelicentieerd onder de Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Broncode beschikbaar op http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Broncode beschikbaar op https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Actief profiel</string>
     <string name="connection">Verbinding</string>
     <string name="connection_state">Verbindingsstatus</string>
@@ -189,7 +189,7 @@
     <string name="checking">controleren&#8230;</string>
     <string name="error">FOUT!</string>
     <string name="check_connectivity">Test verbinding</string>
-    <string name="version_too_low">Versie &lt; 1.6.5</string>
+    <string name="version_too_low">Versie &lt; 1.4.1</string>
     <string name="connection_error">Verbindingsfout</string>
     <string name="port_out_of_range">Poort niet tussen 1 en 65535</string>
     <string name="illegal_host">Illegale host</string>
@@ -228,7 +228,7 @@
     <string name="profiles_long">Profielen configureren</string>
     <string name="enable_instant_zap">Onmiddelijk zappen</string>
     <string name="enable_instant_zap_long">Onmiddelijk zappen bij het kort aanklikken van een service</string>
-    <string name="wrong_activity">Verkeerde activiteit aangeroepen! Hercreëer de snelkoppeling voor dreamDroid!</string>
+    <string name="wrong_activity">Verkeerde activiteit aangeroepen! Hercreëer de snelkoppeling voor visionDroid!</string>
     <string name="simple_remote">Eenvoudige afstandbediening layout</string>
     <string name="screenshot_saved">Screenshot opgeslagen als \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -239,9 +239,9 @@
     <string name="mobile_imdb">Gebruik mobiele versie van www.imdb.com</string>
     <string name="mobile_imdb_long">Gebruik m.imdb.com ipv. www.imdb.com</string>
     <string name="searching">Zoeken&#8230;</string>
-    <string name="searching_known_devices">Dreamboxen zoeken in je lokale netwerk. Dit kan een paar minuten duren&#8230;</string>
-    <string name="autodiscover_dreamboxes">Automatisch zoeken Dreambox</string>
-    <string name="autodiscovery_failed">Kon geen Dreambox vinden in je lokale netwerk!</string>
+    <string name="searching_known_devices">STBen zoeken in je lokale netwerk. Dit kan een paar minuten duren&#8230;</string>
+    <string name="autodiscover_STBs">Automatisch zoeken STB</string>
+    <string name="autodiscovery_failed">Kon geen STB vinden in je lokale netwerk!</string>
     <string name="add_all">Alles toevoegen</string>
     <string name="error_parsing">Er heeft zich een fout voorgedaan bij het doorgeven van data!</string>
     <string name="enabled">Ingeschakeld</string>
@@ -250,10 +250,10 @@
     <string name="use_light_theme_long">Gebruik lichte thema ipv. donkere standaard thema</string>
     <string name="use_light_theme">Gebruik lichte thema</string>
     <string name="leave_confirm">Echt verlaten?</string>
-    <string name="leave_confirm_long">Wil je dreamDroid echt verlaten?</string>
+    <string name="leave_confirm_long">Wil je visionDroid echt verlaten?</string>
     <string name="sent_as">Stuur als %s</string>
-    <string name="watch_on_dream">Bekijk op de Dreambox</string>
-    <string name="sent_from_dreamdroid">Gezonden vanaf dreamDroid op %s</string>
+    <string name="watch_on_dream">Bekijk op de STB</string>
+    <string name="sent_from_visiondroid">Gezonden vanaf visionDroid op %s</string>
     <string name="no_profile_available">Geen profiel gevonden! Configureer minimaal een profiel om deze app te gebruiken.</string>
     <string name="confirm_app_close">Vraag om bevestiging voor app sluit.</string>
     <string name="login_movies">Login (Films)</string>
@@ -263,8 +263,8 @@
     <string name="usability">Bruikbaarheid</string>
     <string name="use_picons">Gebruik Picons</string>
     <string name="sync_picons">Picons synchroniseren</string>
-    <string name="sync_picons_long">Synchroniseer Picons naar /{ExternalStorageDir}/dreamDroid/picons met gebruik van het huidige verbindingsprofiel</string>
-    <string name="sync_picons_path_long">Pad waar Picons op de dreambox staan</string>
+    <string name="sync_picons_long">Synchroniseer Picons naar /{ExternalStorageDir}/visionDroid/picons met gebruik van het huidige verbindingsprofiel</string>
+    <string name="sync_picons_path_long">Pad waar Picons op de STB staan</string>
     <string name="connecting">Verbinden ...</string>
     <string name="connected">Verbonden</string>
     <string name="logged_in">Ingelogd</string>
@@ -281,8 +281,6 @@
     <string name="disable_fab_reload">Zwevende herlaadknop uitzetten</string>
     <string name="max_grid_cols">Max. kolommen kanaallijst</string>
     <string name="max_grid_cols_long">Maximum aantal kolommen in de kanaallijst</string>
-    <string name="donate_sum">Doneer %s</string>
-    <string name="donate">Doneer</string>
     <string name="donation_thanks">Hartelijk dank voor uw donatie!</string>
     <string name="donation_error">Donatie mislukt! Spijtig! (%s)</string>
 </resources>

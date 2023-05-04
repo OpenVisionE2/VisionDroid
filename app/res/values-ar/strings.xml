@@ -227,7 +227,6 @@
     <string name="epg_sync">مزامنة البرامج</string>
     <string name="epg_sync_finished">تم مزامنة البرامج</string>
     <string name="reset_default">اعادة الافتراضي</string>
-    <string name="donate">تبرع</string>
     <string name="donation_thanks">شكرا جزيلا على تبرعك</string>
     <string name="donation_error">نأسف - لقد فشلت عملية التبرع</string>
     <string name="share">مشاركة</string>

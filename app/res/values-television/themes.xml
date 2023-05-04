@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.DreamDroid" parent="Theme.Leanback" />
-    <style name="Theme.DreamDroid.Dialog" parent="Theme.Dreamdroid.FullscreenDialog" />
-    <style name="Theme.DreamDroid.Dialog.Alert" parent="Theme.Dreamdroid.FullscreenDialog" />
+    <style name="Theme.VisionDroid" parent="Theme.Leanback" />
+    <style name="Theme.VisionDroid.Dialog" parent="Theme.Visiondroid.FullscreenDialog" />
+    <style name="Theme.VisionDroid.Dialog.Alert" parent="Theme.Visiondroid.FullscreenDialog" />
     <style name="VideoPlayerButton" parent="Widget.Leanback.DetailsActionButtonStyle">
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="Theme.Dreamdroid.FullscreenDialog" parent="Theme.DreamDroid.Dialog">
+    <style name="Theme.Visiondroid.FullscreenDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@color/primary_dreamDroid_transparent</item>
+        <item name="android:windowBackground">@color/primary_visionDroid_transparent</item>
     </style>
 </resources>

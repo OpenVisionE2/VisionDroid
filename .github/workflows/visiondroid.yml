@@ -1,0 +1,16 @@
+name: visiondroid
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Build VisionDroid app
+        run: ./gradlew assembleDebug
+      - name: Publish VisionDroid apk file
+        run: ./CI/build.sh

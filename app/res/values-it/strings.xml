@@ -4,7 +4,7 @@
     <string name="description">Descrizione</string>
     <string name="title">Titolo</string>
     <string name="mo">Lun</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Pacchetti (TV)</item>
@@ -182,7 +182,7 @@
     <string name="changelog">Note modifiche</string>
 <string name="license">LICENZA:
 \nLicenziato sotto i termini della Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Codice sorgente disponibile in: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Codice sorgente disponibile in: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Profilo</string>
     <string name="connection">Connessione</string>
     <string name="connection_state">Stato</string>
@@ -190,7 +190,7 @@
     <string name="checking">verifica...</string>
     <string name="error">ERRORE!</string>
     <string name="check_connectivity">Verifica connettività</string>
-    <string name="version_too_low">Versione &lt; 1.6.5</string>
+    <string name="version_too_low">Versione &lt; 1.4.1</string>
     <string name="connection_error">Errore connessione</string>
     <string name="port_out_of_range">La porta non può essere tra 1 e 65535</string>
     <string name="illegal_host">Nome sistema non valido</string>
@@ -229,7 +229,7 @@
     <string name="profiles_long">Configura profili connessione</string>
     <string name="enable_instant_zap">Sintonia veloce</string>
     <string name="enable_instant_zap_long">Breve tocco su un canale per la sintonia veloce</string>
-    <string name="wrong_activity">Errore attività! Ricrea i collegamenti precedenti per dreamDroid!</string>
+    <string name="wrong_activity">Errore attività! Ricrea i collegamenti precedenti per visionDroid!</string>
     <string name="simple_remote">Formato telecomando semplice</string>
     <string name="screenshot_saved">Schermata salvata in \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -240,9 +240,9 @@
     <string name="mobile_imdb">Usa la versione mobile di imdb.com</string>
     <string name="mobile_imdb_long">Usa m.imdb.com invece di www.imdb.com</string>
     <string name="searching">Ricerca...</string>
-    <string name="searching_known_devices">Ricerca dei Dreambox nella rete locale. Può impiegare diversi minuti...</string>
-    <string name="autodiscover_dreamboxes">Ricerca automatica Dreambox</string>
-    <string name="autodiscovery_failed">Impossibile trovare alcun Dreambox nella rete locale!</string>
+    <string name="searching_known_devices">Ricerca dei STB nella rete locale. Può impiegare diversi minuti...</string>
+    <string name="autodiscover_STBs">Ricerca automatica STB</string>
+    <string name="autodiscovery_failed">Impossibile trovare alcun STB nella rete locale!</string>
     <string name="add_all">Aggiungi tutti</string>
     <string name="error_parsing">Si è verificato un errore durante l\'elaborazione dei dati!</string>
     <string name="enabled">Abilitato</string>
@@ -251,10 +251,10 @@
     <string name="use_light_theme_long">Usa un tema leggero invece del tema oscuro predefinito</string>
     <string name="use_light_theme">Usa un tema leggero</string>
     <string name="leave_confirm">Uscire?</string>
-    <string name="leave_confirm_long">Vuoi veramente uscire da dreamDroid?</string>
+    <string name="leave_confirm_long">Vuoi veramente uscire da visionDroid?</string>
     <string name="sent_as">Inviato a %s</string>
-    <string name="watch_on_dream">Guarda su Dreambox</string>
-    <string name="sent_from_dreamdroid">Inviato da dreamDroid su %s</string>
+    <string name="watch_on_dream">Guarda su STB</string>
+    <string name="sent_from_visiondroid">Inviato da visionDroid su %s</string>
     <string name="no_profile_available">Nessun profilo di connessione trovato! Configura almeno un profilo per usare l\'applicazione principale!</string>
     <string name="confirm_app_close">Chiedi conferma prima di uscire</string>
     <string name="confirm_app_close_long">Chiedi conferma prima di chiudere l\'applicazione premendo &quot;back&quot;</string>
@@ -265,11 +265,11 @@
     <string name="usability">Usabilità</string>
     <string name="use_picons">Usa Picons</string>
 <string name="use_picons_long">Abilita l\'uso di Picons in certe aree.
-\nRichiede i picons in /{SchedaSD}/dreamDroid/picons</string>
+\nRichiede i picons in /{SchedaSD}/visionDroid/picons</string>
     <string name="sync_picons">Sincronizza Picons</string>
-    <string name="sync_picons_long">Sincronizza Picons in /{SchedaSD}/dreamDroid/picons usando il profilo di connessione attualmente configurato</string>
+    <string name="sync_picons_long">Sincronizza Picons in /{SchedaSD}/visionDroid/picons usando il profilo di connessione attualmente configurato</string>
     <string name="sync_picons_path">Picons - percorso remoto</string>
-    <string name="sync_picons_path_long">Percorso dove si trovano i Picons nel Dreambox</string>
+    <string name="sync_picons_path_long">Percorso dove si trovano i Picons nel STB</string>
     <string name="connecting">Connessione</string>
     <string name="connected">Connesso</string>
     <string name="logged_in">Accesso effettuato</string>
@@ -296,13 +296,11 @@
     <string name="max_grid_cols_long">Numero massimo di colonne nell\'elenco canali</string>
     <string name="default_to_full_vrm_long">Usa il formato di telecomando semplice come predefinito</string>
     <string name="default_to_full_vrm">Telecomando semplice come predefinito</string>
-    <string name="donate_sum">Donazione di %s</string>
-    <string name="donate">Donazione</string>
     <string name="donation_thanks">Grazie mille della donazione!</string>
     <string name="donation_error">La tua donazione è fallita! Siamo spiacenti! (%s)</string>
     <string name="share">Condividi</string>
     <string name="restart">Riavviare?</string>
-    <string name="theme_change_restart">E\' necessario un riavvio per applicare il cambio tema. Riavviare dreamDroid adesso?</string>
+    <string name="theme_change_restart">E\' necessario un riavvio per applicare il cambio tema. Riavviare visionDroid adesso?</string>
     <string name="host_not_found">Nome sistema non trovato</string>
     <string name="auth_error">Autorizzazione fallita (verifica nome utente/password)</string>
     <string name="developer_settings_enable">Abilita impostazioni sviluppatore</string>

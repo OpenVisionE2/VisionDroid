@@ -4,7 +4,7 @@
     <string name="description">Описание</string>
     <string name="title">Заголовок</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Фавориты (TV)</item>
@@ -166,14 +166,14 @@
     <string name="about">О...</string>
 <string name="license">Лицензия:
 \nnLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">исходный код доступен на: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">исходный код доступен на: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Активный профиль</string>
     <string name="connection_state">Состояние соединения</string>
     <string name="not_available">Недоступно</string>
     <string name="checking">проверяю...</string>
     <string name="error">Ошибка</string>
     <string name="check_connectivity">Проверка соединения</string>
-    <string name="version_too_low">Версия &lt; 1.6.5</string>
+    <string name="version_too_low">Версия &lt; 1.4.1</string>
     <string name="connection_error">Ошибка соединения</string>
     <string name="port_out_of_range">порт вне диапазона</string>
     <string name="illegal_host">Недопустимый хост</string>
@@ -211,7 +211,7 @@
     <string name="profiles">Профили</string>
     <string name="enable_instant_zap">Быстрый переход</string>
     <string name="enable_instant_zap_long">Быстрый переход при коротком нажатии</string>
-    <string name="wrong_activity">Неверное действие! Пересоздайте ярлыки для dreamDroid!</string>
+    <string name="wrong_activity">Неверное действие! Пересоздайте ярлыки для visionDroid!</string>
     <string name="simple_remote">Упрощенная раскладка кнопок</string>
     <string name="screenshot_saved">Скриншот сохранен в  \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -220,8 +220,8 @@
     <string name="mobile_imdb">Использовать мобильную версию imdb.com</string>
     <string name="mobile_imdb_long">Использовать m.imdb.com вместо www.imdb.com</string>
     <string name="searching">Идёт поиск</string>
-    <string name="searching_known_devices">Поиск Dreambox в Вашей локальной сети. Это займёт несколько минут.</string>
-    <string name="autodiscover_dreamboxes">Автопоиск ресивера</string>
+    <string name="searching_known_devices">Поиск STB в Вашей локальной сети. Это займёт несколько минут.</string>
+    <string name="autodiscover_STBs">Автопоиск ресивера</string>
     <string name="autodiscovery_failed">Ресивер не найден</string>
     <string name="add_all">Добавить всё.</string>
     <string name="enabled">Включить</string>

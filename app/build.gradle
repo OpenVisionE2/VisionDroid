@@ -71,7 +71,7 @@ android {
 
     defaultConfig {
         versionCode 535
-        versionName="12.2.r535I got report that none OV image is working on formuler and "
+        versionName="12.2.r535"
         minSdkVersion 17
         targetSdkVersion 33
         multiDexEnabled true

@@ -4,6 +4,6 @@ gradle=8.1.1
 junit=4.13.2
 kotlin=1.8.10
 minsdk=17
-studio=2022.2.1p1
+studio=2022.2.1p2
 targetsdk=33
 tools=33.0.1

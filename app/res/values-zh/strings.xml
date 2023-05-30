@@ -4,7 +4,7 @@
     <string name="description">描述</string>
     <string name="title">标题</string>
     <string name="mo">周一</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>喜爱频道(TV)</item>
@@ -153,14 +153,14 @@
     <string name="set_default">设置为默认</string>
     <string name="loading">加载</string>
     <string name="about">关于</string>
-    <string name="source_code_link">源代码请访问http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">源代码请访问https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">激活档</string>
     <string name="connection_state">连接状态</string>
     <string name="not_available">不可用</string>
     <string name="checking">检查中...</string>
     <string name="error">错误！</string>
     <string name="check_connectivity">检查可连接</string>
-    <string name="version_too_low">版本 &lt; 1.6.5</string>
+    <string name="version_too_low">版本 &lt; 1.4.1</string>
     <string name="connection_error">连接失败</string>
     <string name="port_out_of_range">端口号不知1和65535之间</string>
     <string name="illegal_host">不合法的主机名</string>

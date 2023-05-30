@@ -4,7 +4,7 @@
     <string name="description">Leírás</string>
     <string name="title">Cím</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Kedvencek (TV)</item>
@@ -162,14 +162,14 @@
     <string name="loading">Töltés...</string>
     <string name="about">Névjegy</string>
     <string name="license">LICENSE:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Forráskód elérhető: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Forráskód elérhető: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktív profil</string>
     <string name="connection_state">Kapcsolat állapota</string>
     <string name="not_available">Nem elérhető</string>
     <string name="checking">ellenőrzés</string>
     <string name="error">HIBA!</string>
     <string name="check_connectivity">Kapcsolat ellenőrzése</string>
-    <string name="version_too_low">Verzió &lt; 1.6.5</string>
+    <string name="version_too_low">Verzió &lt; 1.4.1</string>
     <string name="connection_error">Kapcsolati hiba</string>
     <string name="port_out_of_range">A portnak 1 és 65535 között kell lennie</string>
     <string name="illegal_host">Illegális állomás</string>
@@ -207,7 +207,7 @@
     <string name="profiles">Profilok</string>
     <string name="enable_instant_zap">Azonnali zap</string>
     <string name="enable_instant_zap_long">Azonnali zap egy szolgáltató rövid megnyomásakor</string>
-    <string name="wrong_activity">Hibás művelet hívása! Kérem hozza újra létre azokat a parancsikonokat a dreamDroid részére, amelyeket ön készített!</string>
+    <string name="wrong_activity">Hibás művelet hívása! Kérem hozza újra létre azokat a parancsikonokat a visionDroid részére, amelyeket ön készített!</string>
     <string name="simple_remote">Egyszerű távirányító rajz</string>
     <string name="screenshot_saved">Pillanatkép mentve \'%s-on\'</string>
     <string name="imdb">IMDb</string>
@@ -219,8 +219,8 @@
     <string name="mobile_imdb">imdb.com mobilverziójának használata</string>
     <string name="mobile_imdb_long">Használja az m.imdb.com-ot a www.imdb.com helyett</string>
     <string name="searching">Keresés&#8230;</string>
-    <string name="searching_known_devices">Dreambox-ok keresése a hálózaton. Ez eltarthat egy pár percig&#8230;</string>
-    <string name="autodiscover_dreamboxes">Box automatikus felkeresése</string>
+    <string name="searching_known_devices">STB-ok keresése a hálózaton. Ez eltarthat egy pár percig&#8230;</string>
+    <string name="autodiscover_STBs">Box automatikus felkeresése</string>
     <string name="autodiscovery_failed">Nem található box a hálózaton</string>
     <string name="add_all">Összes hozzáadása</string>
     <string name="error_parsing">Hiba történt az adatok feldolgozása közben</string>
@@ -230,10 +230,10 @@
     <string name="use_light_theme_long">A világos témát használja a sötét helyett</string>
     <string name="use_light_theme">Világos téma</string>
     <string name="leave_confirm">Valóban kilép?</string>
-    <string name="leave_confirm_long">Valóban kilép a dreamDroid alkalmazásból?</string>
+    <string name="leave_confirm_long">Valóban kilép a visionDroid alkalmazásból?</string>
     <string name="sent_as">Küldés mint %s</string>
-    <string name="watch_on_dream">Megtekintés a Dreambox-on</string>
-    <string name="sent_from_dreamdroid">Küldve a dreamDroid-ról, %s keresztül</string>
+    <string name="watch_on_dream">Megtekintés a STB-on</string>
+    <string name="sent_from_visiondroid">Küldve a visionDroid-ról, %s keresztül</string>
     <string name="no_profile_available">Nem található profil! Állítson be legalább egy profilt a fő alkalmazás használatával!</string>
     <string name="confirm_app_close">Rákérdezés az app-ból való kilépésre</string>
     <string name="confirm_app_close_long">Megerősítést vár, mielőtt az app bezáródik, amikor a "Vissza"-ra kattint</string>
@@ -243,11 +243,11 @@
     <string name="appearance">Megjelenés</string>
     <string name="usability">Használat</string>
     <string name="use_picons">Picon-ok használata</string>
-    <string name="use_picons_long">Egyes helyeken picon-ok használata.\nA picon-oknak ebben a mappában kell lenniük:  /{ExternalStorageDir}/dreamDroid/picons</string>
+    <string name="use_picons_long">Egyes helyeken picon-ok használata.\nA picon-oknak ebben a mappában kell lenniük:  /{ExternalStorageDir}/visionDroid/picons</string>
     <string name="sync_picons">Picon-ok szinkronizálása</string>
-    <string name="sync_picons_long">Picon-ok szinkronizálása a /{ExternalStorageDir}/dreamDroid/picons mappába, a jelenlegi profil használatával</string>
+    <string name="sync_picons_long">Picon-ok szinkronizálása a /{ExternalStorageDir}/visionDroid/picons mappába, a jelenlegi profil használatával</string>
     <string name="sync_picons_path">Picon-ok - távoli mappa</string>
-    <string name="sync_picons_path_long">A picon-ok mappája a Dreambox-ban</string>
+    <string name="sync_picons_path_long">A picon-ok mappája a STB-ban</string>
     <string name="connecting">Csatlakozás</string>
     <string name="connected">Csatlakoztatva</string>
     <string name="logged_in">Bejelentkezve</string>

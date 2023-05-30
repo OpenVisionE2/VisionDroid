@@ -70,8 +70,8 @@ android {
     buildToolsVersion '33.0.1'
 
     defaultConfig {
-        versionCode 535
-        versionName="12.2.r535"
+        versionCode 539
+        versionName="13.1.r539"
         minSdkVersion 17
         targetSdkVersion 33
         multiDexEnabled true

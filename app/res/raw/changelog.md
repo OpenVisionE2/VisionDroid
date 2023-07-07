@@ -1,41 +1,191 @@
-## 1.6.444
-* UPD: Color theme improvments
-* UPD/FIX: number of columns and general visuals in Zap layout
-* UPD: Settings are now always opened in a dedicated Activity
-* FIX: On large screens time selection in "EPG" view was invisible (but actually there)
+## 12.2.r513
+* Update build settings (API 33-Android 13)
+* Add multiboxpro
+* Add gbtrio4kplus
+* Add ip8
+* Add sx88v2
 
-## 1.6.443
-* NEW: Add preference for enabling "Dynamic Theme" mode on Android >= 12 (this was default enabled in all previous 1.6.x versions)
-* IMP: Bigger picons on bigger screens
-* IMP: Modernize signal meter
-* IMP: Side navigation rail instead of bottom navigation for TV & Movies on larger screens
-* FIX/IMP: reimplement Multi-Column service list
-* FIX: misaligned floating action button when profile fails to connect
-* FIX/NEW: add "UP" navigation for providers by clicking the selected tab again (if no up is available this will reload the current bouquet)
-* FIX: Screenshot saving, caching and sharing
-* FIX: Add a bunch of missing accessibility descriptions
-* UPD: German translation
-* NEW/TV: Add "next" event to content description in service list
+## 12.1.r453
+* Update build settings (API 32-Android 12)
+* Add sfx6008 and sx988
+* Add opt9600prima
+* Add og2ott4k
+* Add hd66se
+* Add ustym4kottpremium
+* Add vipertwin
+* Get rid of developer boxes
 
-## 1.6.442
-* FIX: end date/time could not be changed when editing a timer
-* FIX: localize time format in timer edit timer picker
+## 11.2.r427
+* Add opt9600 and opt9600mini
+* Add protek4kx2
+* Add pulse4kmini
 
-## 1.6.441
-* FIX: some typos in german translation
-* FIX: Crash on large screen devices when trying to open the TV & Movies
-* UPD: multiple updates to the home screen Widget
-  * FIX: widget not being added on Android >= 12
-  * FIX: configuration colors
-  * NEW: make appwidget reconfigurable
-  * NEW: add a proper preview image/layout
-* minor code cleanups
+## 11.2.r413
+* Add iziboxone4kplus
+* Add viper4kv20
+* Add sf8008opt
+* Try enabling default password
 
-## 1.6.440
-* NEW: Material 3 Theme and updated libraries
+## 11.1.r403
+* Add atto pixel models
+
+## 10.3.r388
+* No text or buttons in dialog when adding widget
+* Add reborn
+* Add h11
+* Add axashistwinplus
+* Add pulse4k
+* Add dinobot4ktwin
+* Add dual (dagsmv200)
+* Add dmamlogic (dreamone and dreamtwo)
+
+## 10.2.r310
+* Add iziboxelite4k
+* Cleanup old model names
+* Add debug flags
+
+## 10.2.r256
+* Add h9combose
+* Add h9se
+* Add i55plusse
+
+## 10.2.r243
+* Update build settings (android 11, sdk 30)
+* Add vip1_v1
+* Add vuduo4kse
+* Add missing zgemma models
+* Add h0 and h8
+* Add viper4kv20 and vipers
+* Get rid of odin duplicates
+* Add turing
+* Add multiboxplus
+* Get rid of dev boxes
+* Add adb_2850
+* Add k1plusv2
+* Get rid of dream name
+* Get rid of dinobot u42/u43 duplicates
+* UPD: Update google libraries, adjust themes
+* FIX: Fix build issues on f-droid
+* FIX: crash when streaming
+
+## 7.3.r70
+* Update build settings
+* DEL: Auto-Theme selection and with that the coarse location permission have been dropped
+* DEL: Donations have been removed with no intention for any replacement (~70% of any donation got eaten up by google and local taxes)
+* UPD: AndroidX libriaries updated to 1.1 where available
+* UPD: Built with Android 10 SDK
+* FIX: Some minor crashes have been fixed
+
+## 7.3.r65
+* Add forever_2424hd
+* Add forever_3434hd
+* Add forever_9898hd
+* Add forever_nanosmart
+
+## 7.3.r61
+* Add sf8008m
+* Add qboxhd
+* Add qboxhd_mini
+
+## 7.3.r57
+* Add osmini4k
+
+## 7.3.r55
+* Add lunixco
+* Remove dinobot duplicates
+
+## 7.3.r53
+* Add gbx34k
+* Update build settings
+
+## 7.2.r29
+* Add gbip4k
+
+## 7.2.r28
+* Add iziboxx3
+* Update build settings
+
+## 7.2.r23
+* Add arivacombo
+* Add arivatwin
+* Add iziboxecohd
+* Add jdhdduo
+* Add protek4kx1
+* Add spycatminiv2
+* Add turing
+* Add raspberrypi4
+
+## 7.2.r18
+* Add axultra
+* Add dinobotu43
+* Add dreamone
+
+## 7.2.r16
+* Add h10
+
+## 7.2.r14
+* Add anadolprohd5
+
+## 7.2.r12
+* Add viper4k
+
+## 7.2.r11
+* Add osmio4kplus
+
+## 7.1.r10
+* Add new STBs
+
+## 7.0.r8
+* First compatible release for Open Vision
+
+## 1.13.457
+* FIX: Don't reset the port to protocol default when editing an existing profile
+* FIX: Marked entries are now properly highlighted again (Profiles, Timers, etc)
+* FIX: Some visual glitches on android < 5.0 (SDK 21) 
+* FIX: Availability for TVs without WiFi but only Ethernet (google told me those things exist, I wouldn't have guessed so)
+* UPD: Prettify the backup screen and modernize the code it uses
+* UPD: Visual improvements at multiple places
+* UPD: External libraries
+
+## 1.12.456
+* FIX: TV & Movies now properly remembers where you left any of the tabs after rotation or reopening the app
+* FIX: A crash in TV & Services when the device was rotated while the "Timer" tab was active
+* FIX: Crashes related to the new profile storage implementation, breaking saving of any newly created Profile
+
+## 1.10.452 / 1.11.453
+* FIX: Crashing VirtualRemote on Android 6.0 and older (SDK <= 23)
+* FIX: A bunch of crashes on mobile and tv
+* FIX: Some theming/style issues
+* FIX: Radio mode (broken in 1.10.452)
+* UPD: Italian and spanish translations
+* UPD: Internal changes to how profiles are handled (old profiles will migrated automatically)
+
+## 1.9.451
+* FIX: Crashes related to self-signed ssl/https certificates
+* FIX: Crash on android < 24 (Nougat) when trying to stream with the internal player
+* FIX: Crashes related to the movies tab
+
+## 1.8.449
+* FIX: This should finally fix most of the annyoing crashes you've experienced recently
+* FIX: Favorite bouquet is properly loaded upon start again
+
+## 1.7.448
+* FIX: location selection for movies
+* FIX: crashes on TVs
+* FIX: experimental fix for a bug i can't reproduce 
+* NOTE: there are some open reported Bug, this is just fixing SOME issues
+
+## 1.6.447
+* NEW: Material 3 theme incl. dynamic color themes
 * NEW: Merge TV, Radio, Movies and Timer Management into a Sliding Tab
+* NEW: Numerous visual improvements
+* NEW: Enable PIP for android >= 8.0
 * NEW: You can now define an alternative ip/hostname based on the WiFi SSID you're connected to, thx to @basalt79
-* FIX: Use "Play/Pause" in Virtual Remote instead of "Play"
+* NEW-TV: Add "next" event to content description in service list
+* UPD: multiple updates to the home screen widget
+* UPD: external libraries
+* FIX: Screenshot saving, caching and sharing
+* FIX: Add a bunch of missing accessibility descriptions 
 
 ## 1.5.439
 * UPD: Update google libraries, adjust themes
@@ -79,7 +229,7 @@
 ## 1.3.430
 * FIX: crash when trying to stream with external video player
 * FIX: crash when encoder-port/bitrate is empty or invalid
-* FIX: Bug in integrated gaugeview-library that caused "READ_PHONE_STATE" permission to be added by the android SDK [https://github.com/...](https://github.com/sreichholf/dreamDroid/commit/f3eb97472a850ddbeca7bf91a14c4163f845cc35)
+* FIX: Bug in integrated gaugeview-library that caused "READ_PHONE_STATE" permission to be added by the android SDK [https://github.com/...](https://github.com/OpenVisionE2/VisionDroid/commit/f3eb97472a850ddbeca7bf91a14c4163f845cc35)
 
 ## 1.3.429
 * Improvements to the videoplayer (don't stop on rotation, jump in recordings, playback time displayed correctly when watching recorded movies)
@@ -112,7 +262,7 @@
 
 ## 1.2.420
 * NEW: Settings Backup
-* FIX: Some improvements for the TV version of dreamDroid
+* FIX: Some improvements for the TV version of visionDroid
 * FIX: Fix NPEs
 * DEV: Switch to Android SDK 28 and AndroidX
 * DEV: Update external libraries
@@ -138,7 +288,7 @@
 * Fast scrolling is back
 
 ## 1.2.409
-* DreamDroid is now free Software, licensed under GPLv3
+* VisionDroid is now free Software, licensed under GPLv3
 * Some changes for releasing on f-droid
 
 ## 1.2-405
@@ -193,7 +343,7 @@
 
 ## 1.1-380
 * FIX: Improve error handling in some of the lists
-* FIX: Workaround for issues with "EPG" on older dreambox models
+* FIX: Workaround for issues with "EPG" on older STB models
 
 ## 1.1-379
 * FIX: Profile Name fix was actually missing

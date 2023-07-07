@@ -4,7 +4,7 @@
     <string name="description">Popis</string>
     <string name="title">Názov</string>
     <string name="mo">Po</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Bouquets(TV)</item>
@@ -171,7 +171,7 @@
     <string name="about">O aplikácii</string>
 <string name="license">LICENCIA:
 \nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Zdrojový kód dostupný na: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Zdrojový kód dostupný na: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Aktívny profil</string>
     <string name="connection">Spojenie</string>
     <string name="connection_state">Stav pripojenia</string>
@@ -179,7 +179,7 @@
     <string name="checking">Overovanie ...</string>
     <string name="error">CHYBA!</string>
     <string name="check_connectivity">Kontrola pripojenia</string>
-    <string name="version_too_low">Verzia &lt; 1.6.5</string>
+    <string name="version_too_low">Verzia &lt; 1.4.1</string>
     <string name="connection_error">Chyba spojenia</string>
     <string name="port_out_of_range">Port nie je medzi 1 a 65535</string>
     <string name="illegal_host">Neplatný hostiteľ</string>
@@ -218,7 +218,7 @@
     <string name="profiles_long">Správa profilov pripojenia</string>
     <string name="enable_instant_zap">Okamžité prepnutie</string>
     <string name="enable_instant_zap_long">Okamžité prepnutie kanála pri dotknutí</string>
-    <string name="wrong_activity">Zvolená nesprávna aktivita! Nastavte opäť všetky rýchle predvoľby pre DreamDroid!</string>
+    <string name="wrong_activity">Zvolená nesprávna aktivita! Nastavte opäť všetky rýchle predvoľby pre VisionDroid!</string>
     <string name="simple_remote">Zobrazenie jednoduchého ovládača</string>
     <string name="screenshot_saved">Snímka obrazovky uložená do \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -229,9 +229,9 @@
     <string name="mobile_imdb">Použi mobilnú verziu imdb.com</string>
     <string name="mobile_imdb_long">Použi m.imdb.com namiesto www.imdb.com</string>
     <string name="searching">Hľadám</string>
-    <string name="searching_known_devices">Hľadanie dreamboxov v lokálnej sieti môže trvať pár minút</string>
-    <string name="autodiscover_dreamboxes">Automatické vyhľadanie dreamboxu</string>
-    <string name="autodiscovery_failed">Nepodarilo sa nájsť nijaký dreambox v lokálnej sieti! </string>
+    <string name="searching_known_devices">Hľadanie STBov v lokálnej sieti môže trvať pár minút</string>
+    <string name="autodiscover_STBs">Automatické vyhľadanie STBu</string>
+    <string name="autodiscovery_failed">Nepodarilo sa nájsť nijaký STB v lokálnej sieti! </string>
     <string name="add_all">Pridaj všetko</string>
     <string name="error_parsing">Chyba pri analýze dát!</string>
     <string name="enabled">Povolené</string>
@@ -240,10 +240,10 @@
     <string name="use_light_theme_long">Použi svetlú tému namiesto hlavnej tmavej</string>
     <string name="use_light_theme">Použi svetlú tému</string>
     <string name="leave_confirm">Naozaj odísť?</string>
-    <string name="leave_confirm_long">Naozaj chcete ukončiť dreamDroid?</string>
+    <string name="leave_confirm_long">Naozaj chcete ukončiť visionDroid?</string>
     <string name="sent_as">Poslané ako %s</string>
-    <string name="watch_on_dream">Sledovať na dreamDroide</string>
-    <string name="sent_from_dreamdroid">Odoslal dreamDroid o %s</string>
+    <string name="watch_on_dream">Sledovať na visionDroide</string>
+    <string name="sent_from_visiondroid">Odoslal visionDroid o %s</string>
     <string name="no_profile_available">Neexistuje profil pripojenia! Vytvorte nejaký!</string>
     <string name="confirm_app_close">Žiadať potvrdenie pred ukončením aplikácie</string>
     <string name="login_movies">Prihlásenie (Filmy)</string>

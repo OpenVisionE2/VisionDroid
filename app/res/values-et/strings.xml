@@ -3,8 +3,8 @@
 
 <string name="description">Kirjeldus</string>
 <string name="title">Pealkiri</string>
-<string name="app_name_release">Dreamdroid</string>
-<string name="app_name_tv_release">dreamDroidTV</string>
+<string name="app_name_release">Visiondroid</string>
+<string name="app_name_tv_release">visionDroidTV</string>
 
 <string-array name="servicelist">
 <item>Lemmiknimekirjad (TV)</item>
@@ -180,9 +180,9 @@
 <string name="about">Rakendusest</string>
 <string name="changelog">Muudatused</string>
 <string name="license_gplv3">LITSENTS:
-\nDreamDroid on vaba tarkvara!
+\nVisionDroid on vaba tarkvara!
 \nAluseks GNU Üldine Avalik Litsents 3 https://www.gnu.org/licenses/gpl-3.0.html</string>
-<string name="source_code_link">Lähtekood on saadaval: http://github.com/sreichholf/dreamDroid</string>
+<string name="source_code_link">Lähtekood on saadaval: https://github.com/OpenVisionE2/VisionDroid</string>
 <string name="active_profile">Profiil</string>
 <string name="connection">Ühendus</string>
 <string name="connection_state">Olek</string>
@@ -190,7 +190,7 @@
 <string name="checking">kontrollitakse#8230;</string>
 <string name="error">VIGA!</string>
 <string name="check_connectivity">Kontrolli ühenduvust</string>
-<string name="version_too_low">Versioon &lt; 1.6.5</string>
+<string name="version_too_low">Versioon &lt; 1.4.1</string>
 <string name="connection_error">Ühenduse viga</string>
 <string name="port_out_of_range">Port pole vahemikus 1 - 65535</string>
 <string name="illegal_host">Illegaalne masin</string>
@@ -228,7 +228,7 @@
 <string name="profiles_long">Seadista ühenduse profiilid</string>
 <string name="enable_instant_zap">Kohene kanalivahetus</string>
 <string name="enable_instant_zap_long">Kohene kanalivahetus lühikesel koputusel</string>
-<string name="wrong_activity">Vale toiming! Loo kõik dreamDroidi jaoks loodud otseteed uuesti!</string>
+<string name="wrong_activity">Vale toiming! Loo kõik visionDroidi jaoks loodud otseteed uuesti!</string>
 <string name="simple_remote">Lihtsa puldi välimus</string>
 <string name="screenshot_saved">Ekraanitõmmis salvestati asukohta \'%s\'</string>
 <string name="imdb">IMDb</string>
@@ -239,9 +239,9 @@
 <string name="mobile_imdb">Kasuta imdb.com mobiiliversiooni</string>
 <string name="mobile_imdb_long">Kasuta \'www.imdb.com\' asemel \'m.imdb.com\'</string>
 <string name="searching">Otsitakse…</string>
-<string name="searching_known_devices">Toimub dreamboxide otsing kohtvõrgus. See võib kesta paar minutit…</string>
-<string name="autodiscover_dreamboxes">Dreamboxi automaatne tuvastamine</string>
-<string name="autodiscovery_failed">Kohtvõrgust dreamboxe ei leitud!</string>
+<string name="searching_known_devices">Toimub STBide otsing kohtvõrgus. See võib kesta paar minutit…</string>
+<string name="autodiscover_STBs">STBi automaatne tuvastamine</string>
+<string name="autodiscovery_failed">Kohtvõrgust STBe ei leitud!</string>
 <string name="add_all">Lisa kõik</string>
 <string name="error_parsing">Viga andmete töötlemisel!</string>
 <string name="enabled">Lubatud</string>
@@ -250,10 +250,10 @@
 <string name="use_light_theme_long">Kasuta tumeda teema asemel heledat</string>
 <string name="use_light_theme">Kasuta heledat teemat</string>
 <string name="leave_confirm">Kas sulged rakenduse?</string>
-<string name="leave_confirm_long">Kas sulgeda dreamDroid?</string>
+<string name="leave_confirm_long">Kas sulgeda visionDroid?</string>
 <string name="sent_as">Saada kui %s</string>
 <string name="watch_on_dream">Vaata vastuvõtjas</string>
-<string name="sent_from_dreamdroid">Saatjaks dreamDroid kasutades %s</string>
+<string name="sent_from_visiondroid">Saatjaks visionDroid kasutades %s</string>
 <string name="no_profile_available">Ühenduse profiili ei leitud. Rakenduse kasutamiseks seadista vähemalt üks!</string>
 <string name="confirm_app_close">Küsi kinnitust enne rakenduse sulgemist</string>
 <string name="confirm_app_close_long">Küsi kinnitust enne rakenduse sulgemist, kui vajutada "tagasi"</string>
@@ -264,9 +264,9 @@
 <string name="usability">Kasutatavus</string>
 <string name="use_picons">Kasuta pikoneid</string>
 <string name="use_picons_long">Luba pikonite kasutamine teatud kohtades.
-\nPikonite asukoht  /{SD-kaart}/dreamDroid/picons</string>
+\nPikonite asukoht  /{SD-kaart}/visionDroid/picons</string>
 <string name="sync_picons">Impordi pikonid</string>
-<string name="sync_picons_long">Impordi pikonid kataloogi /{SD-kaart}/dreamDroid/picons kasutades seadistatud profiili</string>
+<string name="sync_picons_long">Impordi pikonid kataloogi /{SD-kaart}/visionDroid/picons kasutades seadistatud profiili</string>
 <string name="sync_picons_path">Pikonid - kaugasukoht</string>
 <string name="sync_picons_path_long">Pikonite asukoht vastuvõtjas</string>
 <string name="connecting">Ühendan</string>
@@ -295,13 +295,11 @@
 <string name="max_grid_cols_long">Suurim tulpade arv kanalinimekirjas </string>
 <string name="default_to_full_vrm_long">Kasuta vaikimisi lihtsat virtuaalpulti</string>
 <string name="default_to_full_vrm">Vaikimisi lihtne pult</string>
-<string name="donate_sum">Anneta %s</string>
-<string name="donate">Anneta</string>
 <string name="donation_thanks">Suur tänu annetuse eest!</string>
 <string name="donation_error">Annetamine nurjus! Väga kahju! (%s)</string>
 <string name="share">Jaga</string>
 <string name="restart">Kas taaskäivitada?</string>
-<string name="theme_change_restart">Teema muutmiseks tuleb dreamDroid taaskäivitada. Kas teha seda kohe?</string>
+<string name="theme_change_restart">Teema muutmiseks tuleb visionDroid taaskäivitada. Kas teha seda kohe?</string>
     <string name="host_not_found">Masinat ei leitud</string>
 <string name="auth_error">Autentimine nurjus. Kontrolli kasutajanime/parooli</string>
 <string name="developer_settings_enable">Luba arendaja seaded</string>
@@ -342,7 +340,7 @@
 <string name="use_hw_accel_long">Kasuta riistvaralist kiirendust video dekodeerimiseks (%s)</string>
 <string name="video_player">Videomängija</string>
 <string name="location_rationale_title">Nõutav on asukoht</string>
-<string name="location_rationale">Päeva/öö teema automaatseks vahetamiseks vajab DreamDroid asukoha tuvastamist.
+<string name="location_rationale">Päeva/öö teema automaatseks vahetamiseks vajab VisionDroid asukoha tuvastamist.
 \nAsukoht ei kuulu logidesse, seda kasutatakse ainult teema vahetamiseks!</string>
 <string name="video_enable_gestures_long">Luba viiped helitugevuse ja heleduse juhtimiseks</string>
 <string name="video_enable_gestures">Luba viiped</string>

@@ -161,7 +161,7 @@
     <string name="loading">در حال بارگذاری &#8230;</string>
     <string name="about">درباره</string>
     <string name="license">LICENSE:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link"> http://github.com/sreichholf/dreamDroid سورس کد در این آدرس موجود است : </string>
+    <string name="source_code_link"> https://github.com/OpenVisionE2/VisionDroid سورس کد در این آدرس موجود است : </string>
     <string name="active_profile">نمایه</string>
     <string name="connection_state">حالت</string>
     <string name="not_available">در دسترس نیست</string>
@@ -219,7 +219,7 @@
     <string name="mobile_imdb_long">استفاده از m.imdb.com بجای www.imdb.com</string>
     <string name="searching">در حال جستجوی &#8230;</string>
     <string name="searching_known_devices">جستجو برای دستگاه های موجود در شبکه محلی شما ، این کار ممکن است چند دقیقه زمان نیاز داشته باشد &#8230;</string>
-    <string name="autodiscover_dreamboxes">یافتن خودکار دستگاه</string>
+    <string name="autodiscover_STBs">یافتن خودکار دستگاه</string>
     <string name="autodiscovery_failed">هیچ دستگاهی در شبکه محلی شما به صورت خودکار یافت نشد</string>
     <string name="add_all">اضافه کردن همه</string>
     <string name="error_parsing">یک خطا هنگام تجزیه و تحلیل اطلاعات رخ داد ! </string>
@@ -232,7 +232,7 @@
     <string name="leave_confirm_long">آیا واقعا میخواهید از PEDroid خارج شوید ؟</string>
     <string name="sent_as">ارسال شده به عنوان %s</string>
     <string name="watch_on_dream">مشاهده روی دستگاه</string>
-    <string name="sent_from_dreamdroid">توسط PEDroid روی %s ارسال شد</string>
+    <string name="sent_from_visiondroid">توسط PEDroid روی %s ارسال شد</string>
     <string name="no_profile_available">هیچ نمایه ای برای اتصال یافت نشد ! لطفا حداقل یک نمایه توسط صفحه اصلی برنامه پیکربندی کنید</string>
     <string name="confirm_app_close">پرسش برای تایید قبل از خروج از برنامه</string>
     <string name="confirm_app_close_long">پرسش برای تایید قبل از بسته شدن برنامه هنگام فشار دادن &quot;back&quot;</string>

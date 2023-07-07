@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="net.reichholf.dreamdroid"
+          package="org.openvision.visiondroid"
           android:installLocation="auto">
 
     <uses-sdk
@@ -16,30 +16,33 @@
         android:xlargeScreens="true"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.BIND_JOB_SERVICE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
-    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
     <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
 
     <application
-        android:name=".DreamDroid"
+        android:name=".VisionDroid"
         android:allowBackup="true"
         android:allowClearUserData="true"
-        android:backupAgent="DreamDroidBackupAgent"
+        android:backupAgent="VisionDroidBackupAgent"
         android:hardwareAccelerated="true"
         android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
-        android:banner="@drawable/dreamdroid_banner"
+        android:banner="@drawable/visiondroid_banner"
         android:killAfterRestore="true"
         android:label="@string/app_name"
         android:resizeableActivity="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DreamDroid"
+        android:theme="@style/Theme.VisionDroid"
         android:usesCleartextTraffic="true">
         <activity android:name=".activities.TabbedNavigationActivity"
                   android:exported="true">
@@ -50,7 +53,7 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <data android:scheme="dreamdroid" />
+                <data android:scheme="visiondroid" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -63,7 +66,7 @@
         </activity>
         <activity
             android:name=".activities.SimpleNoTitleFragmentActivity"
-            android:theme="@style/Theme.DreamDroid.NoTitle"
+            android:theme="@style/Theme.VisionDroid.NoTitle"
             android:uiOptions=""
             android:exported="false"/>
 
@@ -84,12 +87,12 @@
             android:exported="false" />
         <activity
             android:name=".tv.activities.PreferenceActivity"
-            android:theme="@style/Theme.Dreamdroid.LeanbackPreferences"
+            android:theme="@style/Theme.Visiondroid.LeanbackPreferences"
             android:exported="false" />
 
         <activity
             android:name=".activities.ShareActivity"
-            android:theme="@style/Theme.DreamDroid"
+            android:theme="@style/Theme.VisionDroid"
             android:exported="true" >
 
             <intent-filter android:label="@string/watch_on_dream">
@@ -141,29 +144,26 @@
 
         <activity
             android:name=".activities.VideoActivity"
-            android:theme="@style/Theme.DreamDroid.Player"
+            android:theme="@style/Theme.VisionDroid.Player"
             android:finishOnTaskLaunch="true"
             android:launchMode="singleTop"
+            android:supportsPictureInPicture="true"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|screenLayout|uiMode|smallestScreenSize"
             android:exported="false" />
 
         <activity
             android:name=".appwidget.VirtualRemoteWidgetConfiguration"
-            android:theme="@style/Theme.DreamDroid.Night"
+            android:theme="@style/Theme.VisionDroid.Night"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="de.duenndns.ssl.MemorizingActivity"
-                  android:theme="@style/Theme.DreamDroid.Dialog"
-                  android:exported="false"/>
-
         <receiver android:name=".appwidget.VirtualRemoteWidgetProvider" android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-                <action android:name="net.reichholf.dreamdroid.appwidget.WidgetService.ACTION_RCU" />
+                <action android:name="org.openvision.visiondroid.appwidget.WidgetService.ACTION_RCU" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"

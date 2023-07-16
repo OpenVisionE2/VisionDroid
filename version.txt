@@ -1,6 +1,6 @@
 android=13
 androidgradle=7.4.2
-gradle=8.2
+gradle=8.2.1
 junit=4.13.2
 kotlin=1.8.10
 minsdk=17

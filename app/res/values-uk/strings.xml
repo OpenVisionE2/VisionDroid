@@ -4,7 +4,7 @@
     <string name="description">Опис</string>
     <string name="title">Заголовок</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Фаворити (TV)</item>
@@ -161,14 +161,14 @@
     <string name="loading">Завантаження&#8230;</string>
     <string name="about">Про програму</string>
     <string name="license">ЛІЦЕНЗІЯ:\nLicensed under the Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Вихідний код доступний на: http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Вихідний код доступний на: https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Активний профіль</string>
     <string name="connection_state">Стан з\'єднання</string>
     <string name="not_available">Недоступно</string>
     <string name="checking">перевіряю&#8230;</string>
     <string name="error">ПОМИЛКА!</string>
     <string name="check_connectivity">Перевірити з\'єднання</string>
-    <string name="version_too_low">Версія &lt; 1.6.5</string>
+    <string name="version_too_low">Версія &lt; 1.4.1</string>
     <string name="connection_error">Помилка з\'єднання</string>
     <string name="port_out_of_range">Порт поза діапазоном 1 і 65535</string>
     <string name="illegal_host">Неприпустиме ім\'я хосту</string>
@@ -206,7 +206,7 @@
     <string name="profiles">Профілі</string>
     <string name="enable_instant_zap">Швидкий перехід</string>
     <string name="enable_instant_zap_long">Швидкий перехід при короткому натисканні на сервіс</string>
-    <string name="wrong_activity">Невірна дія! Створіть заново усі посилання на dreamDroid!</string>
+    <string name="wrong_activity">Невірна дія! Створіть заново усі посилання на visionDroid!</string>
     <string name="simple_remote">Спрощена розкладка кнопок пульта</string>
     <string name="screenshot_saved">Знімок екрану збережено до  \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -218,17 +218,17 @@
     <string name="mobile_imdb">Використовувати мобільну версію imdb.com</string>
     <string name="mobile_imdb_long">Використовувати m.imdb.com замість imdb.com</string>
     <string name="searching">Шукаю&#8230;</string>
-    <string name="searching_known_devices">Здійснюється пошук Dreambox\'ів у вашій локальній мережі. Це може зайняти кілька хвилин &#8230;</string>
-    <string name="autodiscover_dreamboxes">Автопошук Dreambox\'ів</string>
-    <string name="autodiscovery_failed">Не знайдено жодного Dreambox\'у у вашій мережі!</string>
+    <string name="searching_known_devices">Здійснюється пошук STB\'ів у вашій локальній мережі. Це може зайняти кілька хвилин &#8230;</string>
+    <string name="autodiscover_STBs">Автопошук STB\'ів</string>
+    <string name="autodiscovery_failed">Не знайдено жодного STB\'у у вашій мережі!</string>
     <string name="add_all">Додати всі</string>
     <string name="signal_meter">Рівень сигналу</string>
     <string name="use_light_theme_long">Використовувати світлу тему замість темної</string>
     <string name="use_light_theme">Світла тема</string>
     <string name="leave_confirm">Схаменіться!</string>
-    <string name="leave_confirm_long">Ви дійсно хочете вийти з dreamDroid?</string>
-    <string name="watch_on_dream">Переглянути на Dreambox</string>
-    <string name="sent_from_dreamdroid">Надіслано з dreamDroid на %s</string>
+    <string name="leave_confirm_long">Ви дійсно хочете вийти з visionDroid?</string>
+    <string name="watch_on_dream">Переглянути на STB</string>
+    <string name="sent_from_visiondroid">Надіслано з visionDroid на %s</string>
     <string name="confirm_app_close">Підтвердження перед виходом</string>
     <string name="confirm_app_close_long">Запитувати підтвердження перед виходом з програми після натискання кнопки &quot;назад&quot;</string>
 </resources>

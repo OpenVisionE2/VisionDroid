@@ -1,11 +1,11 @@
-An opensource client for enigma2 based dreamboxes.
-FAQ: https://dreamdroid.org/faq/
+An opensource client for enigma2 based STBs.
+FAQ: https://visiondroid.org/faq/
 
 <b>Supported Devices:</b> dm9x0 ultraHD, dm7080hd, dm820hd, dm520hd, dm525hd, dm500hd, dm800, dm800se, dm7020hd, dm7025, dm8000<br>
 <b>Unsupported Devices:</b> This App is not fully compatible with "OpenWebIf"!
 
 Features:
-★ Unlimited connection profiles (number of dreambox you can control using dreamDroid)
+★ Unlimited connection profiles (number of STB you can control using visionDroid)
 ★ Stream your favorite channel or recording using the integrated or any (capable) external Video Player for android (BETA!)
 ★ See what's currently running
 ★ Browse channels and their EPG
@@ -22,5 +22,5 @@ Features:
 
 If you have any questions or issues, please write me an email (german or english).<br>
 
-You'd like to translate dreamDroid to your language?
-Visit https://www.dreamdroid.org/translate/dreamDroid/
+You'd like to translate visionDroid to your language?
+Visit https://www.visiondroid.org/translate/visionDroid/

@@ -4,7 +4,7 @@
     <string name="description">Descrição</string>
     <string name="title">Titulo</string>
     <string name="mo">Mo</string>
-    <string name="app_name_release">DreamDroid</string>
+    <string name="app_name_release">VisionDroid</string>
 
     <string-array name="servicelist">
         <item>Pacotes TV</item>
@@ -182,7 +182,7 @@
     <string name="changelog">Alterações</string>
 <string name="license">LICENÇA:
 \nLicenciado sob a Create-Commons Attribution-Noncommercial-Share Alike 3.0 Unported http://creativecommons.org/licenses/by-nc-sa/3.0</string>
-    <string name="source_code_link">Código fonte disponível em http://github.com/sreichholf/dreamDroid</string>
+    <string name="source_code_link">Código fonte disponível em https://github.com/OpenVisionE2/VisionDroid</string>
     <string name="active_profile">Perfil</string>
     <string name="connection">Ligação</string>
     <string name="connection_state">Estado</string>
@@ -190,7 +190,7 @@
     <string name="checking">A Verificar&#8230;</string>
     <string name="error">ERRO!</string>
     <string name="check_connectivity">Verificar conetividade</string>
-    <string name="version_too_low">Versão &lt; 1.6.5</string>
+    <string name="version_too_low">Versão &lt; 1.4.1</string>
     <string name="connection_error">Erro de ligação</string>
     <string name="port_out_of_range">Porto tem de ser de 1 a 65535</string>
     <string name="illegal_host">Anfitrião incorreto</string>
@@ -229,7 +229,7 @@
     <string name="profiles_long">Configurar perfis de ligação</string>
     <string name="enable_instant_zap">Mudar agora</string>
     <string name="enable_instant_zap_long">Zap instantâneo ao clicar no canal</string>
-    <string name="wrong_activity">Atividade errada executada! Por favor recrie os atalhos que criou para o dreamDroid!</string>
+    <string name="wrong_activity">Atividade errada executada! Por favor recrie os atalhos que criou para o visionDroid!</string>
     <string name="simple_remote">Comando simples</string>
     <string name="screenshot_saved">Foto do ecrã gravada em \'%s\'</string>
     <string name="imdb">IMDb</string>
@@ -241,7 +241,7 @@
     <string name="mobile_imdb_long">Usar m.IMDb.com ao invés de www.IMDb.com</string>
     <string name="searching">A procurar&#8230;</string>
     <string name="searching_known_devices">A procurar recetores na rede. Pode demorar alguns minutos&#8230;</string>
-    <string name="autodiscover_dreamboxes">Detetar Dreambox automaticamente</string>
+    <string name="autodiscover_STBs">Detetar STB automaticamente</string>
     <string name="autodiscovery_failed">Nao conseguiu encontrar a dreamboc na rede local!</string>
     <string name="add_all">Adicionar todos</string>
     <string name="error_parsing">Ocorreu um erro ao interpretar os dados!</string>
@@ -251,10 +251,10 @@
     <string name="use_light_theme_long">Usar um tema claro ao invés do tema escuro</string>
     <string name="use_light_theme">Usar tema claro</string>
     <string name="leave_confirm">Sair?</string>
-    <string name="leave_confirm_long">Sair do dreamDroid?</string>
+    <string name="leave_confirm_long">Sair do visionDroid?</string>
     <string name="sent_as">Enviado como %s</string>
-    <string name="watch_on_dream">Ver na Dreambox</string>
-    <string name="sent_from_dreamdroid">Enviado do dreamDroid em %s</string>
+    <string name="watch_on_dream">Ver na STB</string>
+    <string name="sent_from_visiondroid">Enviado do visionDroid em %s</string>
     <string name="no_profile_available">Ligação de perfil não encontrada! Por favor ao menos um perfil usando a aplicação principal!</string>
     <string name="confirm_app_close">Pergunte pela confirmação antes de sair do aplicativo</string>
     <string name="confirm_app_close_long">Pergunte pela confirmação antes da aplicação estar sendo fechada  precisando &quot;voltar&quot;</string>
@@ -264,11 +264,11 @@
     <string name="appearance">Aparência</string>
     <string name="usability">Usabilidade</string>
     <string name="use_picons">Símbolo Canal</string>
-    <string name="use_picons_long">Ativar o uso dos picons em certas áreas. Requere picons em /{ExternalStorageDir}/dreamDroid/picons</string>
+    <string name="use_picons_long">Ativar o uso dos picons em certas áreas. Requere picons em /{ExternalStorageDir}/visionDroid/picons</string>
     <string name="sync_picons">Sincronizar Símbolo do canal</string>
-    <string name="sync_picons_long">Sincronizar Picons para /{ExternalStorageDir}/dreamDroid/picons usando configuração de ligação de perfil atual</string>
+    <string name="sync_picons_long">Sincronizar Picons para /{ExternalStorageDir}/visionDroid/picons usando configuração de ligação de perfil atual</string>
     <string name="sync_picons_path">Picons - caminho remoto</string>
-    <string name="sync_picons_path_long">Caminho onde os Picons residem na dreambox</string>
+    <string name="sync_picons_path_long">Caminho onde os Picons residem na STB</string>
     <string name="connecting">A ligar</string>
     <string name="connected">Ligado</string>
     <string name="logged_in">Registado</string>

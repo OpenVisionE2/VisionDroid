@@ -29,7 +29,7 @@
         android:background="?attr/navigation_footer">
 
 
-        <net.reichholf.dreamdroid.widget.CheckableImageButton
+        <org.openvision.visiondroid.widget.CheckableImageButton
             android:id="@+id/menu_navigation_changelog"
             style="@style/NavButtonBarButton"
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:contentDescription="@string/changelog"
             android:src="?attr/ic_menu_changelog"/>
 
-        <net.reichholf.dreamdroid.widget.CheckableImageButton
+        <org.openvision.visiondroid.widget.CheckableImageButton
             android:id="@+id/menu_navigation_about"
             style="@style/NavButtonBarButton"
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:contentDescription="@string/about"
             android:src="?attr/ic_menu_about"/>
 
-        <net.reichholf.dreamdroid.widget.CheckableImageButton
+        <org.openvision.visiondroid.widget.CheckableImageButton
             android:id="@+id/menu_navigation_backup"
             style="@style/NavButtonBarButton"
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:contentDescription="@string/backup"
             android:src="?attr/ic_menu_backup"/>
 
-        <net.reichholf.dreamdroid.widget.CheckableImageButton
+        <org.openvision.visiondroid.widget.CheckableImageButton
             android:id="@+id/menu_navigation_profiles"
             style="@style/NavButtonBarButton"
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             android:contentDescription="@string/profiles"
             android:src="?attr/ic_menu_profiles"/>
 
-        <net.reichholf.dreamdroid.widget.CheckableImageButton
+        <org.openvision.visiondroid.widget.CheckableImageButton
             android:id="@+id/menu_navigation_settings"
             style="@style/NavButtonBarButton"
             android:layout_width="match_parent"

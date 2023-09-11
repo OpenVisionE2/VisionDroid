@@ -60,8 +60,8 @@ dependencies {
     implementation 'com.github.livefront:bridge:v2.0.2'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.7.2'
-    implementation 'androidx.navigation:navigation-ui:2.7.2'
+    implementation 'androidx.navigation:navigation-fragment:2.7.0'
+    implementation 'androidx.navigation:navigation-ui:2.7.0'
     implementation 'androidx.slidingpanelayout:slidingpanelayout:1.2.0'
 }
 
